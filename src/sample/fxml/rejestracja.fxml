@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.controllers.Rejestracja">
+    <ButtonBar layoutX="254.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0"/>
+    <!--<Button layoutX="549.0" layoutY="1.0" mnemonicParsing="false" onAction="#wroc" text="Wróć" />-->
+    <Button layoutX="258.0" layoutY="350.0" mnemonicParsing="false" onAction="#zarejestruj" text="Zarejestruj"/>
+    <Label id="notice-success" layoutX="73.0" layoutY="72.0" stylesheets="" text="Imię" textFill="black"/>
+    <Label layoutX="225.0" layoutY="72.0" text="Nazwisko" textFill="black"/>
+    <Label layoutX="69.0" layoutY="209.0" text="Login" textFill="black"/>
+    <Label layoutX="241.0" layoutY="209.0" text="Hasło" textFill="black"/>
+    <Label layoutX="360.0" layoutY="209.0" text="Powtórz hasło" textFill="black"/>
+    <PasswordField fx:id="pass1" layoutX="196.0" layoutY="230.0" prefHeight="27.0" prefWidth="116.0"/>
+    <PasswordField fx:id="pass2" layoutX="341.0" layoutY="230.0" prefHeight="27.0" prefWidth="124.0"/>
+    <TextField fx:id="imie" layoutX="28.0" layoutY="89.0" prefHeight="27.0" prefWidth="116.0"/>
+    <TextField fx:id="nazwisko" layoutX="188.0" layoutY="89.0" prefHeight="27.0" prefWidth="116.0"/>
+    <TextField fx:id="login" layoutX="28.0" layoutY="230.0" prefHeight="27.0" prefWidth="116.0"/>
+</AnchorPane>
