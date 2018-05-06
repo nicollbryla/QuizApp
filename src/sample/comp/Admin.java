@@ -4,10 +4,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Admin {
-    public int id;
-    public String name;
-    public String surname;
-    public String login;
+    private int id;
+    private String name;
+    private String surname;
+    private String login;
 
     public Admin() {
         id = 1;

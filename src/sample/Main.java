@@ -2,7 +2,6 @@ package sample;
 
 import sample.comp.Admin;
 import sample.comp.Player;
-import sample.controllers.MainWindow;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -32,31 +31,18 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void zmiana_strony(ActionEvent actionEvent, Player player, FXMLLoader loader, String fxmlfile, Admin worker) throws IOException{
-        Parent home_page_parent = loader.load();
-        Scene home_page_scene = new Scene(home_page_parent);
-
-        Stage app_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
-    }
-
+    //jak zrobie css to wprowadze jeszcze jedna zmienna do tej metody. narazie niech sie tak nazywa
     public static void zmiana_strony_css(ActionEvent actionEvent, Player player, FXMLLoader loader, String fxmlfile, Admin admin) throws IOException {
         Parent home_page_parent = loader.load();
         Scene home_page_scene = new Scene(home_page_parent);
         if (fxmlfile.equals("mainWindow")) {
-            MainWindow controller = loader.getController();
-            controller.add_client(player);
             home_page_parent.setId("pane");
-           // home_page_parent.getStylesheets().addAll(elements);
         }
-        // coo
         else if (fxmlfile.equals("rejestracja")){
             home_page_parent.setId("rejestracja");
-            //home_page_parent.getStylesheets().addAll(elements);
-        } else if (fxmlfile.equals("logowanie")) {
+        }
+        else if (fxmlfile.equals("logowanie")) {
             home_page_parent.setId("pane");
-            //home_page_parent.getStylesheets().addAll(elements);
         }
         Stage app_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
