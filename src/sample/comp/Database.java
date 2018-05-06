@@ -23,7 +23,7 @@ public class Database {
             rs = stmt.executeQuery(query);
             return rs;
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
             throw new db_exception();
         }
     }
@@ -36,10 +36,9 @@ public class Database {
             connect.setAutoCommit(false);
             stmt = connect.createStatement();
             stmt.executeUpdate(query);
-            System.out.println("halkoasinfoisabni");
             insert = true;
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 

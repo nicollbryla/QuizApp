@@ -18,7 +18,7 @@ public class Player {
         score = 0;
     }
     public Player(ResultSet rs) throws SQLException {
-        id = rs.getInt("id_client");
+        id = rs.getInt("id");
         name = rs.getString("name");
         surname = rs.getString("surname");
         login = rs.getString("login");

@@ -1,16 +1,13 @@
 package sample.controllers;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import sample.comp.Database;
 import sample.Main;
+import sample.comp.Database;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,7 +26,7 @@ public class Rejestracja implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-    public void pustepole(TextField wyzeruj, String name){
+    private void pustepole(TextField wyzeruj, String name){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Rejestracja");
         alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
@@ -50,16 +47,16 @@ public class Rejestracja implements Initializable{
             pustepole(imie, "Imie");
         } else if(nazwisko.getText().length() < 2){
             pustepole(nazwisko, "Nazwisko");
-        }else if(login.getText().length() < 5){
+        }else if(login.getText().length() < 2){
             pustepole(login, "login");
         }else {
                 Database db = null;
-                ResultSet dbres = null;
+                ResultSet dbres;
                 try {
                     db = new Database();
-                    System.out.println("Select * from clients where login = '" + login.getText() + "'");
+                    System.out.println("Select * from player where login = '" + login.getText() + "'");
 
-                    dbres = db.dbselect("Select * from clients where login = '" + login.getText() + "'");
+                    dbres = db.dbselect("Select * from player where login = '" + login.getText() + "'");
                     if (dbres.next()){
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Rejestracja");
@@ -77,29 +74,29 @@ public class Rejestracja implements Initializable{
                     } catch (Exception ignored) {
                     }
                 }
-                int d = 0;
+                int maxIdx = 0;
                 try {
                     db = new Database();
-                    dbres = db.dbselect("select max(id_client) from clients");
+                    dbres = db.dbselect("select max(id) from player");
                     if (dbres.next()){
-                        d = dbres.getInt("1") + 1;
+                        maxIdx = dbres.getInt("max") + 1;
                     }
                     db.close();
                 } catch (Exception e) {
                     try {
                         db.close();
-                    } catch (Exception e2) {
+                    } catch (Exception ignored) {
                     }
                 }
-                System.out.println(d);
+                System.out.println(maxIdx);
                 try {
                     db = new Database();
-                    db.insert("Insert into player(id, login, password, name, surname, score) values ('" + d + "', " + login.getText() + "', '" + pass1.getText() + "', '" + imie.getText() + "', '"+ nazwisko.getText() +"', '0'"+");");
+                    db.insert("Insert into player(id, login, password, name, surname, score) values ('" + maxIdx + "', '" + login.getText() + "', '" + pass1.getText() + "', '" + imie.getText() + "', '"+ nazwisko.getText() +"', '0'"+");");
                     db.close();
                 } catch (Exception e) {
                     try {
                         db.close();
-                    } catch (Exception e2) {
+                    } catch (Exception ignored) {
                     }
                 }
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);

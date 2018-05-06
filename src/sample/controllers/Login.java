@@ -32,8 +32,8 @@ public class Login implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        login.setText("PieterJan");
-        haslo.setText("8hrhUaUUGhhglBF2822F3Yf");
+        login.setText("ResultSet");
+        haslo.setText("halko");
     }
 
     public void zaloguj(ActionEvent actionEvent) throws IOException, SQLException {
@@ -41,7 +41,7 @@ public class Login implements Initializable {
         String name = null;
         Player player = null;
         Admin admin = null;
-        ResultSet dbres = null;
+        ResultSet dbres;
         if (logowanie.getSelectedToggle() == null) {
             alert.setText("Nie wybrano zadnej opcji!");
             return;
@@ -51,7 +51,7 @@ public class Login implements Initializable {
                 login.setText("Andrzej.Lewandowski@rp2.pl");
                 haslo.setText("46022013318");
                 db = new Database();
-                //TO DO query
+                //TODO query
                 dbres = db.dbselect("");
                 int ile = 0;
                 while (dbres.next()) {
@@ -66,16 +66,19 @@ public class Login implements Initializable {
                     alert.setText("Niepoprawne dane");
                 if (admin != null) {
                     db.close();
-                    //tu miejsce na przelaczenie na amina jak juz powstanie
+                    //TODO
+                    //tu miejsce na przelaczenie na admina jak juz powstanie
                 }
                 db.close();
             }
             catch (Exception e){
                 try {
+                    assert db != null;
                     db.close();
-                } catch (Exception e2){}
+                } catch (Exception ignored){
+                }
                 alert.setText("Wystąpił problem z bazą danych.");
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
         else if (logowanie.getSelectedToggle() == klientButton){
@@ -85,27 +88,33 @@ public class Login implements Initializable {
                 int ile = 0;
                 while (dbres.next()) {
                     ile++;
-                    player = new Player(dbres);
                     if (ile == 2) {
                         alert.setText("Więcej tych samych rekordów w bazie danych");
                         break;
                     }
+                    player = new Player(dbres);
                 }
                 if (ile == 0)
                     alert.setText("Niepoprawne dane");
                 if (player != null) {
                     db.close();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/mainWindow.fxml"));
-                    Main.zmiana_strony_css(actionEvent, player, loader, "mainWindow",  null);
+                    try {
+                        Main.zmiana_strony_css(actionEvent, player, loader, "mainWindow",  null);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
                 db.close();
             }
             catch (Exception e){
                 try {
+                    assert db != null;
                     db.close();
-                } catch (Exception e2){}
+                } catch (Exception ignored){
+                }
                 alert.setText("Wystąpił problem z bazą danych.");
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
     }
