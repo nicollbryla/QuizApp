@@ -1,6 +1,7 @@
 package sample;
 
 import sample.comp.Admin;
+import sample.comp.Config;
 import sample.comp.Player;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -14,8 +15,11 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    private Config config;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+        config = new Config("config.cfg");
         Parent root = FXMLLoader.load(getClass().getResource("fxml/Login.fxml"));
         root.setId("pane");
         primaryStage.setTitle("QuizApp");
