@@ -6,43 +6,97 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.controllers.Login">
-    <Label layoutX="100.0" layoutY="28.0" text="QuizApp" textFill="#FFFFFF">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4f592c;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
+   <ImageView fitHeight="600.0" fitWidth="611.0" layoutY="-179.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@blue.jpg" />
+      </image>
+   </ImageView>
+    <Label alignment="CENTER" layoutX="110.0" layoutY="-23.0" opacity="0.45" prefHeight="116.0" prefWidth="383.0" text="QuizApp" textAlignment="CENTER" textFill="#FFFFFF" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
         <font>
-            <Font size="35.0"/>
+            <Font name="System Italic" size="99.0" />
         </font>
     </Label>
-    <Label layoutX="283.0" layoutY="270.0" text="Password" textFill="#8a6e00">
+    <Label alignment="CENTER" layoutX="235.0" layoutY="238.0" text="Podaj hasło" textFill="WHITE">
         <font>
-            <Font name="System Bold Italic" size="13.0"/>
+            <Font name="System Bold" size="24.0" />
         </font>
     </Label>
-    <PasswordField fx:id="haslo" layoutX="217.0" layoutY="287.0"/>
-    <TextField fx:id="login" layoutX="217.0" layoutY="222.0"/>
-    <Label layoutX="283.0" layoutY="205.0" text="Login" textFill="#8a6e00">
+    <PasswordField fx:id="haslo" layoutX="171.0" layoutY="273.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="161.0" />
+    <TextField fx:id="login" layoutX="171.0" layoutY="197.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="161.0" />
+    <Label alignment="CENTER" layoutX="235.0" layoutY="162.0" prefHeight="35.0" prefWidth="132.0" text="Podaj login" textFill="WHITE">
         <font>
-            <Font name="System Bold" size="13.0"/>
+            <Font name="System Bold" size="24.0" />
         </font>
     </Label>
-    <ToggleButton fx:id="klientButton" layoutX="217.0" layoutY="160.0" mnemonicParsing="false" prefHeight="27.0"
-                  prefWidth="80.0" selected="true" text="Klient">
+    <ToggleButton fx:id="klientButton" layoutX="170.0" layoutY="126.0" mnemonicParsing="false" opacity="0.9" prefHeight="31.0" prefWidth="124.0" selected="true" text="Gracz" textAlignment="CENTER" textFill="#576ec2" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="299.0">
         <toggleGroup>
-            <ToggleGroup fx:id="logowanie"/>
+            <ToggleGroup fx:id="logowanie" />
         </toggleGroup>
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
     </ToggleButton>
-    <ToggleButton fx:id="adminButton" layoutX="304.0" layoutY="160.0" mnemonicParsing="false" prefHeight="27.0"
-                  prefWidth="80.0" text="Admin" toggleGroup="$logowanie"/>
-    <Button layoutX="217.0" layoutY="330.0" mnemonicParsing="false" onAction="#signIn" prefHeight="27.0"
-            prefWidth="167.0" text="Logowanie"/>
+    <ToggleButton fx:id="adminButton" layoutX="315.0" layoutY="126.0" mnemonicParsing="false" opacity="0.9" prefHeight="31.0" prefWidth="124.0" text="Admin" textFill="#576ec2" toggleGroup="$logowanie" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="161.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font></ToggleButton>
+    <Button layoutX="170.0" layoutY="324.0" mnemonicParsing="false" onAction="#signIn" opacity="0.9" prefHeight="31.0" prefWidth="131.0" text="Zaloguj" textFill="#576ec2" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="299.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font></Button>
     <Label fx:id="alert" layoutX="287.0" layoutY="127.0" textAlignment="CENTER" textFill="#8a6e00">
         <font>
-            <Font size="19.0"/>
+            <Font size="19.0" />
         </font>
     </Label>
-    <Button layoutX="261.0" layoutY="366.0" mnemonicParsing="false" onAction="#signUp" text="Rejestracja"/>
+    <Button layoutX="316.0" layoutY="324.0" mnemonicParsing="false" onAction="#signUp" opacity="0.9" prefHeight="31.0" prefWidth="124.0" text="Zarejestruj" textFill="#576ec2" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="161.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font></Button>
+   <Label layoutX="499.0" layoutY="250.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Calibri Italic" size="99.0" />
+      </font>
+   </Label>
+   <Label layoutX="77.0" layoutY="125.0" opacity="0.28" rotate="-35.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Calibri Italic" size="96.0" />
+      </font>
+   </Label>
+   <Label layoutX="484.0" layoutY="125.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Calibri Italic" size="96.0" />
+      </font>
+   </Label>
+   <Label layoutX="65.0" layoutY="270.0" opacity="0.28" rotate="-40.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Calibri Italic" size="96.0" />
+      </font>
+   </Label>
+   <Label layoutX="101.0" layoutY="232.0" opacity="0.28" rotate="-404.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Calibri Italic" size="63.0" />
+      </font>
+   </Label>
+   <Label layoutX="471.0" layoutY="220.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Calibri Italic" size="62.0" />
+      </font>
+   </Label>
+   <Label layoutX="535.0" layoutY="174.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Calibri Italic" size="91.0" />
+      </font>
+   </Label>
+   <Label layoutX="27.0" layoutY="171.0" opacity="0.28" prefHeight="78.0" prefWidth="37.0" rotate="-40.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Calibri Italic" size="96.0" />
+      </font>
+   </Label>
 </AnchorPane>
