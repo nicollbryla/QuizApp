@@ -133,7 +133,7 @@ public class Login extends QuizController {
 
     public void asGuest(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/mainWindow.fxml"));
-        Main.zmiana_strony_css(actionEvent, null, loader, "guest", null);
+        Main.zmiana_strony_css(actionEvent, new Player(), loader, "guest", null);
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException {
