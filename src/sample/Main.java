@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.controllers.QuizController;
 
 import java.io.IOException;
 
@@ -38,20 +39,26 @@ public class Main extends Application {
     //jak zrobie css to wprowadze jeszcze jedna zmienna do tej metody. narazie niech sie tak nazywa
     public static void zmiana_strony_css(ActionEvent actionEvent, Player player, FXMLLoader loader, String fxmlfile, Admin admin) throws IOException {
         Parent homePageParent = loader.load();
+        QuizController controller = loader.getController();
+        controller.setPlayer(player);
         Scene homePageScene = new Scene(homePageParent);
+        Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         if (fxmlfile.equals("mainWindow")) {
             homePageParent.setId("pane");
         }
         else if (fxmlfile.equals("rejestracja")){
             homePageParent.setId("rejestracja");
         }
-        else if (fxmlfile.equals("logowanie")) {
+        else if (fxmlfile.equals("logowanie")){
             homePageParent.setId("pane");
         }
-        else if (fxmlfile.equals("guest")) {
+        else if (fxmlfile.equals("onePlayer")){
+            homePageParent.setId("onePlayer");
+            appStage.hide();
+            appStage = new Stage();
+        } else if (fxmlfile.equals("guest")) {
             homePageParent.setId("pane");
         }
-        Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         appStage.setScene(homePageScene);
         appStage.show();
     }

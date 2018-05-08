@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 import sample.comp.Player;
 import sample.Main;
 
-public class Login implements Initializable {
+public class Login extends QuizController {
     @FXML
     public ToggleGroup logowanie;
     @FXML

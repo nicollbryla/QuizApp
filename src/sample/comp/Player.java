@@ -22,5 +22,6 @@ public class Player {
         name = rs.getString("name");
         surname = rs.getString("surname");
         login = rs.getString("login");
+        score = 0;
     }
 }

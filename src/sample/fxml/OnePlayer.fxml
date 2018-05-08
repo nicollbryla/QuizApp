@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.OnePlayer">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="151.0" prefWidth="796.0" style="-fx-border-style: solid; -fx-border-width: 2px;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label fx:id="questionLabel" alignment="CENTER" prefHeight="152.0" prefWidth="572.0" text="Label" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="-2.0" />
+            <Label fx:id="categoryLabel" layoutX="14.0" layoutY="4.0" text="Label" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="68.0" prefWidth="793.0" text="Odpowiedz na pytanie:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="pointsLabel" layoutX="14.0" layoutY="264.0" text="Label" AnchorPane.leftAnchor="14.0" />
+      <Button layoutX="362.0" layoutY="544.0" mnemonicParsing="false" onAction="#answer" prefHeight="43.0" prefWidth="211.0" text="Odpowiadam" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="362.0" AnchorPane.rightAnchor="362.0" />
+      <GridPane layoutX="35.0" layoutY="320.0" prefHeight="167.0" prefWidth="792.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <RadioButton fx:id="answer0" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textAlignment="CENTER" />
+            <RadioButton fx:id="answer2" mnemonicParsing="false" prefHeight="68.0" prefWidth="306.0" text="RadioButton" GridPane.rowIndex="1" />
+            <RadioButton fx:id="answer1" mnemonicParsing="false" prefHeight="68.0" prefWidth="306.0" text="RadioButton" GridPane.columnIndex="1" />
+            <RadioButton fx:id="answer3" mnemonicParsing="false" prefHeight="68.0" prefWidth="306.0" text="RadioButton" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

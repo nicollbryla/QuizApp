@@ -14,7 +14,7 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class Registration implements Initializable{
+public class Registration extends QuizController {
 
     public PasswordField pass1;
     public PasswordField pass2;
