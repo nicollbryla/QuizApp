@@ -26,17 +26,22 @@ public class Registration implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-    private void emptyField(TextField reset, String name){
+    private void emptyField(TextField reset, String name,boolean multyply){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Rejestracja");
         alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
-        alert.setContentText("Błędne wypełnienie pola " + name);
+        if(multyply){
+            alert.setContentText("Błędne wypełnienie pól " + name);
+        } else {
+            alert.setContentText("Błędne wypełnienie pola " + name);
+        }
         reset.setText("");
         alert.showAndWait();
 
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException{
+        boolean multiply = false;
         if (!pass1.getText().equals(pass2.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Rejestracja");
@@ -44,11 +49,25 @@ public class Registration implements Initializable{
             alert.setContentText("Podane hasła nie zgadzają sie!");
             alert.showAndWait();
         } else if(name.getText().length() < 2){
-            emptyField(name, "Imie");
+            if(surname.getText().length() < 2){
+                multiply = true;
+                if(login.getText().length() < 2){
+                    emptyField(name, "\"Imie\", \"Nazwisko\" i \"Login\"",multiply);
+                } else{
+                    emptyField(name, "\"Imie\" i \"Nazwisko\"",multiply);
+                }
+            } else {
+                emptyField(name, "\"Imie\"",multiply);
+            }
         } else if(surname.getText().length() < 2){
-            emptyField(surname, "Nazwisko");
+            if(login.getText().length() < 2){
+                multiply = true;
+                emptyField(surname, "\"Nazwisko\" i \"Login\"",multiply);
+            } else {
+                emptyField(surname, "\"Nazwisko\"",multiply);
+            }
         }else if(login.getText().length() < 2){
-            emptyField(login, "login");
+            emptyField(login, "\"Login\"",multiply);
         }else {
             Database db = null;
             ResultSet dbres;

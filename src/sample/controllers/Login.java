@@ -29,9 +29,16 @@ public class Login implements Initializable {
     private PasswordField haslo;
     @FXML
     private TextField login;
+    @FXML
+    private Button guest;
+    @FXML
+    private Button register;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {}
+    public void initialize(URL location, ResourceBundle resources) {
+        guest.setWrapText(true);
+        register.setWrapText(true);
+    }
 
     public void signIn(ActionEvent actionEvent) throws IOException, SQLException {
         Database db = null;
@@ -59,8 +66,9 @@ public class Login implements Initializable {
                         break;
                     }
                 }
-                if (cntr == 0)
-                    alert.setText("Niepoprawne dane");
+                if (cntr == 0) {
+                    alert();
+                }
                 if (admin != null) {
                     db.close();
                     //TODO
@@ -91,8 +99,9 @@ public class Login implements Initializable {
                     }
                     player = new Player(dbres);
                 }
-                if (cntr == 0)
-                    alert.setText("Niepoprawne dane");
+                if (cntr == 0){
+                    alert();
+                }
                 if (player != null) {
                     db.close();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/mainWindow.fxml"));
@@ -114,6 +123,17 @@ public class Login implements Initializable {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void alert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText("Niepoprawne dane");
+        alert.showAndWait();
+    }
+
+    public void asGuest(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/mainWindow.fxml"));
+        Main.zmiana_strony_css(actionEvent, null, loader, "guest", null);
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException {

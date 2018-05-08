@@ -48,6 +48,9 @@ public class Main extends Application {
         else if (fxmlfile.equals("logowanie")) {
             homePageParent.setId("pane");
         }
+        else if (fxmlfile.equals("guest")) {
+            homePageParent.setId("pane");
+        }
         Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         appStage.setScene(homePageScene);
         appStage.show();

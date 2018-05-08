@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4f592c;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
@@ -27,8 +28,8 @@
             <Font name="System Italic" size="20.0" />
         </font>
     </Label>
-    <PasswordField fx:id="haslo" layoutX="166.0" layoutY="241.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="166.0" />
     <TextField fx:id="login" layoutX="167.0" layoutY="185.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="167.0" AnchorPane.rightAnchor="165.0" />
+    <PasswordField fx:id="haslo" layoutX="166.0" layoutY="241.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="166.0" />
     <Label alignment="CENTER" layoutX="235.0" layoutY="153.0" prefHeight="35.0" prefWidth="132.0" text="Podaj login" textFill="WHITE">
         <font>
             <Font name="System Italic" size="20.0" />
@@ -55,10 +56,7 @@
             <Font size="19.0" />
         </font>
     </Label>
-    <Button layoutX="186.0" layoutY="340.0" mnemonicParsing="false" onAction="#signUp" opacity="0.9" prefHeight="31.0" prefWidth="232.0" text="Przejdź do okna rejestracji" textFill="#576ec2" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="182.0">
-      <font>
-         <Font name="System Bold" size="15.0" />
-      </font></Button>
+   <VBox layoutX="149.0" layoutY="500.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="319.0" />
    <Label layoutX="499.0" layoutY="250.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
       <font>
          <Font name="Calibri Italic" size="99.0" />
@@ -99,9 +97,19 @@
          <Font name="Calibri Italic" size="96.0" />
       </font>
    </Label>
-   <Label layoutX="285.0" layoutY="310.0" text="lub" textFill="WHITE">
+   <Label layoutX="283.0" layoutY="304.0" text="lub" textFill="WHITE" AnchorPane.bottomAnchor="66.0">
       <font>
          <Font name="System Italic" size="20.0" />
       </font>
    </Label>
+   <Button fx:id="guest" layoutX="311.0" layoutY="338.0" mnemonicParsing="false" onAction="#asGuest" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Zagraj jako gość" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="12.0">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+    <Button fx:id="register" alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="342.0" mnemonicParsing="false" onAction="#signUp" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Przejdź do okna rejestracji" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="12.0">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
 </AnchorPane>
