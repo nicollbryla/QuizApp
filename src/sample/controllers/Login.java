@@ -18,7 +18,7 @@ import sample.Main;
 
 public class Login implements Initializable {
     @FXML
-    private ToggleGroup logowanie;
+    public ToggleGroup logowanie;
     @FXML
     private Label alert;
     @FXML
@@ -36,7 +36,7 @@ public class Login implements Initializable {
         haslo.setText("halko");
     }
 
-    public void zaloguj(ActionEvent actionEvent) throws IOException, SQLException {
+    public void signIn(ActionEvent actionEvent) throws IOException, SQLException {
         Database db = null;
         String name = null;
         Player player = null;
@@ -53,16 +53,16 @@ public class Login implements Initializable {
                 db = new Database();
                 //TODO query
                 dbres = db.dbselect("");
-                int ile = 0;
+                int cntr = 0;
                 while (dbres.next()) {
-                    ile++;
+                    cntr++;
                     admin = new Admin(dbres);
-                    if (ile == 2) {
+                    if (cntr == 2) {
                         alert.setText("Więcej tych samych rekordów w bazie danych");
                         break;
                     }
                 }
-                if (ile == 0)
+                if (cntr == 0)
                     alert.setText("Niepoprawne dane");
                 if (admin != null) {
                     db.close();
@@ -85,16 +85,16 @@ public class Login implements Initializable {
             try {
                 db = new Database();
                 dbres = db.dbselect("SELECT * from player p where login = '" + login.getText() + "' AND password = '" + haslo.getText() + "'");
-                int ile = 0;
+                int cntr = 0;
                 while (dbres.next()) {
-                    ile++;
-                    if (ile == 2) {
+                    cntr++;
+                    if (cntr == 2) {
                         alert.setText("Więcej tych samych rekordów w bazie danych");
                         break;
                     }
                     player = new Player(dbres);
                 }
-                if (ile == 0)
+                if (cntr == 0)
                     alert.setText("Niepoprawne dane");
                 if (player != null) {
                     db.close();
@@ -119,7 +119,7 @@ public class Login implements Initializable {
         }
     }
 
-    public void zarejestruj(ActionEvent actionEvent) throws IOException {
+    public void signUp(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/rejestracja.fxml"));
         Main.zmiana_strony_css(actionEvent, null, loader, "rejestracja", null);
     }

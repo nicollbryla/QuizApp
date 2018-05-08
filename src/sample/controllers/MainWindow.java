@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 public class MainWindow implements Initializable {
     private Player player;
 
-    public void add_client(Player player){
+    public void addClient(Player player){
         this.player = player;
         System.out.println("Przekazano " + player.name);
     }

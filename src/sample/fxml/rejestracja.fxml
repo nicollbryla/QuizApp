@@ -9,10 +9,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.controllers.Rejestracja">
+            fx:controller="sample.controllers.Registration">
     <ButtonBar layoutX="254.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0"/>
     <!--<Button layoutX="549.0" layoutY="1.0" mnemonicParsing="false" onAction="#wroc" text="Wróć" />-->
-    <Button layoutX="258.0" layoutY="350.0" mnemonicParsing="false" onAction="#zarejestruj" text="Zarejestruj"/>
+    <Button layoutX="258.0" layoutY="350.0" mnemonicParsing="false" onAction="#signUp" text="Zarejestruj"/>
     <Label id="notice-success" layoutX="73.0" layoutY="72.0" stylesheets="" text="Imię" textFill="black"/>
     <Label layoutX="225.0" layoutY="72.0" text="Nazwisko" textFill="black"/>
     <Label layoutX="69.0" layoutY="209.0" text="Login" textFill="black"/>

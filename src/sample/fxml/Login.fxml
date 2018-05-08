@@ -37,12 +37,12 @@
     </ToggleButton>
     <ToggleButton fx:id="adminButton" layoutX="304.0" layoutY="160.0" mnemonicParsing="false" prefHeight="27.0"
                   prefWidth="80.0" text="Admin" toggleGroup="$logowanie"/>
-    <Button layoutX="217.0" layoutY="330.0" mnemonicParsing="false" onAction="#zaloguj" prefHeight="27.0"
+    <Button layoutX="217.0" layoutY="330.0" mnemonicParsing="false" onAction="#signIn" prefHeight="27.0"
             prefWidth="167.0" text="Logowanie"/>
     <Label fx:id="alert" layoutX="287.0" layoutY="127.0" textAlignment="CENTER" textFill="#8a6e00">
         <font>
             <Font size="19.0"/>
         </font>
     </Label>
-    <Button layoutX="261.0" layoutY="366.0" mnemonicParsing="false" onAction="#zarejestruj" text="Rejestracja"/>
+    <Button layoutX="261.0" layoutY="366.0" mnemonicParsing="false" onAction="#signUp" text="Rejestracja"/>
 </AnchorPane>
