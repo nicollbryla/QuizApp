@@ -31,10 +31,7 @@ public class Login implements Initializable {
     private TextField login;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        login.setText("ResultSet");
-        haslo.setText("halko");
-    }
+    public void initialize(URL location, ResourceBundle resources) {}
 
     public void signIn(ActionEvent actionEvent) throws IOException, SQLException {
         Database db = null;
