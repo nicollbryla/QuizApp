@@ -41,7 +41,7 @@ public class Database {
         }
     }
 
-    public void insert(String query) throws db_exception{
+    public void insert(String query) {
         try {
             insert = false;
             connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
