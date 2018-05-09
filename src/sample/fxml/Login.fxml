@@ -28,8 +28,6 @@
             <Font name="System Italic" size="20.0" />
         </font>
     </Label>
-    <TextField fx:id="login" layoutX="167.0" layoutY="185.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="167.0" AnchorPane.rightAnchor="165.0" />
-    <PasswordField fx:id="haslo" layoutX="166.0" layoutY="241.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="166.0" />
     <Label alignment="CENTER" layoutX="235.0" layoutY="153.0" prefHeight="35.0" prefWidth="132.0" text="Podaj login" textFill="WHITE">
         <font>
             <Font name="System Italic" size="20.0" />
@@ -47,10 +45,22 @@
       <font>
          <Font name="System Bold" size="15.0" />
       </font></ToggleButton>
+    <TextField fx:id="login" layoutX="167.0" layoutY="185.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="167.0" AnchorPane.rightAnchor="165.0" />
+    <PasswordField fx:id="haslo" layoutX="166.0" layoutY="241.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="166.0" />
     <Button alignment="CENTER" layoutX="235.0" layoutY="279.0" mnemonicParsing="false" onAction="#signIn" opacity="0.9" prefHeight="31.0" prefWidth="131.0" text="Zaloguj" textFill="#576ec2" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="235.0">
       <font>
          <Font name="System Bold" size="15.0" />
       </font></Button>
+    <Button fx:id="register" alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="342.0" mnemonicParsing="false" onAction="#signUp" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Przejdź do okna rejestracji" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="12.0">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="guest" layoutX="311.0" layoutY="338.0" mnemonicParsing="false" onAction="#asGuest" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Zagraj jako gość" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="12.0">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
     <Label fx:id="alert" layoutX="287.0" layoutY="127.0" textAlignment="CENTER" textFill="#8a6e00">
         <font>
             <Font size="19.0" />
@@ -102,14 +112,4 @@
          <Font name="System Italic" size="20.0" />
       </font>
    </Label>
-   <Button fx:id="guest" layoutX="311.0" layoutY="338.0" mnemonicParsing="false" onAction="#asGuest" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Zagraj jako gość" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="12.0">
-      <font>
-         <Font name="System Bold" size="14.0" />
-      </font>
-   </Button>
-    <Button fx:id="register" alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="342.0" mnemonicParsing="false" onAction="#signUp" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Przejdź do okna rejestracji" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="12.0">
-      <font>
-         <Font name="System Bold" size="14.0" />
-      </font>
-   </Button>
 </AnchorPane>
