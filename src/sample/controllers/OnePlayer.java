@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -78,7 +79,50 @@ public class OnePlayer extends QuizController {
         nextQuestion();
     }
 
+    public void alertCorrectAnswer(){
+        player.score++;
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Gratulacje!");
+        alert.setContentText("Ta odpowiedź jest poprawna. Dostajesz jeden punkt.");
+        alert.showAndWait();
+    }
+
+    public void alertIncorrectAnswer(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Niestety...");
+        alert.setContentText("Ta odpowiedź jest niepoprawna.");
+        alert.showAndWait();
+    }
+
+    public boolean NoAnswerIsSelected(){
+        if(!answer0.isSelected() && !answer1.isSelected() && !answer2.isSelected() && !answer3.isSelected())
+            return true;
+        return false;
+    }
+
+    public void alertNoAnswerIsSelected(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Błąd");
+        alert.setContentText("Trzeba zaznaczyć jedną odpowiedź!");
+        alert.showAndWait();
+    }
+
+    public boolean checkAnswer(RadioButton button){
+        String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
+
+        if(button.isSelected() && button.getText().equals(correctAnswer))
+            return true;
+        return false;
+    }
+
     public void answer(ActionEvent actionEvent) throws IOException {
+        if(checkAnswer(answer0) || checkAnswer(answer1) || checkAnswer(answer2) || checkAnswer(answer3)){
+            alertCorrectAnswer();
+        } else if(NoAnswerIsSelected()){
+            alertNoAnswerIsSelected();
+        } else {
+            alertIncorrectAnswer();
+        }
         answer0.setSelected(false);
         answer1.setSelected(false);
         answer2.setSelected(false);
@@ -86,4 +130,5 @@ public class OnePlayer extends QuizController {
         if(nextQuestion())
             displayQuestion();
     }
+
 }
