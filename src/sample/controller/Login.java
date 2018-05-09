@@ -1,21 +1,18 @@
-package sample.controllers;
+package sample.controller;
 
-import javafx.scene.input.KeyCode;
-import sample.comp.Admin;
-import sample.comp.Database;
+import sample.model.Admin;
+import sample.model.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import sample.comp.Player;
+import sample.model.Player;
 import sample.Main;
 
 public class Login extends QuizController {
@@ -108,7 +105,7 @@ public class Login extends QuizController {
                 }
                 if (player != null) {
                     db.close();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/mainWindow.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
                     try {
                         Main.zmiana_strony_css(actionEvent, player, loader, "mainWindow",  null);
                     } catch (IOException e) {
@@ -136,12 +133,12 @@ public class Login extends QuizController {
     }
 
     public void asGuest(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/mainWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
         Main.zmiana_strony_css(actionEvent, new Player(), loader, "guest", null);
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/rejestracja.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/rejestracja.fxml"));
         Main.zmiana_strony_css(actionEvent, null, loader, "rejestracja", null);
     }
 }

@@ -1,13 +1,12 @@
-package sample.controllers;
+package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import sample.Main;
-import sample.comp.Database;
+import sample.model.Database;
 
 import java.io.IOException;
 import java.net.URL;
@@ -42,7 +41,25 @@ public class Registration extends QuizController {
 
     public void signUp(ActionEvent actionEvent) throws IOException{
         boolean multiply = false;
-        if (!pass1.getText().equals(pass2.getText())) {
+        if(pass1.getText().equals("") && pass2.getText().equals("")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Rejestracja");
+            alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
+            alert.setContentText("Pola \"Hasło\" i \"Powtórz hasło\" nie mogą być puste");
+            alert.showAndWait();
+        } else if(pass1.getText().equals("")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Rejestracja");
+            alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
+            alert.setContentText("Pole \"Hasło\" nie może być puste");
+            alert.showAndWait();
+        } else if(pass2.getText().equals("")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Rejestracja");
+            alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
+            alert.setContentText("Pole \"Powtórz hasło\" nie może być puste");
+            alert.showAndWait();
+        } else if (!pass1.getText().equals(pass2.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Rejestracja");
             alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
@@ -66,15 +83,9 @@ public class Registration extends QuizController {
             } else {
                 emptyField(surname, "\"Nazwisko\"",multiply);
             }
-        }else if(login.getText().length() < 2){
+        } else if(login.getText().length() < 2){
             emptyField(login, "\"Login\"",multiply);
-        }/*else if( pass1.equals() ){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Rejestracja");
-            alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
-            alert.setContentText("Pole \"Hasło\" nie może być puste");
-            alert.showAndWait();
-        }*/else {
+        } else {
             Database db = null;
             ResultSet dbres;
             try {
@@ -130,7 +141,7 @@ public class Registration extends QuizController {
             alert.setContentText("Można sie zalogować.");
             login.setText("");
             alert.showAndWait();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/Login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
             Main.zmiana_strony_css(actionEvent, null, loader, "logowanie", null);
         }
     }
