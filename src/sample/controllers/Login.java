@@ -36,6 +36,8 @@ public class Login extends QuizController {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        login.setText("ResultSet");
+        haslo.setText("halko");
         guest.setWrapText(true);
         register.setWrapText(true);
     }

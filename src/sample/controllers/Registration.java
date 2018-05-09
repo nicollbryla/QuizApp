@@ -68,7 +68,13 @@ public class Registration extends QuizController {
             }
         }else if(login.getText().length() < 2){
             emptyField(login, "\"Login\"",multiply);
-        }else {
+        }/*else if( pass1.equals() ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Rejestracja");
+            alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
+            alert.setContentText("Pole \"Hasło\" nie może być puste");
+            alert.showAndWait();
+        }*/else {
             Database db = null;
             ResultSet dbres;
             try {

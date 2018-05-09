@@ -42,6 +42,11 @@ public class OnePlayer extends QuizController {
     private Question currentQuestion;
 
     private void displayQuestion(){
+        questionLabel.setWrapText(true);
+        answer0.setWrapText(true);
+        answer1.setWrapText(true);
+        answer2.setWrapText(true);
+        answer3.setWrapText(true);
         questionLabel.setText(currentQuestion.content);
         categoryLabel.setText("Kategoria: " + currentQuestion.category);
         pointsLabel.setText("Twoje punkty: " + Integer.toString(player.score));
