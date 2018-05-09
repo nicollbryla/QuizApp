@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -78,7 +79,37 @@ public class OnePlayer extends QuizController {
         nextQuestion();
     }
 
+    public void alertCorrectAnswer(){
+        player.score++;
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Gratulacje!");
+        alert.setContentText("Ta odpowiedź jest poprawna. Dostajesz jeden punkt.");
+        alert.showAndWait();
+    }
+
+    public void alertIncorrectAnswer(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Niestety...");
+        alert.setContentText("Ta odpowiedź jest niepoprawna.");
+        alert.showAndWait();
+    }
+
+
+
     public void answer(ActionEvent actionEvent) throws IOException {
+        String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
+
+        if(answer0.isSelected() && answer0.getText().equals(correctAnswer)){
+            alertCorrectAnswer();
+        } else if(answer1.isSelected() && answer1.getText().equals(correctAnswer)){
+            alertCorrectAnswer();
+        } else if(answer2.isSelected() && answer2.getText().equals(correctAnswer)){
+            alertCorrectAnswer();
+        } else if(answer3.isSelected() && answer3.getText().equals(correctAnswer)){
+            alertCorrectAnswer();
+        } else {
+            alertIncorrectAnswer();
+        }
         answer0.setSelected(false);
         answer1.setSelected(false);
         answer2.setSelected(false);
@@ -86,4 +117,6 @@ public class OnePlayer extends QuizController {
         if(nextQuestion())
             displayQuestion();
     }
+
+
 }
