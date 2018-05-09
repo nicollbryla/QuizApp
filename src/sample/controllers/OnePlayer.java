@@ -94,19 +94,32 @@ public class OnePlayer extends QuizController {
         alert.showAndWait();
     }
 
+    public boolean NoAnswerIsSelected(){
+        if(!answer0.isSelected() && !answer1.isSelected() && !answer2.isSelected() && !answer3.isSelected())
+            return true;
+        return false;
+    }
 
+    public void alertNoAnswerIsSelected(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Błąd");
+        alert.setContentText("Trzeba zaznaczyć jedną odpowiedź!");
+        alert.showAndWait();
+    }
 
-    public void answer(ActionEvent actionEvent) throws IOException {
+    public boolean checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
 
-        if(answer0.isSelected() && answer0.getText().equals(correctAnswer)){
+        if(button.isSelected() && button.getText().equals(correctAnswer))
+            return true;
+        return false;
+    }
+
+    public void answer(ActionEvent actionEvent) throws IOException {
+        if(checkAnswer(answer0) || checkAnswer(answer1) || checkAnswer(answer2) || checkAnswer(answer3)){
             alertCorrectAnswer();
-        } else if(answer1.isSelected() && answer1.getText().equals(correctAnswer)){
-            alertCorrectAnswer();
-        } else if(answer2.isSelected() && answer2.getText().equals(correctAnswer)){
-            alertCorrectAnswer();
-        } else if(answer3.isSelected() && answer3.getText().equals(correctAnswer)){
-            alertCorrectAnswer();
+        } else if(NoAnswerIsSelected()){
+            alertNoAnswerIsSelected();
         } else {
             alertIncorrectAnswer();
         }
@@ -117,6 +130,5 @@ public class OnePlayer extends QuizController {
         if(nextQuestion())
             displayQuestion();
     }
-
 
 }
