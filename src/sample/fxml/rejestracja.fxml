@@ -17,11 +17,6 @@
       </image>
    </ImageView>
     <ButtonBar layoutX="254.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0" />
-    <!--<Button layoutX="549.0" layoutY="1.0" mnemonicParsing="false" onAction="#wroc" text="Wróć" />-->
-    <Button alignment="CENTER" layoutX="237.0" layoutY="341.0" mnemonicParsing="false" onAction="#signUp" prefHeight="31.0" prefWidth="135.0" text="Zarejestruj" textFill="#576ec2">
-      <font>
-         <Font name="System Bold" size="15.0" />
-      </font></Button>
     <Label id="notice-success" layoutX="94.0" layoutY="176.0" stylesheets="" text="Imię" textFill="WHITE">
       <font>
          <Font name="System Italic" size="24.0" />
@@ -42,11 +37,16 @@
       <font>
          <Font name="System Italic" size="24.0" />
       </font></Label>
-    <PasswordField fx:id="pass1" layoutX="50.0" layoutY="291.0" opacity="0.7" prefHeight="31.0" prefWidth="237.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="313.0" />
-    <PasswordField fx:id="pass2" layoutX="319.0" layoutY="291.0" opacity="0.7" prefHeight="31.0" prefWidth="237.0" />
     <TextField fx:id="name" layoutX="41.0" layoutY="218.0" opacity="0.7" prefHeight="31.0" prefWidth="164.0" />
     <TextField fx:id="surname" layoutX="227.0" layoutY="218.0" opacity="0.7" prefHeight="31.0" prefWidth="156.0" AnchorPane.rightAnchor="217.0" />
     <TextField fx:id="login" layoutX="407.0" layoutY="218.0" opacity="0.7" prefHeight="31.0" prefWidth="149.0" AnchorPane.leftAnchor="407.0" AnchorPane.rightAnchor="44.0" />
+    <PasswordField fx:id="pass1" layoutX="50.0" layoutY="291.0" opacity="0.7" prefHeight="31.0" prefWidth="237.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="313.0" />
+    <PasswordField fx:id="pass2" layoutX="319.0" layoutY="291.0" opacity="0.7" prefHeight="31.0" prefWidth="237.0" />
+    <!--<Button layoutX="549.0" layoutY="1.0" mnemonicParsing="false" onAction="#wroc" text="Wróć" />-->
+    <Button alignment="CENTER" layoutX="237.0" layoutY="341.0" mnemonicParsing="false" onAction="#signUp" prefHeight="31.0" prefWidth="135.0" text="Zarejestruj" textFill="#576ec2">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font></Button>
    <Label alignment="CENTER" layoutX="115.0" layoutY="-18.0" opacity="0.45" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
       <font>
          <Font name="System Italic" size="99.0" />
