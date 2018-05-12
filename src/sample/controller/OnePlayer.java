@@ -2,10 +2,12 @@ package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import sample.Main;
 import sample.model.Player;
 import sample.model.Question;
 
@@ -128,4 +130,8 @@ public class OnePlayer extends QuizController {
             displayQuestion();
     }
 
+    public void backToMainWindow(ActionEvent actionEvent) throws  IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
+        Main.zmiana_strony_css(actionEvent, player, loader, "mainWindow", null);
+    }
 }

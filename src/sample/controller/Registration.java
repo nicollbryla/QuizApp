@@ -145,4 +145,9 @@ public class Registration extends QuizController {
             Main.zmiana_strony_css(actionEvent, null, loader, "logowanie", null);
         }
     }
+
+    public void backToLogin(ActionEvent actionEvent) throws  IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
+        Main.zmiana_strony_css(actionEvent, player, loader, "Login", null);
+    }
 }
