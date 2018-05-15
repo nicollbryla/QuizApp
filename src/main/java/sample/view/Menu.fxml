@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.Menu">
+   <ImageView fitHeight="613.0" fitWidth="612.0" layoutX="-3.0" layoutY="-212.0" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@blue.jpg"/>
+   </ImageView>
+   <Label alignment="CENTER" layoutX="109.0" layoutY="14.0" opacity="0.45" text="QuizApp" textFill="WHITE"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
+      <font>
+         <Font name="System Italic" size="99.0"/>
+      </font>
+   </Label>
+   <Label alignment="CENTER" layoutX="240.0" layoutY="123.0" opacity="0.8" text="Menu" textFill="WHITE"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+      <font>
+         <Font name="System Italic" size="48.0"/>
+      </font>
+   </Label>
+</AnchorPane>

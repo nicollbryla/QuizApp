@@ -12,12 +12,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4f592c;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Login">
-   <ImageView fitHeight="600.0" fitWidth="611.0" layoutY="-179.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@blue.jpg" />
-      </image>
-   </ImageView>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4f592c;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.Login">
+    <ImageView fitHeight="600.0" fitWidth="611.0" layoutY="-179.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@blue.jpg"/>
+    </ImageView>
     <Label alignment="CENTER" layoutX="110.0" layoutY="-23.0" opacity="0.45" prefHeight="116.0" prefWidth="383.0" text="QuizApp" textAlignment="CENTER" textFill="#FFFFFF" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
         <font>
             <Font name="System Italic" size="99.0" />

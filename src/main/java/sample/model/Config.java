@@ -1,4 +1,4 @@
-package sample.model;
+package main.java.sample.model;
 
 import java.io.FileInputStream;
 import java.io.IOException;

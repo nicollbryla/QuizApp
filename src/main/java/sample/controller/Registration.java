@@ -1,12 +1,12 @@
-package sample.controller;
+package main.java.sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import sample.Main;
-import sample.model.Database;
+import main.java.sample.Main;
+import main.java.sample.model.Database;
 
 import java.io.IOException;
 import java.net.URL;

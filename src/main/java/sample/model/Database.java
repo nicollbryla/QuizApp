@@ -1,4 +1,4 @@
-package sample.model;
+package main.java.sample.model;
 
 import java.sql.*;
 import java.util.Properties;

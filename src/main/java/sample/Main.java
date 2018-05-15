@@ -1,8 +1,8 @@
-package sample;
+package main.java.sample;
 
-import sample.model.Admin;
-import sample.model.Config;
-import sample.model.Player;
+import main.java.sample.model.Admin;
+import main.java.sample.model.Config;
+import main.java.sample.model.Player;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.controller.QuizController;
+import main.java.sample.controller.QuizController;
 
 import java.io.IOException;
 
@@ -36,7 +36,6 @@ public class Main extends Application {
         launch(args);
     }
 
-    //jak zrobie css to wprowadze jeszcze jedna zmienna do tej metody. narazie niech sie tak nazywa
     public static void zmiana_strony_css(ActionEvent actionEvent, Player player, FXMLLoader loader, String fxmlfile, Admin admin) throws IOException {
         Parent homePageParent = loader.load();
         QuizController controller = loader.getController();

@@ -1,8 +1,8 @@
-package sample.controller;
+package main.java.sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import sample.Main;
+import main.java.sample.Main;
 
 import java.io.IOException;
 import java.net.URL;

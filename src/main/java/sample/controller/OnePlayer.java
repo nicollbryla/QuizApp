@@ -1,4 +1,4 @@
-package sample.controller;
+package main.java.sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,9 +7,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import sample.Main;
-import sample.model.Player;
-import sample.model.Question;
+import main.java.sample.Main;
+import main.java.sample.model.Player;
+import main.java.sample.model.Question;
 
 import java.io.IOException;
 import java.net.URL;

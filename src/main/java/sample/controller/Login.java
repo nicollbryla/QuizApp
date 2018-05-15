@@ -1,7 +1,7 @@
-package sample.controller;
+package main.java.sample.controller;
 
-import sample.model.Admin;
-import sample.model.Database;
+import main.java.sample.model.Admin;
+import main.java.sample.model.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,8 +12,8 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import sample.model.Player;
-import sample.Main;
+import main.java.sample.model.Player;
+import main.java.sample.Main;
 
 public class Login extends QuizController {
     @FXML
@@ -138,7 +138,7 @@ public class Login extends QuizController {
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/rejestracja.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Registration.fxml"));
         Main.zmiana_strony_css(actionEvent, null, loader, "rejestracja", null);
     }
 
