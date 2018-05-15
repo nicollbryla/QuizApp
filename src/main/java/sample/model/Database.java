@@ -30,6 +30,7 @@ public class Database {
     public ResultSet dbselect(String query) throws db_exception {
         try {
             insert = false;
+            Class.forName("org.postgresql.Driver");
             connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
             connect.setAutoCommit(false);
             stmt = connect.createStatement();
@@ -44,6 +45,7 @@ public class Database {
     public void insert(String query) {
         try {
             insert = false;
+            Class.forName("org.postgresql.Driver");
             connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
             connect.setAutoCommit(false);
             stmt = connect.createStatement();
