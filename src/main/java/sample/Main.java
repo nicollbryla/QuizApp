@@ -55,8 +55,10 @@ public class Main extends Application {
             homePageParent.setId("onePlayer");
             appStage.hide();
             appStage = new Stage();
-        } else if (fxmlfile.equals("guest")) {
+        } else if (fxmlfile.equals("guest")){
             homePageParent.setId("pane");
+        } else if (fxmlfile.equals("endOfGame")){
+            homePageParent.setId("endOfGame");
         }
         appStage.setScene(homePageScene);
         appStage.show();

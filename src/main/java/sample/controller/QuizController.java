@@ -9,6 +9,7 @@ public abstract class QuizController implements Initializable {
     public void setPlayer(Player player){
         this.player = player;
     }
+
     public Player getPlayer(){
         return this.player;
     }

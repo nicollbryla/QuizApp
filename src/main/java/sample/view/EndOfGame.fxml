@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="490.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.EndOfGame">
+   <children>
+      <Label alignment="CENTER" layoutX="143.0" layoutY="41.0" prefHeight="54.0" prefWidth="315.0" text="Gratulacje!" textAlignment="CENTER" AnchorPane.leftAnchor="143.0" AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="41.0">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="234.0" layoutY="116.0" prefHeight="17.0" prefWidth="214.0" text="Gra skończona" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="234.0" AnchorPane.topAnchor="116.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="65.0" layoutY="245.0" prefHeight="53.0" prefWidth="237.0" text="Twój wynik:">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="pointsLabel" alignment="CENTER" layoutX="388.0" layoutY="245.0" prefHeight="53.0" prefWidth="119.0">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
