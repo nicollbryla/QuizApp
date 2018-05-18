@@ -75,26 +75,27 @@
          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       </columnConstraints>
       <rowConstraints>
+         <RowConstraints />
          <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
          <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <children>
-         <RadioButton fx:id="answer0" contentDisplay="CENTER" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textAlignment="CENTER" textFill="WHITE">
+         <RadioButton fx:id="answer0" contentDisplay="CENTER" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
             <font>
                <Font name="System Bold" size="20.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="answer2" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.rowIndex="1">
+         <RadioButton fx:id="answer2" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.rowIndex="2">
             <font>
                <Font name="System Bold" size="20.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="answer1" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.columnIndex="1">
+         <RadioButton fx:id="answer1" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <font>
                <Font name="System Bold" size="20.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="answer3" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <RadioButton fx:id="answer3" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <font>
                <Font name="System Bold" size="20.0" />
             </font>

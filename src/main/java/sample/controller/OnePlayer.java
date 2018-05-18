@@ -3,9 +3,13 @@ package main.java.sample.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import main.java.sample.Main;
@@ -13,6 +17,7 @@ import main.java.sample.model.Player;
 import main.java.sample.model.Question;
 import sun.plugin2.message.Message;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -33,8 +38,6 @@ public class OnePlayer extends QuizController {
     private RadioButton answer3;
     @FXML
     private Label pointsLabel;
-    @FXML
-    private Button answerButton;
 
     public void setPlayer(Player p) {
         player = p;
@@ -45,6 +48,7 @@ public class OnePlayer extends QuizController {
     private List<Question> questionList;
     private int questionIndex;
     private Question currentQuestion;
+
 
     private void displayQuestion() {
         questionLabel.setWrapText(true);
@@ -83,32 +87,17 @@ public class OnePlayer extends QuizController {
         nextQuestion();
     }
 
-    /*public void alertCorrectAnswer(){
-        player.score++;
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Gratulacje!");
-        alert.setContentText("Ta odpowiedź jest poprawna. Dostajesz jeden punkt.");
-        alert.showAndWait();
-    }*/
-
-   /* public void alertIncorrectAnswer(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Niestety...");
-        alert.setContentText("Ta odpowiedź jest niepoprawna.");
-        alert.showAndWait();
-    }*/
-
     public boolean NoAnswerIsSelected(){
         if(!answer0.isSelected() && !answer1.isSelected() && !answer2.isSelected() && !answer3.isSelected())
             return true;
         return false;
     }
-
-    public void alertNoAnswerIsSelected(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    public void alertNoAnswerIsSelected() {
+        Alert alert = new Alert(Alert.AlertType.NONE);
         alert.setHeaderText("Błąd");
         alert.setContentText("Trzeba zaznaczyć jedną odpowiedź!");
         alert.showAndWait();
+
     }
 
     public boolean checkAnswer(RadioButton button){
@@ -116,42 +105,21 @@ public class OnePlayer extends QuizController {
 
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
             player.score++;
-            setColor(button,true);
             return true;
         } else if(button.isSelected()) {
-            setColor(button, false);
         }
         return false;
     }
 
-    public void setColor(RadioButton button, boolean correct){
-        Light.Distant light = new Light.Distant();
-        light.setAzimuth(-135.0);
-
-        Lighting lighting = new Lighting();
-        lighting.setLight(light);
-        lighting.setSurfaceScale(5.0);
-
-        if(correct)
-            button.setTextFill(Color.GREEN);
-        else
-            button.setTextFill(Color.RED);
-        button.setEffect(lighting);
-    }
-
     public void answer(ActionEvent actionEvent) throws IOException, InterruptedException {
         if(checkAnswer(answer0)) {
-            System.out.println("ok");
-            //setColor(answer0,true);
+
         } else if(checkAnswer(answer1)) {
-            System.out.println("ok");
-            //setColor(answer1,true);
+
         } else if(checkAnswer(answer2)) {
-            System.out.println("ok");
-            //setColor(answer2,true);
+
         }else if(checkAnswer(answer3)) {
-            System.out.println("ok");
-            //setColor(answer3,true);
+
         } else if(NoAnswerIsSelected()){
             alertNoAnswerIsSelected();
         }
@@ -161,11 +129,11 @@ public class OnePlayer extends QuizController {
         answer3.setSelected(false);
 
         if(nextQuestion()) {
-            TimeUnit.SECONDS.sleep(2);
+            //TimeUnit.SECONDS.sleep(2);
             displayQuestion();
         }
         else if(!nextQuestion()){
-            TimeUnit.SECONDS.sleep(2);
+            //TimeUnit.SECONDS.sleep(2);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setHeaderText("Gratulacje! Gra skończona");
             alert.setContentText("Kliknij ok, żeby zobaczyć swój wynik.");
@@ -183,9 +151,29 @@ public class OnePlayer extends QuizController {
         Main.zmiana_strony_css(actionEvent, player, loader, "endOfGame", null);
     }
 
-
     public void backToMainWindow(ActionEvent actionEvent) throws  IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
         Main.zmiana_strony_css(actionEvent, player, loader, "mainWindow", null);
     }
+
+    /*public void setColor(RadioButton button, boolean correct){
+        Light.Distant light = new Light.Distant();
+        light.setAzimuth(-135.0);
+
+        Lighting lighting = new Lighting();
+        lighting.setLight(light);
+        lighting.setSurfaceScale(5.0);
+
+        if (correct) {
+            button.setTextFill(Color.GREEN);
+        } else {
+            button.setTextFill(Color.RED);
+        }
+        button.setEffect(lighting);
+    }*/
+
+    /*public void unsetColor(RadioButton button){
+        button.setTextFill(Color.WHITE);
+        button.setEffect(null);
+    }*/
 }
