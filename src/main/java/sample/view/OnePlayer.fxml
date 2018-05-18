@@ -117,12 +117,17 @@
          <Font name="System Italic" size="24.0" />
       </font>
    </Label>
-   <Button layoutX="76.0" layoutY="553.0" mnemonicParsing="false" onAction="#backToMainWindow" text="Wróć" textFill="#576ec2">
+   <Button layoutX="76.0" layoutY="553.0" mnemonicParsing="false" onAction="#backToMainWindow" text="Wróć" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="74.0">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>
    </Button>
-   <Button layoutX="14.0" layoutY="553.0" mnemonicParsing="false" text="Menu" textFill="#576ec2">
+   <Button layoutX="14.0" layoutY="553.0" mnemonicParsing="false" text="Menu" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="14.0">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font>
+   </Button>
+   <Button layoutX="139.0" layoutY="553.0" mnemonicParsing="false" onAction="#exitFromTheGame" prefHeight="30.0" prefWidth="66.0" text="Wyjście" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="134.0">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>

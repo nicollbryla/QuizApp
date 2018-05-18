@@ -9,53 +9,43 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="main.java.sample.controller.MainWindow">
-   <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-               prefWidth="600.0">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.MainWindow">
+   <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
       <center>
-         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER"/>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
       </center>
    </BorderPane>
    <ImageView fitHeight="601.0" fitWidth="631.0" layoutY="-180.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@blue.jpg"/>
+      <Image url="@blue.jpg" />
    </ImageView>
-   <Label alignment="CENTER" layoutX="120.0" layoutY="14.0" opacity="0.45" text="QuizApp" textFill="WHITE"
-          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
+   <Label alignment="CENTER" layoutX="120.0" layoutY="14.0" opacity="0.45" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
       <font>
-         <Font name="System Italic" size="99.0"/>
+         <Font name="System Italic" size="99.0" />
       </font>
    </Label>
-   <Label alignment="CENTER" layoutX="192.0" layoutY="113.0" opacity="0.8" prefHeight="121.0" prefWidth="217.0"
-          text="Wybierz tryb" textFill="WHITE">
+   <Label alignment="CENTER" layoutX="-3.0" layoutY="113.0" opacity="0.8" prefHeight="121.0" prefWidth="600.0" text="Wybierz tryb" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <font>
-         <Font name="System Italic" size="35.0"/>
+         <Font name="System Italic" size="35.0" />
       </font>
    </Label>
-   <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="ghfcfbg" layoutX="120.0" layoutY="234.0"
-           mnemonicParsing="false" onAction="#onePlayer" opacity="0.8" prefHeight="51.0" prefWidth="167.0"
-           text="Tryb jednoosobowy" textAlignment="CENTER" textFill="#576ec2" textOverrun="LEADING_ELLIPSIS"
-           AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="314.0">
+   <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="ghfcfbg" layoutX="120.0" layoutY="234.0" mnemonicParsing="false" onAction="#onePlayer" opacity="0.8" prefHeight="51.0" prefWidth="167.0" text="Tryb jednoosobowy" textAlignment="CENTER" textFill="#576ec2" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="314.0">
       <font>
-         <Font name="System Bold" size="15.0"/>
+         <Font name="System Bold" size="15.0" />
       </font>
    </Button>
-   <Button layoutX="311.0" layoutY="234.0" mnemonicParsing="false" opacity="0.8" prefHeight="51.0" prefWidth="160.0"
-           text="Tryb dwuosobowy" textFill="#576ec2" AnchorPane.leftAnchor="311.0" AnchorPane.rightAnchor="130.0">
+   <Button layoutX="311.0" layoutY="234.0" mnemonicParsing="false" opacity="0.8" prefHeight="51.0" prefWidth="160.0" text="Tryb dwuosobowy" textFill="#576ec2" AnchorPane.leftAnchor="314.0" AnchorPane.rightAnchor="120.0">
       <font>
-         <Font name="System Bold" size="15.0"/>
+         <Font name="System Bold" size="15.0" />
       </font>
    </Button>
-   <Button layoutX="84.0" layoutY="371.0" mnemonicParsing="false" onAction="#backToLogin" opacity="0.8"
-           prefHeight="11.0" prefWidth="53.0" text="Wróć" textFill="#576ec2" AnchorPane.bottomAnchor="21.0"
-           AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="464.0">
+   <Button layoutX="80.0" layoutY="371.0" mnemonicParsing="false" onAction="#backToLogin" opacity="0.8" prefHeight="11.0" prefWidth="53.0" text="Wróć" textFill="#576ec2" wrapText="true" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="80.0">
       <font>
-         <Font name="System Bold" size="13.0"/>
+         <Font name="System Bold" size="13.0" />
       </font>
    </Button>
-   <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" opacity="0.8" text="Menu" textFill="#576ec2">
+   <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" opacity="0.8" text="Menu" textFill="#576ec2" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="14.0">
       <font>
-         <Font name="System Bold" size="13.0"/>
+         <Font name="System Bold" size="13.0" />
       </font>
    </Button>
 </AnchorPane>

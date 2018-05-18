@@ -93,14 +93,14 @@ public class OnePlayer extends QuizController {
         return false;
     }
     public void alertNoAnswerIsSelected() {
-        Alert alert = new Alert(Alert.AlertType.NONE);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText("Błąd");
         alert.setContentText("Trzeba zaznaczyć jedną odpowiedź!");
         alert.showAndWait();
 
     }
 
-    public boolean checkAnswer(RadioButton button){
+    public boolean checkAnswer(RadioButton button) throws InterruptedException {
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
 
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
@@ -144,6 +144,10 @@ public class OnePlayer extends QuizController {
                 endOfGame(actionEvent);
             }
         }
+    }
+
+    public void exitFromTheGame(){
+        System.exit(0);
     }
 
     public void endOfGame(ActionEvent actionEvent) throws IOException {

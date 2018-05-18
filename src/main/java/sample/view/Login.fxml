@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4f592c;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.Login">
     <ImageView fitHeight="600.0" fitWidth="611.0" layoutY="-179.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@blue.jpg"/>
+        <Image url="@blue.jpg" />
     </ImageView>
     <Label alignment="CENTER" layoutX="110.0" layoutY="-23.0" opacity="0.45" prefHeight="116.0" prefWidth="383.0" text="QuizApp" textAlignment="CENTER" textFill="#FFFFFF" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
         <font>
@@ -49,12 +49,12 @@
       <font>
          <Font name="System Bold" size="15.0" />
       </font></Button>
-    <Button fx:id="register" alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="342.0" mnemonicParsing="false" onAction="#signUp" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Przejdź do okna rejestracji" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="12.0">
+    <Button fx:id="register" alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="342.0" mnemonicParsing="false" onAction="#signUp" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Przejdź do okna rejestracji" textAlignment="CENTER" textFill="#576ec2" wrapText="true" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="165.0">
       <font>
          <Font name="System Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="guest" layoutX="311.0" layoutY="338.0" mnemonicParsing="false" onAction="#asGuest" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Zagraj jako gość" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="12.0">
+   <Button fx:id="guest" layoutX="311.0" layoutY="338.0" mnemonicParsing="false" onAction="#asGuest" opacity="0.9" prefHeight="50.0" prefWidth="124.0" text="Zagraj jako gość" textAlignment="CENTER" textFill="#576ec2" wrapText="true" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="165.0">
       <font>
          <Font name="System Bold" size="14.0" />
       </font>
@@ -110,7 +110,12 @@
          <Font name="System Italic" size="20.0" />
       </font>
    </Label>
-   <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Menu" textFill="#576ec2">
+   <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Menu" textFill="#576ec2" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="20.0">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font>
+   </Button>
+   <Button layoutX="14.0" layoutY="63.0" mnemonicParsing="false" onAction="#exitFromTheGame" text="Wyjście" textFill="#576ec2" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="63.0">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>

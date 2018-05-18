@@ -150,4 +150,8 @@ public class Registration extends QuizController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
         Main.zmiana_strony_css(actionEvent, player, loader, "Login", null);
     }
+
+    public void exitFromTheGame(){
+        System.exit(0);
+    }
 }
