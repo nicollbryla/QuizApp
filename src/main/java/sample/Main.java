@@ -1,6 +1,5 @@
 package main.java.sample;
 
-import javafx.scene.Group;
 import main.java.sample.model.Admin;
 import main.java.sample.model.Config;
 import main.java.sample.model.Player;
@@ -37,32 +36,39 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void zmiana_strony_css(ActionEvent actionEvent, Player player, FXMLLoader loader, String fxmlfile, Admin admin) throws IOException {
+    public static void changeWindow(ActionEvent actionEvent, Player player, FXMLLoader loader, String fxmlfile, Admin admin) throws IOException {
         Parent homePageParent = loader.load();
         QuizController controller = loader.getController();
         controller.setPlayer(player);
         Scene homePageScene = new Scene(homePageParent);
         Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        if (fxmlfile.equals("mainWindow")) {
-            homePageParent.setId("pane");
-        }
-        else if (fxmlfile.equals("rejestracja")){
-            homePageParent.setId("rejestracja");
-        }
-        else if (fxmlfile.equals("logowanie")){
-            homePageParent.setId("pane");
-        }
-        else if (fxmlfile.equals("onePlayer")){
-            homePageParent.setId("onePlayer");
-            appStage.hide();
-            appStage = new Stage();
-        } else if (fxmlfile.equals("guest")){
-            homePageParent.setId("pane");
-        } else if (fxmlfile.equals("endOfGame")){
-            homePageParent.setId("endOfGame");
-
-        } else if (fxmlfile.equals("ranking")){
-            homePageParent.setId("ranking");
+        switch (fxmlfile) {
+            case "mainWindow":
+                homePageParent.setId("pane");
+                break;
+            case "rejestracja":
+                homePageParent.setId("rejestracja");
+                break;
+            case "logowanie":
+                homePageParent.setId("pane");
+                break;
+            case "onePlayer":
+                homePageParent.setId("onePlayer");
+                appStage.hide();
+                appStage = new Stage();
+                break;
+            case "guest":
+                homePageParent.setId("pane");
+                break;
+            case "endOfGame":
+                homePageParent.setId("endOfGame");
+                break;
+            case "ranking":
+                homePageParent.setId("ranking");
+                break;
+            case "addQuestionAdmin":
+                homePageParent.setId("addQuestionAdmin");
+                break;
         }
         appStage.setScene(homePageScene);
         appStage.show();

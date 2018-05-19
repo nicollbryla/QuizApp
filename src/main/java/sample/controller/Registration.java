@@ -25,7 +25,7 @@ public class Registration extends QuizController {
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-    private void emptyField(TextField reset, String name,boolean multyply){
+    private void emptyField(TextField reset, String name, boolean multyply){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Rejestracja");
         alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
@@ -36,7 +36,6 @@ public class Registration extends QuizController {
         }
         reset.setText("");
         alert.showAndWait();
-
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException{
@@ -69,7 +68,7 @@ public class Registration extends QuizController {
             if(surname.getText().length() < 2){
                 multiply = true;
                 if(login.getText().length() < 2){
-                    emptyField(name, "\"Imie\", \"Nazwisko\" i \"Login\"",multiply);
+                    emptyField(name, "\"Imie\", \"Nazwisko\" i \"Login\"", multiply);
                 } else{
                     emptyField(name, "\"Imie\" i \"Nazwisko\"",multiply);
                 }
@@ -90,8 +89,6 @@ public class Registration extends QuizController {
             ResultSet dbres;
             try {
                 db = new Database();
-                System.out.println("Select * from player where login = '" + login.getText() + "'");
-
                 dbres = db.dbselect("Select * from player where login = '" + login.getText() + "'");
                 if (dbres.next()){
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -142,13 +139,13 @@ public class Registration extends QuizController {
             login.setText("");
             alert.showAndWait();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-            Main.zmiana_strony_css(actionEvent, null, loader, "logowanie", null);
+            Main.changeWindow(actionEvent, null, loader, "logowanie", null);
         }
     }
 
     public void backToLogin(ActionEvent actionEvent) throws  IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "Login", null);
+        Main.changeWindow(actionEvent, player, loader, "Login", null);
     }
 
     public void exitFromTheGame(){
