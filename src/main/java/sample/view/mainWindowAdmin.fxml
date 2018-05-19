@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="501.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.MainWindowAdmin">
-    <children>
-        <Label layoutX="240.0" layoutY="30.0" text="Panel admina" textFill="#880015">
-            <font>
-                <Font size="35.0" />
-            </font>
-        </Label>
-        <Button layoutX="283.0" layoutY="182.0" mnemonicParsing="false" text="Edycja pytań" />
-        <Button layoutX="221.0" layoutY="240.0" mnemonicParsing="false" text="Sprawdź oczekujące pytania" />
-        <Button layoutX="245.0" layoutY="297.0" mnemonicParsing="false" text="Edytuj tabele wyników" />
-      <Button layoutX="277.0" layoutY="126.0" mnemonicParsing="false" text="Dodaj pytanie" />
-    </children>
+<AnchorPane prefHeight="501.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.java.sample.controller.MainWindowAdmin">
+    <Label layoutX="240.0" layoutY="30.0" text="Panel admina" textFill="#263188">
+        <font>
+            <Font size="35.0"/>
+        </font>
+    </Label>
+    <Button layoutX="283.0" layoutY="182.0" mnemonicParsing="false" text="Edycja pytań"/>
+    <Button layoutX="221.0" layoutY="240.0" mnemonicParsing="false" text="Sprawdź oczekujące pytania"/>
+    <Button layoutX="245.0" layoutY="297.0" mnemonicParsing="false" text="Edytuj tabele wyników"/>
+    <Button layoutX="277.0" layoutY="126.0" mnemonicParsing="false" onAction="#addQuestion" text="Dodaj pytanie"/>
+    <Button layoutX="31.0" layoutY="81.0" mnemonicParsing="false" onAction="#backToMainWindow"
+            text="Wróc do okna głownego"/>
 </AnchorPane>

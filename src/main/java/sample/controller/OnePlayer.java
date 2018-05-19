@@ -3,29 +3,16 @@ package main.java.sample.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.effect.Light;
-import javafx.scene.effect.Lighting;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import main.java.sample.Main;
 import main.java.sample.model.Database;
 import main.java.sample.model.Player;
 import main.java.sample.model.Question;
-import sun.plugin2.message.Message;
 
-import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 public class OnePlayer extends QuizController {
     @FXML
@@ -162,12 +149,12 @@ public class OnePlayer extends QuizController {
 
     public void endOfGame(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/EndOfGame.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "endOfGame", null);
+        Main.changeWindow(actionEvent, player, loader, "endOfGame", null);
     }
 
     public void backToMainWindow(ActionEvent actionEvent) throws  IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "mainWindow", null);
+        Main.changeWindow(actionEvent, player, loader, "mainWindow", null);
     }
 
     /*public void setColor(RadioButton button, boolean correct){

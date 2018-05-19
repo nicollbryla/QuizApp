@@ -73,7 +73,7 @@ public class Login extends QuizController {
                     db.close();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindowAdmin.fxml"));
                     try {
-                        Main.zmiana_strony_css(actionEvent, null, loader, "mainWindowAdmin",  admin);
+                        Main.changeWindow(actionEvent, null, loader, "mainWindowAdmin",  admin);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -110,7 +110,7 @@ public class Login extends QuizController {
                     db.close();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
                     try {
-                        Main.zmiana_strony_css(actionEvent, player, loader, "mainWindow",  null);
+                        Main.changeWindow(actionEvent, player, loader, "mainWindow",  null);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -137,12 +137,12 @@ public class Login extends QuizController {
 
     public void asGuest(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
-        Main.zmiana_strony_css(actionEvent, new Player(), loader, "guest", null);
+        Main.changeWindow(actionEvent, new Player(), loader, "guest", null);
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Registration.fxml"));
-        Main.zmiana_strony_css(actionEvent, null, loader, "rejestracja", null);
+        Main.changeWindow(actionEvent, null, loader, "rejestracja", null);
     }
 
     public void exitFromTheGame(){
@@ -151,6 +151,6 @@ public class Login extends QuizController {
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, loader, "Menu", null);
     }
 }

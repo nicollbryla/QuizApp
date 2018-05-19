@@ -17,12 +17,12 @@ public class MainWindow extends QuizController {
 
     public void backToLogin(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "Login", null);
+        Main.changeWindow(actionEvent, player, loader, "Login", null);
     }
 
     public void onePlayer(ActionEvent actionEvent) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/OnePlayer.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "onePlayer", null);
+        Main.changeWindow(actionEvent, player, loader, "onePlayer", null);
     }
 
 }
