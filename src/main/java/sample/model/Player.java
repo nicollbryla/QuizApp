@@ -22,6 +22,13 @@ public class Player {
         name = rs.getString("name");
         surname = rs.getString("surname");
         login = rs.getString("login");
-        score = 0;
+        score = rs.getInt("score");
     }
+
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        builder.append(name + ' ' + Integer.toString(score));
+        return builder.toString();
+    }
+
 }

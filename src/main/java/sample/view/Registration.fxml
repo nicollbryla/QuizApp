@@ -36,8 +36,8 @@
          <Font name="System Italic" size="24.0" />
       </font></Label>
     <TextField fx:id="name" layoutX="41.0" layoutY="218.0" opacity="0.7" prefHeight="31.0" prefWidth="164.0" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="218.0" />
-   <TextField fx:id="name1" layoutX="223.0" layoutY="218.0" opacity="0.7" prefHeight="29.0" prefWidth="181.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="218.0" />
-   <TextField fx:id="name2" layoutX="412.0" layoutY="218.0" opacity="0.7" prefHeight="29.0" prefWidth="164.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="218.0" />
+   <TextField fx:id="surname" layoutX="223.0" layoutY="218.0" opacity="0.7" prefHeight="29.0" prefWidth="181.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="218.0" />
+   <TextField fx:id="login" layoutX="412.0" layoutY="218.0" opacity="0.7" prefHeight="29.0" prefWidth="164.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="218.0" />
     <PasswordField fx:id="pass1" layoutX="37.0" layoutY="291.0" opacity="0.7" prefHeight="31.0" prefWidth="237.0" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="41.0" />
     <PasswordField fx:id="pass2" layoutX="335.0" layoutY="291.0" opacity="0.7" prefHeight="31.0" prefWidth="237.0" AnchorPane.bottomAnchor="99.0" AnchorPane.rightAnchor="41.0" />
     <!--<Button layoutX="549.0" layoutY="1.0" mnemonicParsing="false" onAction="#wroc" text="Wróć" />-->

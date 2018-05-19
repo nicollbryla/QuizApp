@@ -11,7 +11,9 @@ public class Database {
     public Connection connect;
     public Statement stmt;
     public ResultSet rs;
+    public PreparedStatement preparedStatement;
     public boolean insert;
+    public boolean  update;
 
     public Database(){
         connect = null;
@@ -56,10 +58,33 @@ public class Database {
         }
     }
 
+    public void update(Integer setInt, String setString ) {
+        try {
+            update = true;
+            insert = false;
+            Class.forName("org.postgresql.Driver");
+            connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+            String query = "UPDATE player SET score = score + ? WHERE login = ?";
+             preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1,setInt);
+            preparedStatement.setString(2,setString);
+            preparedStatement.executeUpdate();
+            connect.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void close() throws SQLException{
         if (insert){
             stmt.close();
             connect.commit();
+        } else if(update){
+            preparedStatement.close();
         }
         else {
             stmt.close();

@@ -13,13 +13,17 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import main.java.sample.Main;
+import main.java.sample.model.Database;
 import main.java.sample.model.Player;
 import main.java.sample.model.Question;
 import sun.plugin2.message.Message;
 
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -100,7 +104,7 @@ public class OnePlayer extends QuizController {
 
     }
 
-    public boolean checkAnswer(RadioButton button) throws InterruptedException {
+    public boolean checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
 
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
@@ -111,7 +115,7 @@ public class OnePlayer extends QuizController {
         return false;
     }
 
-    public void answer(ActionEvent actionEvent) throws IOException, InterruptedException {
+    public void answer(ActionEvent actionEvent) throws IOException, InterruptedException, SQLException, ClassNotFoundException {
         if(checkAnswer(answer0)) {
 
         } else if(checkAnswer(answer1)) {
@@ -129,11 +133,11 @@ public class OnePlayer extends QuizController {
         answer3.setSelected(false);
 
         if(nextQuestion()) {
-            //TimeUnit.SECONDS.sleep(2);
             displayQuestion();
         }
         else if(!nextQuestion()){
-            //TimeUnit.SECONDS.sleep(2);
+
+            updateTheScore();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setHeaderText("Gratulacje! Gra skończona");
             alert.setContentText("Kliknij ok, żeby zobaczyć swój wynik.");
@@ -144,6 +148,12 @@ public class OnePlayer extends QuizController {
                 endOfGame(actionEvent);
             }
         }
+    }
+
+    public void updateTheScore() throws SQLException, ClassNotFoundException {
+        Database db = new Database();
+        db.update(player.score, player.login);
+        db.close();
     }
 
     public void exitFromTheGame(){

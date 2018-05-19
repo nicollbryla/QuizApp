@@ -1,5 +1,6 @@
 package main.java.sample;
 
+import javafx.scene.Group;
 import main.java.sample.model.Admin;
 import main.java.sample.model.Config;
 import main.java.sample.model.Player;
@@ -59,6 +60,9 @@ public class Main extends Application {
             homePageParent.setId("pane");
         } else if (fxmlfile.equals("endOfGame")){
             homePageParent.setId("endOfGame");
+
+        } else if (fxmlfile.equals("ranking")){
+            homePageParent.setId("ranking");
         }
         appStage.setScene(homePageScene);
         appStage.show();
