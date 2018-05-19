@@ -26,3 +26,4 @@ CREATE TABLE questions (
     PRIMARY KEY(id)
 );
 Insert into player(id, login, password, name, surname, score) values ('1', 'ResultSet', 'halko', 'ResultSet', 'ResultSet', '0');
+Insert into admin(id, login, password, name, surname) values ('1', 'jerzyna', 'zeszczecina', 'Jerzy', 'Szczecinski');

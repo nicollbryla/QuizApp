@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 public class Admin {
     private int id;
-    private String login;
-    private String name;
-    private String surname;
+    public String login;
+    public String name;
+    public String surname;
 
     public Admin() {
         id = 1;

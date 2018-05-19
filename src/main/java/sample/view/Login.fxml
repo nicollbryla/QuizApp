@@ -31,7 +31,7 @@
             <Font name="System Italic" size="20.0" />
         </font>
     </Label>
-    <ToggleButton fx:id="klientButton" layoutX="170.0" layoutY="126.0" mnemonicParsing="false" opacity="0.9" prefHeight="31.0" prefWidth="124.0" selected="true" text="Gracz" textAlignment="CENTER" textFill="#576ec2" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="300.0">
+    <ToggleButton fx:id="playerButton" layoutX="170.0" layoutY="126.0" mnemonicParsing="false" opacity="0.9" prefHeight="31.0" prefWidth="124.0" selected="true" text="Gracz" textAlignment="CENTER" textFill="#576ec2" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="300.0">
         <toggleGroup>
             <ToggleGroup fx:id="logowanie" />
         </toggleGroup>
