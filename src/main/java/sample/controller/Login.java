@@ -21,7 +21,7 @@ public class Login extends QuizController {
     @FXML
     private Label alert;
     @FXML
-    private ToggleButton klientButton;
+    private ToggleButton playerButton;
     @FXML
     private ToggleButton adminButton;
     @FXML
@@ -53,17 +53,16 @@ public class Login extends QuizController {
         }
         if (logowanie.getSelectedToggle() == adminButton){
             try {
-                login.setText("Andrzej.Lewandowski@rp2.pl");
-                haslo.setText("46022013318");
+                login.setText("jerzyna");
+                haslo.setText("zeszczecina");
                 db = new Database();
-                //TODO query
-                dbres = db.dbselect("");
+                dbres = db.dbselect("SELECT * from admin p where login = '" + login.getText() + "' AND password = '" + haslo.getText() + "'");
                 int cntr = 0;
                 while (dbres.next()) {
                     cntr++;
                     admin = new Admin(dbres);
                     if (cntr == 2) {
-                        alert.setText("Więcej tych samych rekordów w bazie danych");
+                        alert.setText("Co najmniej dwa te same rekordy w bazie danych");
                         break;
                     }
                 }
@@ -72,8 +71,12 @@ public class Login extends QuizController {
                 }
                 if (admin != null) {
                     db.close();
-                    //TODO
-                    //tu miejsce na przelaczenie na admina jak juz powstanie
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindowAdmin.fxml"));
+                    try {
+                        Main.zmiana_strony_css(actionEvent, null, loader, "mainWindowAdmin",  admin);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
                 db.close();
             }
@@ -87,7 +90,7 @@ public class Login extends QuizController {
                 e.printStackTrace();
             }
         }
-        else if (logowanie.getSelectedToggle() == klientButton){
+        else if (logowanie.getSelectedToggle() == playerButton){
             try {
                 db = new Database();
                 dbres = db.dbselect("SELECT * from player p where login = '" + login.getText() + "' AND password = '" + haslo.getText() + "'");
