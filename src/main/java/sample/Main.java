@@ -1,6 +1,5 @@
 package main.java.sample;
 
-import javafx.scene.Group;
 import main.java.sample.model.Admin;
 import main.java.sample.model.Config;
 import main.java.sample.model.Player;

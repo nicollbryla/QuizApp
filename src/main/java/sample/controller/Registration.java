@@ -151,6 +151,11 @@ public class Registration extends QuizController {
         Main.zmiana_strony_css(actionEvent, player, loader, "Login", null);
     }
 
+    public void goToMenu(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
+        Main.zmiana_strony_css(actionEvent, player, loader, "Menu", null);
+    }
+
     public void exitFromTheGame(){
         System.exit(0);
     }

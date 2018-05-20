@@ -1,55 +1,46 @@
 package main.java.sample.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import main.java.sample.model.Database;
-import main.java.sample.model.Player;
+import main.java.sample.model.ModelTable;
+
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class Ranking extends QuizController{
 
     @FXML
-    private TableView<Player> tableView;
+    private TableView<ModelTable> tableView;
     @FXML
-    private TableColumn<?, ?> idColumn;
+    private TableColumn<ModelTable, String> loginColumn;
     @FXML
-    private TableColumn<?, ?> loginColumn;
+    private TableColumn<ModelTable, String> nameColumn;
     @FXML
-    private TableColumn<?, ?> nameColumn;
+    private TableColumn<ModelTable, String> surnameColumn;
     @FXML
-    private TableColumn<?, ?> surnameColumn;
-    @FXML
-    private TableColumn<?, ?> pointsColumn;
+    private TableColumn<ModelTable, Integer> pointsColumn;
 
-
-    private List<Player> players;
+    private ObservableList<ModelTable> observableList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        players = loadPlayers();
-        
-    }
 
-    public void makeTable(){
-        tableView.getItems().addAll(players);
-    }
-
-    public List<Player> loadPlayers(){
-        List<Player> players = new ArrayList<>();
         Database db = new Database();
-        Player newPlayer;
         try {
             ResultSet rs = db.dbselect("SELECT * FROM player;");
+
             while (rs.next()){
-                newPlayer = new Player(rs);
-                players.add(newPlayer);
+                System.out.println(rs.getString("login"));
+                observableList.add(new ModelTable(rs.getString("login"),rs.getString("name"),rs.getString("surname"),rs.getInt("score")));
+                System.out.println(observableList.toString());
             }
 
         } catch (Database.db_exception db_exception) {
@@ -58,6 +49,12 @@ public class Ranking extends QuizController{
             e.printStackTrace();
         }
 
-        return players;
+        tableView.refresh();
+        loginColumn.setCellValueFactory(new PropertyValueFactory<>("log"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("imie"));
+        surnameColumn.setCellValueFactory(new PropertyValueFactory<>("naz"));
+        pointsColumn.setCellValueFactory(new PropertyValueFactory<>("pkt"));
+
+        tableView.setItems(observableList);
     }
 }
