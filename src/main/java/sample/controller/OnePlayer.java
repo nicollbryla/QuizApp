@@ -1,13 +1,13 @@
-package main.java.sample.controller;
+package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import main.java.sample.Main;
-import main.java.sample.model.Database;
-import main.java.sample.model.Player;
-import main.java.sample.model.Question;
+import sample.Main;
+import sample.model.Database;
+import sample.model.Player;
+import sample.model.Question;
 
 import java.io.IOException;
 import java.net.URL;
@@ -159,7 +159,7 @@ public class OnePlayer extends QuizController {
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, loader, "Menu", null);
     }
 
     /*public void setColor(RadioButton button, boolean correct){

@@ -1,4 +1,4 @@
-package main.java.sample.controller;
+package sample.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,9 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import main.java.sample.Main;
-import main.java.sample.model.Database;
-import main.java.sample.model.ModelTable;
+import sample.Main;
+import sample.model.Database;
+import sample.model.ModelTable;
 
 import java.io.IOException;
 import java.net.URL;
@@ -49,10 +49,8 @@ public class Ranking extends QuizController{
                 observableList.add(new ModelTable(rs.getString("login"),rs.getString("name"),rs.getString("surname"),rs.getInt("score")));
             }
 
-        } catch (Database.db_exception db_exception) {
+        } catch (Database.db_exception | SQLException db_exception) {
             db_exception.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
 
         tableView.setItems(observableList);
@@ -72,6 +70,6 @@ public class Ranking extends QuizController{
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, loader, "Menu", null);
     }
 }

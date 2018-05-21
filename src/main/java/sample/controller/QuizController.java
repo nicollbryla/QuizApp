@@ -1,7 +1,7 @@
-package main.java.sample.controller;
+package sample.controller;
 
 import javafx.fxml.Initializable;
-import main.java.sample.model.Player;
+import sample.model.Player;
 
 public abstract class QuizController implements Initializable {
     Player player;

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="490.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.EndOfGame">
+<AnchorPane prefHeight="490.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EndOfGame">
    <children>
       <Label alignment="CENTER" layoutX="143.0" layoutY="41.0" prefHeight="54.0" prefWidth="315.0" text="Gratulacje!" textAlignment="CENTER" AnchorPane.leftAnchor="143.0" AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="41.0">
          <font>

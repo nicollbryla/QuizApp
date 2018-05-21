@@ -1,12 +1,12 @@
-package main.java.sample.controller;
+package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import main.java.sample.Main;
-import main.java.sample.model.Database;
+import sample.Main;
+import sample.model.Database;
 
 import java.io.IOException;
 import java.net.URL;
@@ -150,7 +150,7 @@ public class Registration extends QuizController {
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.zmiana_strony_css(actionEvent, player, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, loader, "Menu", null);
     }
 
     public void exitFromTheGame(){
