@@ -41,21 +41,21 @@
     <PasswordField fx:id="pass1" layoutX="37.0" layoutY="291.0" opacity="0.7" prefHeight="31.0" prefWidth="237.0" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="41.0" />
     <PasswordField fx:id="pass2" layoutX="335.0" layoutY="291.0" opacity="0.7" prefHeight="31.0" prefWidth="237.0" AnchorPane.bottomAnchor="99.0" AnchorPane.rightAnchor="41.0" />
     <!--<Button layoutX="549.0" layoutY="1.0" mnemonicParsing="false" onAction="#wroc" text="Wróć" />-->
-    <Button alignment="CENTER" layoutX="237.0" layoutY="341.0" mnemonicParsing="false" onAction="#signUp" prefHeight="31.0" prefWidth="135.0" text="Zarejestruj" textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="237.0">
+    <Button alignment="CENTER" layoutX="237.0" layoutY="341.0" mnemonicParsing="false" onAction="#signUp" opacity="0.9" prefHeight="31.0" prefWidth="135.0" text="Zarejestruj" textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="237.0">
       <font>
          <Font name="System Bold" size="15.0" />
       </font></Button>
-   <Button layoutX="23.0" layoutY="364.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="23.0">
+   <Button layoutX="23.0" layoutY="364.0" mnemonicParsing="false" onAction="#goToMenu" opacity="0.8" text="Menu" textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="23.0">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>
    </Button>
-   <Button layoutX="82.0" layoutY="358.0" mnemonicParsing="false" onAction="#backToLogin" text="Wróć" textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="84.0">
+   <Button layoutX="82.0" layoutY="358.0" mnemonicParsing="false" onAction="#backToLogin" opacity="0.8" text="Wróć" textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="84.0">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>
    </Button>
-   <Button layoutX="515.0" layoutY="363.0" mnemonicParsing="false" onAction="#exitFromTheGame" text="Wyjście" textFill="#576ec2" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="23.0">
+   <Button layoutX="515.0" layoutY="363.0" mnemonicParsing="false" onAction="#exitFromTheGame" opacity="0.8" text="Wyjście" textFill="#576ec2" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="23.0">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>

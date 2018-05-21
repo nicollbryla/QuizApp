@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="501.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="main.java.sample.controller.MainWindowAdmin">
-    <Label layoutX="240.0" layoutY="30.0" text="Panel admina" textFill="#263188">
+
+<AnchorPane prefHeight="501.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.MainWindowAdmin">
+   <ImageView fitHeight="716.0" fitWidth="688.0" layoutY="-167.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@blue.jpg" />
+      </image>
+   </ImageView>
+    <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#backToMainWindow" opacity="0.8" text="Wróc do okna głownego" textFill="#576ec2">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font></Button>
+    <Button alignment="CENTER" layoutX="288.0" layoutY="228.0" mnemonicParsing="false" onAction="#addQuestion" opacity="0.9" text="Dodaj pytanie" textFill="#576ec2" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="210.0">
+      <font>
+         <Font name="System Bold" size="19.0" />
+      </font></Button>
+    <Button alignment="CENTER" layoutX="293.0" layoutY="273.0" mnemonicParsing="false" opacity="0.9" text="Edycja pytań" textFill="#576ec2" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="270.0">
+      <font>
+         <Font name="System Bold" size="19.0" />
+      </font></Button>
+    <Button alignment="CENTER" layoutX="294.0" layoutY="322.0" mnemonicParsing="false" opacity="0.9" text="Sprawdź oczekujące pytania" textFill="#576ec2" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="330.0">
+      <font>
+         <Font name="System Bold" size="19.0" />
+      </font></Button>
+    <Button alignment="CENTER" layoutX="288.0" layoutY="368.0" mnemonicParsing="false" opacity="0.9" text="Edytuj tabele wyników" textFill="#576ec2" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="390.0">
+      <font>
+         <Font name="System Bold" size="19.0" />
+      </font></Button>
+   <Label alignment="CENTER" layoutX="275.0" layoutY="39.0" opacity="0.9" text="Panel" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="40.0">
+      <font>
+         <Font name="System Italic" size="60.0" />
+      </font>
+   </Label>
+    <Label alignment="CENTER" layoutY="92.0" opacity="0.9" text="administratora" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="105.0">
         <font>
-            <Font size="35.0"/>
+            <Font name="System Italic" size="60.0" />
         </font>
     </Label>
-    <Button layoutX="283.0" layoutY="182.0" mnemonicParsing="false" text="Edycja pytań"/>
-    <Button layoutX="221.0" layoutY="240.0" mnemonicParsing="false" text="Sprawdź oczekujące pytania"/>
-    <Button layoutX="245.0" layoutY="297.0" mnemonicParsing="false" text="Edytuj tabele wyników"/>
-    <Button layoutX="277.0" layoutY="126.0" mnemonicParsing="false" onAction="#addQuestion" text="Dodaj pytanie"/>
-    <Button layoutX="31.0" layoutY="81.0" mnemonicParsing="false" onAction="#backToMainWindow"
-            text="Wróc do okna głownego"/>
+   <Label alignment="CENTER" layoutX="275.0" layoutY="452.0" opacity="0.45" prefWidth="595.0" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="-275.0" AnchorPane.topAnchor="452.0">
+      <font>
+         <Font name="System Italic" size="30.0" />
+      </font>
+   </Label>
 </AnchorPane>
