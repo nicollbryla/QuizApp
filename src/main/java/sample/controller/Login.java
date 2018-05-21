@@ -1,7 +1,7 @@
-package main.java.sample.controller;
+package sample.controller;
 
-import main.java.sample.model.Admin;
-import main.java.sample.model.Database;
+import sample.model.Admin;
+import sample.model.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,8 +12,8 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import main.java.sample.model.Player;
-import main.java.sample.Main;
+import sample.model.Player;
+import sample.Main;
 
 public class Login extends QuizController {
     @FXML

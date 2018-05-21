@@ -1,8 +1,8 @@
-package main.java.sample.controller;
+package sample.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import main.java.sample.model.Player;
+import sample.model.Player;
 
 import java.net.URL;
 import java.util.ResourceBundle;

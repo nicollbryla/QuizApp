@@ -1,15 +1,12 @@
-package main.java.sample.controller;
+package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import main.java.sample.Main;
-import main.java.sample.model.Database;
-import org.postgresql.util.PSQLException;
-
-import javax.xml.soap.Text;
+import sample.Main;
+import sample.model.Database;
 
 import java.io.IOException;
 import java.net.URL;

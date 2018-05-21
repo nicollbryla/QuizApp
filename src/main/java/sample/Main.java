@@ -1,8 +1,8 @@
-package main.java.sample;
+package sample;
 
-import main.java.sample.model.Admin;
-import main.java.sample.model.Config;
-import main.java.sample.model.Player;
+import sample.model.Admin;
+import sample.model.Config;
+import sample.model.Player;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import main.java.sample.controller.QuizController;
+import sample.controller.QuizController;
 
 import java.io.IOException;
 
