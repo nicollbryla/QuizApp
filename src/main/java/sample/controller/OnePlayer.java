@@ -157,6 +157,11 @@ public class OnePlayer extends QuizController {
         Main.changeWindow(actionEvent, player, loader, "mainWindow", null);
     }
 
+    public void goToMenu(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
+        Main.zmiana_strony_css(actionEvent, player, loader, "Menu", null);
+    }
+
     /*public void setColor(RadioButton button, boolean correct){
         Light.Distant light = new Light.Distant();
         light.setAzimuth(-135.0);

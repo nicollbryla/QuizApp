@@ -1,55 +1,52 @@
 package main.java.sample.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import main.java.sample.Main;
 import main.java.sample.model.Database;
-import main.java.sample.model.Player;
+import main.java.sample.model.ModelTable;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class Ranking extends QuizController{
 
     @FXML
-    private TableView<Player> tableView;
+    private TableView<ModelTable> tableView;
     @FXML
-    private TableColumn<?, ?> idColumn;
+    private TableColumn<ModelTable, String> loginColumn;
     @FXML
-    private TableColumn<?, ?> loginColumn;
+    private TableColumn<ModelTable, String> nameColumn;
     @FXML
-    private TableColumn<?, ?> nameColumn;
+    private TableColumn<ModelTable, String> surnameColumn;
     @FXML
-    private TableColumn<?, ?> surnameColumn;
-    @FXML
-    private TableColumn<?, ?> pointsColumn;
+    private TableColumn<ModelTable, Integer> pointsColumn;
 
+    private ObservableList<ModelTable> observableList = FXCollections.observableArrayList();
 
-    private List<Player> players;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        players = loadPlayers();
-        
+        setData();
+        columnsSettings();
     }
 
-    public void makeTable(){
-        tableView.getItems().addAll(players);
-    }
-
-    public List<Player> loadPlayers(){
-        List<Player> players = new ArrayList<>();
+    public void setData(){
         Database db = new Database();
-        Player newPlayer;
         try {
-            ResultSet rs = db.dbselect("SELECT * FROM player;");
+            ResultSet rs = db.dbselect("SELECT * FROM player ORDER BY SCORE DESC;");
+
             while (rs.next()){
-                newPlayer = new Player(rs);
-                players.add(newPlayer);
+                observableList.add(new ModelTable(rs.getString("login"),rs.getString("name"),rs.getString("surname"),rs.getInt("score")));
             }
 
         } catch (Database.db_exception db_exception) {
@@ -58,6 +55,23 @@ public class Ranking extends QuizController{
             e.printStackTrace();
         }
 
-        return players;
+        tableView.setItems(observableList);
+    }
+
+    public void columnsSettings(){
+        loginColumn.setCellValueFactory(new PropertyValueFactory<>("login"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
+        pointsColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
+
+        loginColumn.setStyle("-fx-alignment: CENTER;");
+        nameColumn.setStyle("-fx-alignment: CENTER;");
+        surnameColumn.setStyle("-fx-alignment: CENTER;");
+        pointsColumn.setStyle("-fx-alignment: CENTER;");
+    }
+
+    public void goToMenu(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
+        Main.zmiana_strony_css(actionEvent, player, loader, "Menu", null);
     }
 }

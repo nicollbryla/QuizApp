@@ -25,10 +25,10 @@ public class Player {
         score = rs.getInt("score");
     }
 
-    public String toString(){
+    /*public String toString(){
         StringBuilder builder = new StringBuilder();
         builder.append(name + ' ' + Integer.toString(score));
         return builder.toString();
-    }
+    }*/
 
 }

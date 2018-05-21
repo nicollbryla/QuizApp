@@ -5,18 +5,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.controller.Ranking">
    <children>
-      <TableView fx:id="tableView" layoutX="71.0" layoutY="94.0" prefHeight="212.0" prefWidth="459.0">
+      <TableView fx:id="tableView" editable="true" layoutX="61.0" layoutY="94.0" prefHeight="238.0" prefWidth="478.0">
         <columns>
-          <TableColumn fx:id="idColumn" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="loginColumn" prefWidth="75.0" text="Login" />
-            <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Imię" />
-            <TableColumn fx:id="surnameColumn" prefWidth="75.0" text="Nazwisko" />
-            <TableColumn fx:id="pointsColumn" prefWidth="75.0" text="Punkty" />
+          <TableColumn fx:id="loginColumn" prefWidth="123.0" text="Login" />
+          <TableColumn fx:id="nameColumn" prefWidth="116.0" text="Imię" />
+          <TableColumn fx:id="surnameColumn" prefWidth="157.0" text="Nazwisko" />
+          <TableColumn fx:id="pointsColumn" minWidth="0.0" prefWidth="81.0" text="Punkty" />
         </columns>
       </TableView>
-      <Button layoutX="188.0" layoutY="355.0" mnemonicParsing="false" onAction="#makeTable" text="Kliknij, żeby załadować ranking" />
+      <Button layoutX="29.0" layoutY="36.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" />
    </children>
 </AnchorPane>
