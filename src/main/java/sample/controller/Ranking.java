@@ -2,14 +2,17 @@ package main.java.sample.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import main.java.sample.Main;
 import main.java.sample.model.Database;
 import main.java.sample.model.ModelTable;
 
-
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,17 +33,20 @@ public class Ranking extends QuizController{
 
     private ObservableList<ModelTable> observableList = FXCollections.observableArrayList();
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setData();
+        columnsSettings();
+    }
 
+    public void setData(){
         Database db = new Database();
         try {
-            ResultSet rs = db.dbselect("SELECT * FROM player;");
+            ResultSet rs = db.dbselect("SELECT * FROM player ORDER BY SCORE DESC;");
 
             while (rs.next()){
-                System.out.println(rs.getString("login"));
                 observableList.add(new ModelTable(rs.getString("login"),rs.getString("name"),rs.getString("surname"),rs.getInt("score")));
-                System.out.println(observableList.toString());
             }
 
         } catch (Database.db_exception db_exception) {
@@ -49,12 +55,23 @@ public class Ranking extends QuizController{
             e.printStackTrace();
         }
 
-        tableView.refresh();
-        loginColumn.setCellValueFactory(new PropertyValueFactory<>("log"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("imie"));
-        surnameColumn.setCellValueFactory(new PropertyValueFactory<>("naz"));
-        pointsColumn.setCellValueFactory(new PropertyValueFactory<>("pkt"));
-
         tableView.setItems(observableList);
+    }
+
+    public void columnsSettings(){
+        loginColumn.setCellValueFactory(new PropertyValueFactory<>("login"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
+        pointsColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
+
+        loginColumn.setStyle("-fx-alignment: CENTER;");
+        nameColumn.setStyle("-fx-alignment: CENTER;");
+        surnameColumn.setStyle("-fx-alignment: CENTER;");
+        pointsColumn.setStyle("-fx-alignment: CENTER;");
+    }
+
+    public void goToMenu(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
+        Main.zmiana_strony_css(actionEvent, player, loader, "Menu", null);
     }
 }
