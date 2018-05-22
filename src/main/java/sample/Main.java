@@ -69,6 +69,8 @@ public class Main extends Application {
             case "addQuestionAdmin":
                 homePageParent.setId("addQuestionAdmin");
                 break;
+            case "Menu":
+                homePageParent.setId("menu");
         }
         appStage.setScene(homePageScene);
         appStage.show();
