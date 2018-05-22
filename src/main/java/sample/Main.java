@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.scene.layout.AnchorPane;
 import sample.model.Admin;
 import sample.model.Config;
 import sample.model.Player;
@@ -21,13 +22,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         config = new Config("config.cfg");
-        Parent root = FXMLLoader.load(getClass().getResource("view/Login.fxml"));
-        root.setId("pane");
+        AnchorPane root = FXMLLoader.load(getClass().getResource("view/Login.fxml"));
+//        root.setId("pane");
         primaryStage.setTitle("QuizApp");
         Scene loginScene = new Scene(root);
         primaryStage.setScene(loginScene);
-        primaryStage.setHeight(450);
-        primaryStage.setWidth(600);
+//        primaryStage.setHeight(450);
+//        primaryStage.setWidth(600);
         primaryStage.setResizable(false);
         primaryStage.show();
     }
@@ -36,6 +37,8 @@ public class Main extends Application {
         launch(args);
     }
 
+
+    //TODO wyczyscic id
     public static void changeWindow(ActionEvent actionEvent, Player player, FXMLLoader loader, String fxmlfile, Admin admin) throws IOException {
         Parent homePageParent = loader.load();
         QuizController controller = loader.getController();
