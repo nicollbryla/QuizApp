@@ -139,18 +139,18 @@ public class Registration extends QuizController {
             login.setText("");
             alert.showAndWait();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-            Main.changeWindow(actionEvent, null, loader, "logowanie", null);
+            Main.changeWindow(actionEvent, null, null, loader, "logowanie", null);
         }
     }
 
     public void backToLogin(ActionEvent actionEvent) throws  IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-        Main.changeWindow(actionEvent, player, loader, "Login", null);
+        Main.changeWindow(actionEvent, player, null, loader, "Login", null);
     }
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, player, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
     }
 
     public void exitFromTheGame(){

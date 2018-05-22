@@ -70,6 +70,6 @@ public class Ranking extends QuizController{
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, player, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
     }
 }
