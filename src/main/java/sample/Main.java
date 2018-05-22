@@ -23,12 +23,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         config = new Config("config.cfg");
         AnchorPane root = FXMLLoader.load(getClass().getResource("view/Login.fxml"));
-//        root.setId("pane");
         primaryStage.setTitle("QuizApp");
         Scene loginScene = new Scene(root);
         primaryStage.setScene(loginScene);
-//        primaryStage.setHeight(450);
-//        primaryStage.setWidth(600);
         primaryStage.setResizable(false);
         primaryStage.show();
     }
