@@ -53,8 +53,6 @@ public class Login extends QuizController {
         }
         if (logowanie.getSelectedToggle() == adminButton){
             try {
-                login.setText("jerzyna");
-                haslo.setText("zeszczecina");
                 db = new Database();
                 dbres = db.dbselect("SELECT * from admin p where login = '" + login.getText() + "' AND password = '" + haslo.getText() + "'");
                 int cntr = 0;
@@ -133,6 +131,16 @@ public class Login extends QuizController {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setContentText("Niepoprawne dane");
         alert.showAndWait();
+    }
+
+    public void changeData(ActionEvent actionEvent){
+        login.setText("jerzyna");
+        haslo.setText("zeszczecina");
+    }
+
+    public void changeDataPlayer(ActionEvent actionEvent){
+        login.setText("ResultSet");
+        haslo.setText("halko");
     }
 
     public void asGuest(ActionEvent actionEvent) throws IOException {
