@@ -75,7 +75,7 @@ public class TwoPlayers extends QuizController {
             pointsLabel.setText("Twoje punkty: " + Integer.toString(firstPlayer.score));
         }
         else {
-            namePlayer.setText("Gracz" + secondPlayer.name);
+            namePlayer.setText("Gracz " + secondPlayer.name);
             pointsLabel.setText("Twoje punkty: " + Integer.toString(secondPlayer.score));
         }
 
