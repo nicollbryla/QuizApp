@@ -113,6 +113,6 @@ public class AddQuestionAdmin extends QuizController {
 
     public void backToMainWindowAdmin(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindowAdmin.fxml"));
-        Main.changeWindow(actionEvent, null, loader, "mainWindowAdmin", null);
+        Main.changeWindow(actionEvent, null, null, loader, "mainWindowAdmin", null);
     }
 }

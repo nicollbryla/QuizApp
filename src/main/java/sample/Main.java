@@ -34,12 +34,15 @@ public class Main extends Application {
         launch(args);
     }
 
-
-    //TODO wyczyscic id
-    public static void changeWindow(ActionEvent actionEvent, Player player, FXMLLoader loader, String fxmlfile, Admin admin) throws IOException {
+//TODO wyczyscic id
+    public static void changeWindow(ActionEvent actionEvent, Player player1, Player player2, FXMLLoader loader, String fxmlfile, Admin admin) throws IOException {
         Parent homePageParent = loader.load();
         QuizController controller = loader.getController();
-        controller.setPlayer(player);
+        if(player1 != null && player2 != null){
+            controller.setTwoPlayers(player1, player2);
+        } else {
+            controller.setPlayer(player1);
+        }
         Scene homePageScene = new Scene(homePageParent);
         Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         switch (fxmlfile) {

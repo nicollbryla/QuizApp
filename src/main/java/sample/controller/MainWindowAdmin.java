@@ -23,11 +23,11 @@ public class MainWindowAdmin extends QuizController {
 
     public void addQuestion(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/addQuestionAdmin.fxml"));
-        Main.changeWindow(actionEvent, null, loader, "addQuestionAdmin", admin);
+        Main.changeWindow(actionEvent, null, null, loader, "addQuestionAdmin", admin);
     }
 
     public void backToMainWindow(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/login.fxml"));
-        Main.changeWindow(actionEvent, null, loader, "login", admin);
+        Main.changeWindow(actionEvent, null, null, loader, "login", admin);
     }
 }
