@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EndOfTwoPlayersGame">
    <children>
-      <Label alignment="CENTER" layoutX="222.0" layoutY="64.0" prefHeight="23.0" prefWidth="158.0" text="Gra skończona" />
-      <Label fx:id="pointsPlayer1" layoutX="134.0" layoutY="179.0" text="Wynik gracza" />
-      <Label fx:id="pointsPlayer2" layoutX="134.0" layoutY="250.0" text="Wynik gracza" />
+      <ImageView fitHeight="682.0" fitWidth="600.0" layoutY="-200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@blue.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="142.0" layoutY="14.0" opacity="0.45" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
+         <font>
+            <Font name="System Italic" size="99.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="177.0" layoutY="113.0" opacity="0.9" prefHeight="77.0" prefWidth="247.0" text=" Gratulacje!!!" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="System Italic" size="40.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="273.0" layoutY="190.0" opacity="0.9" text="Gra skończona" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="190.0">
+         <font>
+            <Font name="System Italic" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="pointsPlayer1" alignment="CENTER" layoutX="118.0" layoutY="272.0" opacity="0.9" text="Wynik gracza" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="250.0">
+         <font>
+            <Font name="System Italic" size="35.0" />
+         </font></Label>
+      <Label fx:id="pointsPlayer2" alignment="CENTER" layoutX="125.0" layoutY="337.0" opacity="0.9" text="Wynik gracza" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="310.0">
+         <font>
+            <Font name="System Italic" size="35.0" />
+         </font></Label>
    </children>
 </AnchorPane>
