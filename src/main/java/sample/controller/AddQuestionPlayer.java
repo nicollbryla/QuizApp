@@ -13,7 +13,7 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class AddQuestionAdmin extends QuizController {
+public class AddQuestionPlayer extends QuizController {
 
     @FXML
     private TextField question;
@@ -35,16 +35,15 @@ public class AddQuestionAdmin extends QuizController {
 
     }
 
-    public void addQuestion(ActionEvent actionEvent) throws IOException {
+    public void addQuestion(ActionEvent actionEvent){
         AddQuestion x = new AddQuestion();
         if (x.validateQuestion(question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText())){
-            x.addQuestion("questions",question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText());
+            x.addQuestion("proposedQuestions",question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText());
         }
     }
 
-
-    public void backToMainWindowAdmin(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindowAdmin.fxml"));
-        Main.changeWindow(actionEvent, null, null, loader, "mainWindowAdmin", null);
+    public void backToMenu(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
+        Main.changeWindow(actionEvent, null, null, loader, "menu", null);
     }
 }

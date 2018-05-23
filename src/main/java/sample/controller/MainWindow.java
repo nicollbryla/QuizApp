@@ -36,4 +36,9 @@ public class MainWindow extends QuizController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
     }
+
+    public void addQuestion(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/addQuestionPlayer.fxml"));
+        Main.changeWindow(actionEvent, player, null, loader, "addQuestionPlayer", null);
+    }
 }
