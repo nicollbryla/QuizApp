@@ -25,5 +25,15 @@ CREATE TABLE questions (
     ans3  TEXT NOT NULL,
     PRIMARY KEY(id)
 );
+CREATE TABLE proposedQuestions (
+    id    INTEGER NOT NULL,
+    content       TEXT NOT NULL,
+    cat   TEXT NOT NULL,
+    ans0  TEXT NOT NULL,
+    ans1  TEXT NOT NULL,
+    ans2  TEXT NOT NULL,
+    ans3  TEXT NOT NULL,
+    PRIMARY KEY(id)
+);
 Insert into player(id, login, password, name, surname, score) values ('1', 'ResultSet', 'halko', 'ResultSet', 'ResultSet', '0');
 Insert into admin(id, login, password, name, surname) values ('1', 'jerzyna', 'zeszczecina', 'Jerzy', 'Szczecinski');

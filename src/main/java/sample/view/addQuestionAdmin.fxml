@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -8,49 +13,58 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="490.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddQuestionAdmin">
-   <ImageView fitHeight="791.0" fitWidth="738.0" layoutY="-232.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@blue.jpg" />
-      </image>
-   </ImageView>
-   <Label alignment="CENTER" layoutX="43.0" layoutY="22.0" opacity="0.9" text="Treść pytania:" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="5.0">
-      <font>
-         <Font name="System Italic" size="28.0" />
-      </font></Label>
-   <TextField fx:id="question" alignment="CENTER" layoutX="43.0" layoutY="104.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="45.0" />
-   <Label alignment="CENTER" layoutX="43.0" layoutY="146.0" opacity="0.9" prefHeight="21.0" prefWidth="328.0" text="Poprawna odpowiedź:" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="85.0">
-      <font>
-         <Font name="System Italic" size="28.0" />
-      </font></Label>
-   <TextField fx:id="correctAnswer" alignment="CENTER" layoutX="43.0" layoutY="167.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="125.0" />
-   <TextField fx:id="incorrectAnswer1" layoutX="43.0" layoutY="227.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="215.0" />
-   <TextField fx:id="incorrectAnswer2" layoutX="35.0" layoutY="302.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="305.0" />
-   <TextField fx:id="incorrectAnswer3" layoutX="43.0" layoutY="377.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="395.0" />
-   <Label alignment="CENTER" layoutX="43.0" layoutY="206.0" opacity="0.9" text="Nieporprawna odpowiedź nr 1:" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="175.0">
-      <font>
-         <Font name="System Italic" size="28.0" />
-      </font></Label>
-   <Label alignment="CENTER" layoutX="43.0" layoutY="269.0" opacity="0.9" text="Nieporprawna odpowiedź nr 2" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="265.0">
-      <font>
-         <Font name="System Italic" size="28.0" />
-      </font></Label>
-   <Label alignment="CENTER" layoutX="43.0" layoutY="341.0" opacity="0.9" text="Nieporprawna odpowiedź nr 3" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="355.0">
-      <font>
-         <Font name="System Italic" size="28.0" />
-      </font></Label>
-   <Button alignment="CENTER" layoutX="164.0" layoutY="449.0" mnemonicParsing="false" onAction="#addQuestion" opacity="0.9" prefHeight="31.0" prefWidth="194.0" text="Dodaj pytanie" textFill="#576ec2" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="445.0">
-      <font>
-         <Font name="System Bold" size="15.0" />
-      </font></Button>
-   <Button alignment="CENTER" layoutX="391.0" layoutY="449.0" mnemonicParsing="false" onAction="#backToMainWindowAdmin" opacity="0.9" text="Wróć do okna głównego" textFill="#576ec2" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="445.0">
-      <font>
-         <Font name="System Bold" size="15.0" />
-      </font></Button>
-   <Label layoutX="629.0" layoutY="446.0" opacity="0.45" text="QuizApp" textFill="WHITE">
-      <font>
-         <Font name="System Italic" size="25.0" />
-      </font>
-   </Label>
+<AnchorPane prefHeight="490.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddQuestionAdmin">
+   <children>
+      <ImageView fitHeight="791.0" fitWidth="738.0" layoutY="-232.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@blue.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="43.0" layoutY="22.0" opacity="0.9" text="Treść pytania:" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font name="System Italic" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="question" alignment="CENTER" layoutX="43.0" layoutY="104.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="45.0" />
+      <Label alignment="CENTER" layoutX="43.0" layoutY="146.0" opacity="0.9" prefHeight="21.0" prefWidth="328.0" text="Poprawna odpowiedź:" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="85.0">
+         <font>
+            <Font name="System Italic" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="correctAnswer" alignment="CENTER" layoutX="43.0" layoutY="167.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="125.0" />
+      <TextField fx:id="incorrectAnswer1" alignment="CENTER" layoutX="43.0" layoutY="227.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="215.0" />
+      <TextField fx:id="incorrectAnswer2" alignment="CENTER" layoutX="35.0" layoutY="302.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="305.0" />
+      <TextField fx:id="incorrectAnswer3" alignment="CENTER" layoutX="43.0" layoutY="377.0" opacity="0.7" prefHeight="39.0" prefWidth="540.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="395.0" />
+      <Label alignment="CENTER" layoutX="43.0" layoutY="206.0" opacity="0.9" text="Nieporprawna odpowiedź nr 1:" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="175.0">
+         <font>
+            <Font name="System Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="43.0" layoutY="269.0" opacity="0.9" text="Nieporprawna odpowiedź nr 2" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="265.0">
+         <font>
+            <Font name="System Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="43.0" layoutY="341.0" opacity="0.9" text="Nieporprawna odpowiedź nr 3" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="355.0">
+         <font>
+            <Font name="System Italic" size="28.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="164.0" layoutY="449.0" mnemonicParsing="false" onAction="#addQuestion" opacity="0.9" prefHeight="31.0" prefWidth="194.0" text="Dodaj pytanie" textFill="#576ec2" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="445.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="391.0" layoutY="449.0" mnemonicParsing="false" onAction="#backToMainWindowAdmin" opacity="0.9" text="Wróć do okna głównego" textFill="#576ec2" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="445.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="629.0" layoutY="446.0" opacity="0.45" text="QuizApp" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="25.0" />
+         </font>
+      </Label>
+   </children>
 
 </AnchorPane>
