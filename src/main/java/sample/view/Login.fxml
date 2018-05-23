@@ -65,44 +65,14 @@
         </font>
     </Label>
    <VBox layoutX="149.0" layoutY="500.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="319.0" />
-   <Label layoutX="499.0" layoutY="250.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
-      <font>
-         <Font name="Calibri Italic" size="99.0" />
-      </font>
-   </Label>
    <Label layoutX="77.0" layoutY="125.0" opacity="0.28" rotate="-35.0" text="?" textFill="WHITE">
       <font>
-         <Font name="Calibri Italic" size="96.0" />
-      </font>
-   </Label>
-   <Label layoutX="484.0" layoutY="125.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
-      <font>
-         <Font name="Calibri Italic" size="96.0" />
-      </font>
-   </Label>
-   <Label layoutX="65.0" layoutY="270.0" opacity="0.28" rotate="-40.0" text="?" textFill="WHITE">
-      <font>
-         <Font name="Calibri Italic" size="96.0" />
-      </font>
-   </Label>
-   <Label layoutX="101.0" layoutY="232.0" opacity="0.28" rotate="-404.0" text="?" textFill="WHITE">
-      <font>
-         <Font name="Calibri Italic" size="63.0" />
-      </font>
-   </Label>
-   <Label layoutX="471.0" layoutY="220.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
-      <font>
-         <Font name="Calibri Italic" size="62.0" />
-      </font>
-   </Label>
-   <Label layoutX="535.0" layoutY="174.0" opacity="0.28" rotate="15.0" text="?" textFill="WHITE">
-      <font>
-         <Font name="Calibri Italic" size="91.0" />
+         <Font name="Bodoni MT" size="96.0" />
       </font>
    </Label>
    <Label layoutX="27.0" layoutY="171.0" opacity="0.28" prefHeight="78.0" prefWidth="37.0" rotate="-40.0" text="?" textFill="WHITE">
       <font>
-         <Font name="Calibri Italic" size="96.0" />
+         <Font name="Bodoni MT" size="96.0" />
       </font>
    </Label>
    <Label layoutX="283.0" layoutY="304.0" text="lub" textFill="WHITE" AnchorPane.bottomAnchor="66.0">
@@ -110,14 +80,44 @@
          <Font name="System Italic" size="20.0" />
       </font>
    </Label>
-   <Button alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" textFill="#576ec2" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+   <Button alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToMenu" opacity="0.8" text="Menu" textFill="#576ec2" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>
    </Button>
-   <Button layoutX="522.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitFromTheGame" text="Wyjście" textFill="#576ec2" AnchorPane.leftAnchor="522.0" AnchorPane.topAnchor="14.0">
+   <Button layoutX="522.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitFromTheGame" opacity="0.8" text="Wyjście" textFill="#576ec2" AnchorPane.leftAnchor="522.0" AnchorPane.topAnchor="14.0">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>
    </Button>
+   <Label layoutX="59.0" layoutY="276.0" opacity="0.28" prefHeight="78.0" prefWidth="37.0" rotate="-40.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Bodoni MT" size="96.0" />
+      </font>
+   </Label>
+   <Label layoutX="92.0" layoutY="223.0" opacity="0.3" prefHeight="78.0" prefWidth="37.0" rotate="-34.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Bodoni MT" size="67.0" />
+      </font>
+   </Label>
+   <Label layoutX="491.0" layoutY="125.0" opacity="0.28" prefHeight="78.0" prefWidth="37.0" rotate="20.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Bodoni MT" size="96.0" />
+      </font>
+   </Label>
+   <Label layoutX="533.0" layoutY="183.0" opacity="0.28" prefHeight="78.0" prefWidth="37.0" rotate="28.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Bodoni MT" size="96.0" />
+      </font>
+   </Label>
+   <Label layoutX="501.0" layoutY="276.0" opacity="0.28" prefHeight="78.0" prefWidth="37.0" rotate="30.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Bodoni MT" size="96.0" />
+      </font>
+   </Label>
+   <Label layoutX="478.0" layoutY="233.0" opacity="0.28" prefHeight="78.0" prefWidth="37.0" rotate="24.0" text="?" textFill="WHITE">
+      <font>
+         <Font name="Bodoni MT" size="66.0" />
+      </font>
+   </Label>
 </AnchorPane>

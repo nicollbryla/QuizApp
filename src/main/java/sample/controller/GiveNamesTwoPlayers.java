@@ -42,4 +42,20 @@ public class GiveNamesTwoPlayers extends QuizController{
         }
     }
 
+    public void goToMenu(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
+        Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
+    }
+
+    /*public void goToMainWindow(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
+        Main.changeWindow(actionEvent, player, null, loader, "mainWindow", null);
+    }*/
+
+    public void backToLogin(ActionEvent actionEvent) throws  IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
+        Main.changeWindow(actionEvent, player, null, loader, "Login", null);
+    }
+
+
 }
