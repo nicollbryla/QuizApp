@@ -3,14 +3,11 @@ package sample.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import sample.Main;
-import sample.model.Database;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 public class AddQuestionAdmin extends QuizController {
@@ -44,7 +41,7 @@ public class AddQuestionAdmin extends QuizController {
 
 
     public void backToMainWindowAdmin(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindowAdmin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindowAdmin.fxml"));
         Main.changeWindow(actionEvent, null, null, loader, "mainWindowAdmin", null);
     }
 }

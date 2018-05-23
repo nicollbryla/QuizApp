@@ -174,7 +174,7 @@ public class TwoPlayers extends QuizController {
     }
 
     public void backToMainWindow(ActionEvent actionEvent) throws  IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
         Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, "mainWindow", null);
     }
 
