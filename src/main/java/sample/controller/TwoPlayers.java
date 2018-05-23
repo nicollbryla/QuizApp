@@ -4,16 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import sample.Main;
-import sample.controller.QuizController;
-import sample.model.Database;
+
 import sample.model.Player;
 import sample.model.Question;
-
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.*;
 
 public class TwoPlayers extends QuizController {
@@ -75,11 +71,11 @@ public class TwoPlayers extends QuizController {
 
     private void displayQuestion() {
         if(first) {
-            namePlayer.setText(firstPlayer.name);
+            namePlayer.setText("Gracz " + firstPlayer.name);
             pointsLabel.setText("Twoje punkty: " + Integer.toString(firstPlayer.score));
         }
         else {
-            namePlayer.setText(secondPlayer.name);
+            namePlayer.setText("Gracz" + secondPlayer.name);
             pointsLabel.setText("Twoje punkty: " + Integer.toString(secondPlayer.score));
         }
 
@@ -123,21 +119,22 @@ public class TwoPlayers extends QuizController {
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
             if(first) {
                 firstPlayer.score++;
-                System.out.println("punkt dla 1");
             }
             else {
                 secondPlayer.score++;
-                System.out.println("punkt dla 2");
             }
             return true;
-        } else if(button.isSelected()) {
         }
         return false;
     }
 
     public void answer(ActionEvent actionEvent) throws IOException {
-        if(checkAnswer(answer0) || checkAnswer(answer1) || checkAnswer(answer1) || checkAnswer(answer1) || checkAnswer(answer1)) {
-        } else if(NoAnswerIsSelected()){
+        checkAnswer(answer0);
+        checkAnswer(answer1);
+        checkAnswer(answer2);
+        checkAnswer(answer3);
+
+        if(NoAnswerIsSelected()){
             alertNoAnswerIsSelected();
         }
         answer0.setSelected(false);
