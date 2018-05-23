@@ -49,7 +49,7 @@ public class OnePlayer extends QuizController {
         answer3.setWrapText(true);
         questionLabel.setText(currentQuestion.content);
         categoryLabel.setText("Kategoria: " + currentQuestion.category);
-        pointsLabel.setText("Twoje punkty: " + Integer.toString(player.score));
+        pointsLabel.setText("Twoje punkty: " + Integer.toString(player.scoreDuringGame));
         answer0.setText(currentQuestion.ans[0]);
         answer1.setText(currentQuestion.ans[1]);
         answer2.setText(currentQuestion.ans[2]);
@@ -96,7 +96,7 @@ public class OnePlayer extends QuizController {
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
 
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
-            player.score++;
+            player.scoreDuringGame++;
             return true;
         } else if(button.isSelected()) {
         }
@@ -140,7 +140,7 @@ public class OnePlayer extends QuizController {
 
     public void updateTheScore() throws SQLException {
         Database db = new Database();
-        db.update(player.score, player.login);
+        db.update(player.scoreDuringGame, player.login);
         db.close();
     }
 

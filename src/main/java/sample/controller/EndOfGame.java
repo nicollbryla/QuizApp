@@ -14,7 +14,7 @@ public class EndOfGame extends QuizController {
 
     public void setPlayer(Player p){
         player = p;
-        pointsLabel.setText(Integer.toString(player.score));
+        pointsLabel.setText(Integer.toString(player.scoreDuringGame));
     }
 
     @Override

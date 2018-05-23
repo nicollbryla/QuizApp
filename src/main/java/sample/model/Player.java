@@ -10,6 +10,7 @@ public class Player {
     public String login;
     public int score;
     public boolean asGuest;
+    public int scoreDuringGame = 0;
 
     public Player(){
         id = 1;
