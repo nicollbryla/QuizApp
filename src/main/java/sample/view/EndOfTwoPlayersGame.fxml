@@ -35,5 +35,15 @@
          <font>
             <Font name="System Italic" size="35.0" />
          </font></Label>
+      <Label alignment="TOP_LEFT" blendMode="SRC_ATOP" layoutX="-309.0" layoutY="350.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.3" prefHeight="50.0" prefWidth="478.0" text="~~~~~~" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT" size="40.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" blendMode="SRC_ATOP" layoutX="7.0" layoutY="350.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.3" prefHeight="50.0" prefWidth="587.0" text="~~~~~~~~~~~~~~~~" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT" size="40.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

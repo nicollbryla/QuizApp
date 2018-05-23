@@ -77,39 +77,39 @@
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Button>
-      <Label layoutX="711.0" layoutY="476.0" opacity="0.5" prefHeight="156.0" prefWidth="53.0" rotate="32.0" text="?" textFill="WHITE">
+      <Label layoutX="711.0" layoutY="476.0" opacity="0.3" prefHeight="156.0" prefWidth="53.0" rotate="32.0" text="?" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="99.0" />
+            <Font name="Bodoni MT" size="96.0" />
          </font>
       </Label>
-      <Label layoutX="674.0" layoutY="441.0" opacity="0.5" prefHeight="183.0" prefWidth="60.0" text="?" textFill="WHITE">
+      <Label layoutX="674.0" layoutY="441.0" opacity="0.3" prefHeight="183.0" prefWidth="60.0" text="?" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="99.0" />
+            <Font name="Bodoni MT" size="96.0" />
          </font>
       </Label>
-      <Label layoutX="636.0" layoutY="470.0" opacity="0.5" prefHeight="151.0" prefWidth="53.0" rotate="-32.0" text="?" textFill="WHITE">
+      <Label layoutX="636.0" layoutY="470.0" opacity="0.3" prefHeight="151.0" prefWidth="53.0" rotate="-32.0" text="?" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="99.0" />
+            <Font name="Bodoni MT" size="96.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" opacity="0.45" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="760.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="545.0">
+      <Label alignment="CENTER" opacity="0.3" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="760.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="545.0">
          <font>
             <Font name="System Italic" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="151.0" layoutY="471.0" opacity="0.5" prefHeight="160.0" prefWidth="44.0" rotate="-32.0" text="?" textFill="WHITE">
+      <Label layoutX="151.0" layoutY="471.0" opacity="0.3" prefHeight="160.0" prefWidth="44.0" rotate="-32.0" text="?" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="99.0" />
+            <Font name="Bodoni MT" size="96.0" />
          </font>
       </Label>
-      <Label layoutX="192.0" layoutY="461.0" opacity="0.5" prefHeight="151.0" prefWidth="53.0" text="?" textFill="WHITE">
+      <Label layoutX="192.0" layoutY="461.0" opacity="0.3" prefHeight="151.0" prefWidth="53.0" text="?" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="99.0" />
+            <Font name="Bodoni MT" size="96.0" />
          </font>
       </Label>
-      <Label layoutX="229.0" layoutY="479.0" opacity="0.5" prefHeight="151.0" prefWidth="53.0" rotate="32.0" text="?" textFill="WHITE">
+      <Label layoutX="229.0" layoutY="479.0" opacity="0.3" prefHeight="151.0" prefWidth="53.0" rotate="32.0" text="?" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="99.0" />
+            <Font name="Bodoni MT" size="96.0" />
          </font>
       </Label>
    </children>

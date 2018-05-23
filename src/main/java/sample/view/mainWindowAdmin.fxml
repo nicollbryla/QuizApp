@@ -43,7 +43,7 @@
             <Font name="System Italic" size="60.0" />
         </font>
     </Label>
-   <Label alignment="CENTER" layoutX="275.0" layoutY="452.0" opacity="0.45" prefWidth="595.0" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="-275.0" AnchorPane.topAnchor="452.0">
+   <Label alignment="CENTER" layoutX="275.0" layoutY="452.0" opacity="0.3" prefWidth="595.0" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="-275.0" AnchorPane.topAnchor="452.0">
       <font>
          <Font name="System Italic" size="30.0" />
       </font>
