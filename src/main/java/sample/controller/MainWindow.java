@@ -2,10 +2,14 @@ package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextInputDialog;
 import sample.Main;
+import sample.model.Question;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainWindow extends QuizController {
@@ -21,6 +25,8 @@ public class MainWindow extends QuizController {
     }
 
     public void onePlayer(ActionEvent actionEvent) throws IOException{
+        int amount = Question.askForQuestions();
+        player.howManyQuestions = amount;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/OnePlayer.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, "onePlayer", null);
     }

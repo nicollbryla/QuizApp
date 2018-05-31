@@ -1,5 +1,8 @@
 package sample.model;
 
+import javafx.scene.control.TextInputDialog;
+import jdk.nashorn.internal.runtime.options.Option;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -42,5 +45,16 @@ public class Question {
             db_exception.printStackTrace();
         }
         return ret;
+    }
+
+    public static int askForQuestions(){
+        List<Question> list = Question.loadQuestions();
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Pytania");
+        dialog.setHeaderText("Wybierz ilość pytań w grze (max. " + list.size() + ")");
+        dialog.setContentText("Napisz wybraną ilość: ");
+        Optional<String> result = dialog.showAndWait();
+        int amount = Integer.parseInt(result.get());
+        return amount;
     }
 }

@@ -11,6 +11,7 @@ public class Player {
     public int score;
     public boolean asGuest;
     public int scoreDuringGame = 0;
+    public int howManyQuestions;
 
     public Player(){
         id = 1;

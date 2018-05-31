@@ -57,7 +57,7 @@ public class OnePlayer extends QuizController {
     }
 
     private boolean nextQuestion(){
-        if(questionIndex + 1 == questionList.size())
+        if(questionIndex + 1 == player.howManyQuestions)
             return false;
         currentQuestion = questionList.get(++questionIndex);
         currentQuestion.shuffle(random);
@@ -75,7 +75,8 @@ public class OnePlayer extends QuizController {
         questionList = Question.loadQuestions();
         questionIndex = -1;
         Collections.shuffle(questionList, random);
-        nextQuestion();
+        currentQuestion = questionList.get(++questionIndex);
+        currentQuestion.shuffle(random);
     }
 
     public boolean NoAnswerIsSelected(){
@@ -135,6 +136,9 @@ public class OnePlayer extends QuizController {
             if(button == ButtonType.OK){
                 endOfGame(actionEvent);
             }
+            else if(button == ButtonType.CANCEL){
+                goToMenu(actionEvent);
+            }
         }
     }
 
@@ -163,24 +167,4 @@ public class OnePlayer extends QuizController {
         Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
     }
 
-    /*public void setColor(RadioButton button, boolean correct){
-        Light.Distant light = new Light.Distant();
-        light.setAzimuth(-135.0);
-
-        Lighting lighting = new Lighting();
-        lighting.setLight(light);
-        lighting.setSurfaceScale(5.0);
-
-        if (correct) {
-            button.setTextFill(Color.GREEN);
-        } else {
-            button.setTextFill(Color.RED);
-        }
-        button.setEffect(lighting);
-    }*/
-
-    /*public void unsetColor(RadioButton button){
-        button.setTextFill(Color.WHITE);
-        button.setEffect(null);
-    }*/
 }
