@@ -35,8 +35,11 @@ public class GiveNamesTwoPlayers extends QuizController{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Trzeba podać imiona!");
             alert.showAndWait();
-        }
-        else {
+        } else if(first.getText().equals(second.getText())){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Imiona muszą się różnić!");
+            alert.showAndWait();
+        } else {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TwoPlayers.fxml"));
             Main.changeWindow(actionEvent, new Player(first.getText()), new Player(second.getText()), loader, "twoPlayers", null);
         }

@@ -40,7 +40,27 @@ public class Registration extends QuizController {
 
     public void signUp(ActionEvent actionEvent) throws IOException{
         boolean multiply = false;
-        if(pass1.getText().equals("") && pass2.getText().equals("")){
+        if(name.getText().length() < 2){
+            if(surname.getText().length() < 2){
+                multiply = true;
+                if(login.getText().length() < 2){
+                    emptyField(name, "\"Imie\", \"Nazwisko\" i \"Login\"", multiply);
+                } else{
+                    emptyField(name, "\"Imie\" i \"Nazwisko\"",multiply);
+                }
+            } else {
+                emptyField(name, "\"Imie\"",multiply);
+            }
+        } else if(surname.getText().length() < 2){
+            if(login.getText().length() < 2){
+                multiply = true;
+                emptyField(surname, "\"Nazwisko\" i \"Login\"",multiply);
+            } else {
+                emptyField(surname, "\"Nazwisko\"",multiply);
+            }
+        } else if(login.getText().length() < 2){
+            emptyField(login, "\"Login\"",multiply);
+        } else if(pass1.getText().equals("") && pass2.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Rejestracja");
             alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
@@ -64,26 +84,6 @@ public class Registration extends QuizController {
             alert.setHeaderText("Błąd podczas dokonywania rejestracji.");
             alert.setContentText("Podane hasła nie zgadzają sie!");
             alert.showAndWait();
-        } else if(name.getText().length() < 2){
-            if(surname.getText().length() < 2){
-                multiply = true;
-                if(login.getText().length() < 2){
-                    emptyField(name, "\"Imie\", \"Nazwisko\" i \"Login\"", multiply);
-                } else{
-                    emptyField(name, "\"Imie\" i \"Nazwisko\"",multiply);
-                }
-            } else {
-                emptyField(name, "\"Imie\"",multiply);
-            }
-        } else if(surname.getText().length() < 2){
-            if(login.getText().length() < 2){
-                multiply = true;
-                emptyField(surname, "\"Nazwisko\" i \"Login\"",multiply);
-            } else {
-                emptyField(surname, "\"Nazwisko\"",multiply);
-            }
-        } else if(login.getText().length() < 2){
-            emptyField(login, "\"Login\"",multiply);
         } else {
             Database db = null;
             ResultSet dbres;
