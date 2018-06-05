@@ -1,8 +1,10 @@
 package sample.model;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
 import jdk.nashorn.internal.runtime.options.Option;
 
+import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -48,13 +50,22 @@ public class Question {
     }
 
     public static int askForQuestions(){
-        List<Question> list = Question.loadQuestions();
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Pytania");
-        dialog.setHeaderText("Wybierz ilość pytań w grze (max. " + list.size() + ")");
-        dialog.setContentText("Napisz wybraną ilość: ");
-        Optional<String> result = dialog.showAndWait();
-        int amount = Integer.parseInt(result.get());
+        int amount;
+        while(true) {
+            List<Question> list = Question.loadQuestions();
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Pytania");
+            dialog.setHeaderText("Wybierz ilość pytań w grze (max. " + list.size() + ")");
+            dialog.setContentText("Podaj wybraną ilość: ");
+            Optional<String> result = dialog.showAndWait();
+            amount = Integer.parseInt(result.get());
+            if(amount > 0 && amount <= list.size()){
+                break;
+            }
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Podano niepoprawną ilość.");
+            alert.showAndWait();
+        }
         return amount;
     }
 }
