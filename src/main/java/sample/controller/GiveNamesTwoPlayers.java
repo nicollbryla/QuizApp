@@ -51,7 +51,7 @@ public class GiveNamesTwoPlayers extends QuizController{
     }
 
     /*public void goToMainWindow(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, "mainWindow", null);
     }*/
 

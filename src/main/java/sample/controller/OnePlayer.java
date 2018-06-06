@@ -72,7 +72,7 @@ public class OnePlayer extends QuizController {
         answer2.setToggleGroup(group);
         answer3.setToggleGroup(group);
         random = new Random();
-        questionList = Question.loadQuestions();
+        questionList = Question.loadQuestions("questions");
         questionIndex = -1;
         Collections.shuffle(questionList, random);
         currentQuestion = questionList.get(++questionIndex);
@@ -158,7 +158,7 @@ public class OnePlayer extends QuizController {
     }
 
     public void backToMainWindow(ActionEvent actionEvent) throws  IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, "mainWindow", null);
     }
 

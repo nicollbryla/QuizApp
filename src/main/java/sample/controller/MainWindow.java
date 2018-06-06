@@ -42,7 +42,7 @@ public class MainWindow extends QuizController {
     }
 
     public void addQuestion(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/addQuestionPlayer.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AddQuestionPlayer.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, "addQuestionPlayer", null);
     }
 }

@@ -25,7 +25,7 @@
       <font>
          <Font name="System Bold" size="19.0" />
       </font></Button>
-    <Button alignment="CENTER" layoutX="294.0" layoutY="322.0" mnemonicParsing="false" opacity="0.9" text="Sprawdź oczekujące pytania" textFill="#576ec2" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="330.0">
+    <Button alignment="CENTER" layoutX="294.0" layoutY="322.0" mnemonicParsing="false" onAction="#acceptQuestion" opacity="0.9" text="Sprawdź oczekujące pytania" textFill="#576ec2" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="330.0">
       <font>
          <Font name="System Bold" size="19.0" />
       </font></Button>

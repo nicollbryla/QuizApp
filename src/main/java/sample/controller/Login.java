@@ -69,7 +69,7 @@ public class Login extends QuizController {
                 }
                 if (admin != null) {
                     db.close();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindowAdmin.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindowAdmin.fxml"));
                     try {
                         Main.changeWindow(actionEvent, null, null, loader, "mainWindowAdmin",  admin);
                     } catch (IOException e) {
@@ -106,7 +106,7 @@ public class Login extends QuizController {
                 }
                 if (player != null) {
                     db.close();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
                     try {
                         Main.changeWindow(actionEvent, player, null, loader, "mainWindow",  null);
                     } catch (IOException e) {
@@ -144,7 +144,7 @@ public class Login extends QuizController {
     }
 
     public void asGuest(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
         Main.changeWindow(actionEvent, new Player(true), null, loader, "guest", null);
     }
 
