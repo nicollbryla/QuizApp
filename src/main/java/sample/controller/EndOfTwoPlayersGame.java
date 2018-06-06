@@ -34,7 +34,7 @@ public class EndOfTwoPlayersGame extends QuizController{
 
     public void goToLogin(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, "Login", null);
+        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader,null);
     }
 
 }

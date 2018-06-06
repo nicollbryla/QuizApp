@@ -121,7 +121,7 @@
                <Font name="System Bold" size="13.0" />
            </font>
        </Button>
-       <Button layoutX="139.0" layoutY="553.0" mnemonicParsing="false" onAction="#saveChannges" opacity="0.8" prefHeight="30.0" prefWidth="66.0" text="Zapisz" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="134.0">
+       <Button layoutX="139.0" layoutY="553.0" mnemonicParsing="false" onAction="#saveChanges" opacity="0.8" prefHeight="30.0" prefWidth="66.0" text="Zapisz" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="134.0">
            <font>
                <Font name="System Bold" size="13.0" />
            </font>

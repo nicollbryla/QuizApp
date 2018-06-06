@@ -65,7 +65,7 @@ public class TwoPlayers extends QuizController {
         displayQuestion();
     }
 
-    public void changePlayer(){
+    private void changePlayer(){
         first = !first;
     }
 
@@ -100,13 +100,11 @@ public class TwoPlayers extends QuizController {
         return true;
     }
 
-    public boolean NoAnswerIsSelected(){
-        if(!answer0.isSelected() && !answer1.isSelected() && !answer2.isSelected() && !answer3.isSelected())
-            return true;
-        return false;
+    private boolean NoAnswerIsSelected(){
+        return !answer0.isSelected() && !answer1.isSelected() && !answer2.isSelected() && !answer3.isSelected();
     }
 
-    public void alertNoAnswerIsSelected() {
+    private void alertNoAnswerIsSelected() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText("Błąd");
         alert.setContentText("Trzeba zaznaczyć jedną odpowiedź!");
@@ -114,7 +112,7 @@ public class TwoPlayers extends QuizController {
 
     }
 
-    public boolean checkAnswer(RadioButton button){
+    private boolean checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
             if(first) {
@@ -170,17 +168,17 @@ public class TwoPlayers extends QuizController {
 
     public void endOfGame(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/EndOfTwoPlayersGame.fxml"));
-        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, "endOfTwoPlayersGame", null);
+        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
     }
 
     public void backToMainWindow(ActionEvent actionEvent) throws  IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
-        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, "mainWindow", null);
+        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
     }
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, "Menu", null);
+        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
     }
 
     public void exitFromTheGame(){

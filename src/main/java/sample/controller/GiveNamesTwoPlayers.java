@@ -41,13 +41,13 @@ public class GiveNamesTwoPlayers extends QuizController{
             alert.showAndWait();
         } else {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TwoPlayers.fxml"));
-            Main.changeWindow(actionEvent, new Player(first.getText()), new Player(second.getText()), loader, "twoPlayers", null);
+            Main.changeWindow(actionEvent, new Player(first.getText()), new Player(second.getText()), loader, null);
         }
     }
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, null, loader, null);
     }
 
     /*public void goToMainWindow(ActionEvent actionEvent) throws IOException {
@@ -57,7 +57,7 @@ public class GiveNamesTwoPlayers extends QuizController{
 
     public void backToLogin(ActionEvent actionEvent) throws  IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, "Login", null);
+        Main.changeWindow(actionEvent, player, null, loader,  null);
     }
 
 

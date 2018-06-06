@@ -1,12 +1,9 @@
 package sample.controller;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import sample.Main;
 import sample.model.Admin;
@@ -15,7 +12,6 @@ import sample.model.Question;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AcceptQuestionAdmin  extends QuizController{
@@ -83,18 +79,18 @@ public class AcceptQuestionAdmin  extends QuizController{
     }
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
-        saveChannges(actionEvent);
+        saveChanges(actionEvent);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, null, loader, null);
     }
 
-    public void saveChannges(ActionEvent actionEvent) throws IOException {
+    public void saveChanges(ActionEvent actionEvent) throws IOException {
 
     }
 
     public void goToMainWindowAdmin(ActionEvent actionEvent) throws IOException {
-        saveChannges(actionEvent);
+        saveChanges(actionEvent);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindowAdmin.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, "mainWindowAdmin", null);
+        Main.changeWindow(actionEvent, player, null, loader, null);
     }
 }

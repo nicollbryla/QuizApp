@@ -15,11 +15,11 @@ public class Menu extends QuizController {
 
     public void goToLogin(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-        Main.changeWindow(actionEvent, null, null, loader, "login", null);
+        Main.changeWindow(actionEvent, null, null, loader, null);
     }
 
     public void goToRanking(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Ranking.fxml"));
-        Main.changeWindow(actionEvent,null ,null, loader,"ranking",null);
+        Main.changeWindow(actionEvent,null ,null, loader,null);
     }
 }

@@ -3,14 +3,11 @@ package sample.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import sample.Main;
-import sample.model.Database;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 public class AddQuestionPlayer extends QuizController {
@@ -44,6 +41,6 @@ public class AddQuestionPlayer extends QuizController {
 
     public void backToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, null, null, loader, "menu", null);
+        Main.changeWindow(actionEvent, null, null, loader, null);
     }
 }

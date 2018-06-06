@@ -1,11 +1,8 @@
 package sample.controller;
 
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import sample.model.Admin;
 import sample.model.Player;
-import sample.model.Question;
 
 public abstract class QuizController implements Initializable {
     Player player;

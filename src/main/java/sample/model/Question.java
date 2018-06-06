@@ -52,7 +52,7 @@ public class Question {
     public static int askForQuestions(){
         int amount;
         while(true) {
-            List<Question> list = Question.loadQuestions();
+            List<Question> list = Question.loadQuestions("questions");
             TextInputDialog dialog = new TextInputDialog();
             dialog.setTitle("Pytania");
             dialog.setHeaderText("Wybierz ilość pytań w grze (max. " + list.size() + ")");

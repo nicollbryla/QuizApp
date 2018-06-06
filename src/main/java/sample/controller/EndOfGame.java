@@ -28,6 +28,6 @@ public class EndOfGame extends QuizController {
 
     public void goToLogin(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, "Login", null);
+        Main.changeWindow(actionEvent, player, null, loader, null);
     }
 }

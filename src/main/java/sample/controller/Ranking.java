@@ -40,7 +40,7 @@ public class Ranking extends QuizController{
         columnsSettings();
     }
 
-    public void setData(){
+    private void setData(){
         Database db = new Database();
         try {
             ResultSet rs = db.dbselect("SELECT * FROM player ORDER BY SCORE DESC;");
@@ -56,7 +56,7 @@ public class Ranking extends QuizController{
         tableView.setItems(observableList);
     }
 
-    public void columnsSettings(){
+    private void columnsSettings(){
         loginColumn.setCellValueFactory(new PropertyValueFactory<>("login"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
@@ -70,6 +70,6 @@ public class Ranking extends QuizController{
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, null, loader, null);
     }
 }

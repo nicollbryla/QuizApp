@@ -43,7 +43,6 @@ public class Login extends QuizController {
 
     public void signIn(ActionEvent actionEvent) throws IOException, SQLException {
         Database db = null;
-        String name = null;
         Player player = null;
         Admin admin = null;
         ResultSet dbres;
@@ -71,7 +70,7 @@ public class Login extends QuizController {
                     db.close();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindowAdmin.fxml"));
                     try {
-                        Main.changeWindow(actionEvent, null, null, loader, "mainWindowAdmin",  admin);
+                        Main.changeWindow(actionEvent, null, null, loader,  admin);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -108,7 +107,7 @@ public class Login extends QuizController {
                     db.close();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
                     try {
-                        Main.changeWindow(actionEvent, player, null, loader, "mainWindow",  null);
+                        Main.changeWindow(actionEvent, player, null, loader,  null);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -127,30 +126,30 @@ public class Login extends QuizController {
         }
     }
 
-    public void alert() {
+    private void alert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setContentText("Niepoprawne dane");
         alert.showAndWait();
     }
 
-    public void changeData(ActionEvent actionEvent){
+    public void changeData(ActionEvent actionEvent) throws IOException {
         login.setText("jerzyna");
         haslo.setText("zeszczecina");
     }
 
-    public void changeDataPlayer(ActionEvent actionEvent){
+    public void changeDataPlayer(ActionEvent actionEvent) throws IOException{
         login.setText("ResultSet");
         haslo.setText("halko");
     }
 
     public void asGuest(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
-        Main.changeWindow(actionEvent, new Player(true), null, loader, "guest", null);
+        Main.changeWindow(actionEvent, new Player(true), null, loader, null);
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Registration.fxml"));
-        Main.changeWindow(actionEvent, null, null, loader, "rejestracja", null);
+        Main.changeWindow(actionEvent, null, null, loader, null);
     }
 
     public void exitFromTheGame(){
@@ -159,6 +158,6 @@ public class Login extends QuizController {
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, "Menu", null);
+        Main.changeWindow(actionEvent, player, null, loader, null);
     }
 }
