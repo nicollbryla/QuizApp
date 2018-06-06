@@ -31,11 +31,11 @@ public class Question {
         correctAnswer = l.get(correctAnswer);
     }
 
-    public static List<Question> loadQuestions() {
+    public static List<Question> loadQuestions(String tableName) {
         List<Question> ret = new ArrayList<>();
         Database db = new Database();
         try {
-            ResultSet rs = db.dbselect("select * from questions;");
+            ResultSet rs = db.dbselect("select * from "+tableName+";");
             while(rs.next())
                 ret.add(new Question(rs));
         } catch (Database.db_exception | SQLException db_exception) {

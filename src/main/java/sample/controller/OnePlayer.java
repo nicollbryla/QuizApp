@@ -72,7 +72,7 @@ public class OnePlayer extends QuizController {
         answer2.setToggleGroup(group);
         answer3.setToggleGroup(group);
         random = new Random();
-        questionList = Question.loadQuestions();
+        questionList = Question.loadQuestions("questions");
         questionIndex = -1;
         Collections.shuffle(questionList, random);
         nextQuestion();

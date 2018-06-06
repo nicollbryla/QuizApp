@@ -40,7 +40,11 @@ public class Main extends Application {
         QuizController controller = loader.getController();
         if(player1 != null && player2 != null){
             controller.setTwoPlayers(player1, player2);
-        } else {
+        }
+        else if (admin!=null) {
+            controller.setAdmin(admin);
+        }
+        else {
             controller.setPlayer(player1);
         }
         Scene homePageScene = new Scene(homePageParent);
@@ -74,6 +78,7 @@ public class Main extends Application {
                 break;
             case "Menu":
                 homePageParent.setId("menu");
+                break;
         }
         appStage.setScene(homePageScene);
         appStage.show();

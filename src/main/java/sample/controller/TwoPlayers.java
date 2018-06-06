@@ -53,7 +53,7 @@ public class TwoPlayers extends QuizController {
         answer3.setToggleGroup(group);
         random = new Random();
         questionIndex = -1;
-        questionList = Question.loadQuestions();
+        questionList = Question.loadQuestions("questions");
         Collections.shuffle(questionList, random);
         nextQuestion();
     }
