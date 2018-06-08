@@ -1,6 +1,8 @@
 package sample;
 
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import sample.model.Admin;
 import sample.model.Config;
 import sample.model.Player;
@@ -13,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.controller.QuizController;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 public class Main extends Application {
 
@@ -25,6 +28,10 @@ public class Main extends Application {
         primaryStage.setScene(loginScene);
         primaryStage.setResizable(false);
         primaryStage.show();
+        String musicStr = "src/main/media/out.mp3"; //ok
+        Media media = new Media(Paths.get(musicStr).toUri().toString());
+        MediaPlayer player = new MediaPlayer(media);
+        player.play();
     }
 
     public static void main(String[] args) {
