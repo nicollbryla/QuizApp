@@ -30,4 +30,8 @@ public class EndOfGame extends QuizController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, null);
     }
+
+    public void exitFromTheGame(){
+        System.exit(0);
+    }
 }

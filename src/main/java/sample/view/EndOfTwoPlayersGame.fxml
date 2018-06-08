@@ -41,9 +41,14 @@
             <Font name="Bodoni MT" size="40.0" />
          </font>
       </Label>
-      <Button layoutX="160.0" layoutY="313.0" mnemonicParsing="false" onAction="#goToLogin" text="Kliknij by zagrać ponownie!" textFill="#576ec2" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0">
+      <Button layoutX="160.0" layoutY="313.0" mnemonicParsing="false" onAction="#goToLogin" opacity="0.9" text="Zagraj ponownie!" textFill="#576ec2" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="310.0">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="321.0" layoutY="313.0" mnemonicParsing="false" onAction="#exitFromTheGame" opacity="0.9" text="Wyjście" textFill="#576ec2" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
          </font>
       </Button>
    </children>

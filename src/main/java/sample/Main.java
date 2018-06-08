@@ -1,6 +1,8 @@
 package sample;
 
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import sample.model.Admin;
 import sample.model.Config;
 import sample.model.Player;
@@ -13,7 +15,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.controller.QuizController;
 
+import javax.sound.midi.Patch;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 public class Main extends Application {
 

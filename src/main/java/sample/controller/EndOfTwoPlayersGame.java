@@ -37,4 +37,8 @@ public class EndOfTwoPlayersGame extends QuizController{
         Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader,null);
     }
 
+    public void exitFromTheGame(){
+        System.exit(0);
+    }
+
 }
