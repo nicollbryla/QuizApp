@@ -13,6 +13,8 @@ import java.net.URL;
 import java.util.*;
 
 public class TwoPlayers extends QuizController {
+    @FXML
+    public Button answerButton;
 
     @FXML
     private Label namePlayer;
@@ -112,7 +114,7 @@ public class TwoPlayers extends QuizController {
 
     }
 
-    private boolean checkAnswer(RadioButton button){
+    private void checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
             if(first) {
@@ -121,9 +123,7 @@ public class TwoPlayers extends QuizController {
             else {
                 secondPlayer.score++;
             }
-            return true;
         }
-        return false;
     }
 
     public void answer(ActionEvent actionEvent) throws IOException {
@@ -151,8 +151,6 @@ public class TwoPlayers extends QuizController {
             Optional<ButtonType> result = alert.showAndWait();
             ButtonType button = result.orElse(ButtonType.CANCEL);
 
-           // updateTheScore();
-
             if(button == ButtonType.OK){
                 endOfGame(actionEvent);
             }
@@ -160,19 +158,8 @@ public class TwoPlayers extends QuizController {
 
     }
 
-    /*public void updateTheScore() throws SQLException {
-        Database db = new Database();
-        db.update(player.score, player.login);
-        db.close();
-    }*/
-
-    public void endOfGame(ActionEvent actionEvent) throws IOException {
+    private void endOfGame(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/EndOfTwoPlayersGame.fxml"));
-        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
-    }
-
-    public void backToMainWindow(ActionEvent actionEvent) throws  IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
         Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
     }
 

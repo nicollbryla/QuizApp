@@ -10,7 +10,6 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import sample.model.Player;
 import sample.Main;
@@ -41,7 +40,7 @@ public class Login extends QuizController {
         register.setWrapText(true);
     }
 
-    public void signIn(ActionEvent actionEvent) throws IOException, SQLException {
+    public void signIn(ActionEvent actionEvent){
         Database db = null;
         Player player = null;
         Admin admin = null;
@@ -132,12 +131,12 @@ public class Login extends QuizController {
         alert.showAndWait();
     }
 
-    public void changeData(ActionEvent actionEvent) throws IOException {
+    public void changeData(){
         login.setText("jerzyna");
         haslo.setText("zeszczecina");
     }
 
-    public void changeDataPlayer(ActionEvent actionEvent) throws IOException{
+    public void changeDataPlayer(){
         login.setText("ResultSet");
         haslo.setText("halko");
     }
