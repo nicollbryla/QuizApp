@@ -34,7 +34,6 @@ public class AcceptQuestionAdmin  extends QuizController{
     private List<Question> questionList;
     private int questionIndex;
     private Question currentQuestion;
-    private Admin admin;
 
     public void setAdmin(Admin a) {
         admin = a;
@@ -49,14 +48,14 @@ public class AcceptQuestionAdmin  extends QuizController{
     }
 
 
-    public void nextQuestion(ActionEvent actionEvent)throws IOException{
+    public void nextQuestion(){
         if(questionIndex + 1 == questionList.size())
             questionIndex = -1;
         currentQuestion = questionList.get(++questionIndex);
         displayQuestion();
     }
 
-    public void prevQuestion(ActionEvent actionEvent)throws IOException{
+    public void prevQuestion(){
         if(questionIndex - 1 == -1)
             questionIndex = questionList.size();
         currentQuestion = questionList.get(--questionIndex);
@@ -79,17 +78,15 @@ public class AcceptQuestionAdmin  extends QuizController{
     }
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
-        saveChanges(actionEvent);
+        saveChanges();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, null);
     }
 
-    public void saveChanges(ActionEvent actionEvent) throws IOException {
-
-    }
+    public void saveChanges(){}
 
     public void goToMainWindowAdmin(ActionEvent actionEvent) throws IOException {
-        saveChanges(actionEvent);
+        saveChanges();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindowAdmin.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, null);
     }

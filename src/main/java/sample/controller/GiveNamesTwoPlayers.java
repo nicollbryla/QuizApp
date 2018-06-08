@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 public class GiveNamesTwoPlayers extends QuizController{
 
     @FXML
-    private Button goNext;
+    public Button goNext;
 
     @FXML
     private TextField first;
@@ -49,11 +49,6 @@ public class GiveNamesTwoPlayers extends QuizController{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, null);
     }
-
-    /*public void goToMainWindow(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, "mainWindow", null);
-    }*/
 
     public void backToLogin(ActionEvent actionEvent) throws  IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));

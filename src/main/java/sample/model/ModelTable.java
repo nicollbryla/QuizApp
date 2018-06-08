@@ -2,8 +2,8 @@ package sample.model;
 
 public class ModelTable {
 
-    String login, name, surname;
-    Integer score;
+    private String login, name, surname;
+    private Integer score;
 
 
     public ModelTable(String login, String name, String surname, Integer score) {
@@ -29,7 +29,7 @@ public class ModelTable {
         this.name = name;
     }
 
-    public String getSurname() {
+    /*public String getSurname() {
         return surname;
     }
 
@@ -43,5 +43,5 @@ public class ModelTable {
 
     public void setScore(Integer score) {
         this.score = score;
-    }
+    }*/
 }

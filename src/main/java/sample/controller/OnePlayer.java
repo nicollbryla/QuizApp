@@ -16,6 +16,8 @@ import java.util.*;
 
 public class OnePlayer extends QuizController {
     @FXML
+    public Button answerButton;
+    @FXML
     private Label questionLabel;
     @FXML
     private Label categoryLabel;
@@ -91,27 +93,21 @@ public class OnePlayer extends QuizController {
 
     }
 
-    private boolean checkAnswer(RadioButton button){
+    private void checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
 
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
             player.scoreDuringGame++;
-            return true;
-        } else if(button.isSelected()) {
         }
-        return false;
     }
 
-    public void answer(ActionEvent actionEvent) throws IOException, InterruptedException, SQLException, ClassNotFoundException {
-        if(checkAnswer(answer0)) {
+    public void answer(ActionEvent actionEvent) throws IOException, SQLException {
+        checkAnswer(answer0);
+        checkAnswer(answer1);
+        checkAnswer(answer2);
+        checkAnswer(answer3);
 
-        } else if(checkAnswer(answer1)) {
-
-        } else if(checkAnswer(answer2)) {
-
-        }else if(checkAnswer(answer3)) {
-
-        } else if(NoAnswerIsSelected()){
+        if(NoAnswerIsSelected()){
             alertNoAnswerIsSelected();
         }
         answer0.setSelected(false);
@@ -150,7 +146,7 @@ public class OnePlayer extends QuizController {
         System.exit(0);
     }
 
-    public void endOfGame(ActionEvent actionEvent) throws IOException {
+    private void endOfGame(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/EndOfGame.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, null);
     }

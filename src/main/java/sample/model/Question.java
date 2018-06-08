@@ -2,9 +2,6 @@ package sample.model;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
-import jdk.nashorn.internal.runtime.options.Option;
-
-import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -16,7 +13,7 @@ public class Question {
     public String[] ans;
     public int correctAnswer;
 
-    public Question(ResultSet rs) throws SQLException {
+    private Question(ResultSet rs) throws SQLException {
         id = rs.getInt("id");
         category = rs.getString("cat");
         content = rs.getString("content");

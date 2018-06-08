@@ -8,48 +8,47 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EndOfTwoPlayersGame">
-   <children>
-      <ImageView fitHeight="682.0" fitWidth="600.0" layoutY="-200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@blue.jpg" />
-         </image>
-      </ImageView>
-      <Label alignment="CENTER" layoutX="142.0" layoutY="14.0" opacity="0.45" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
-         <font>
-            <Font name="System Italic" size="99.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="177.0" layoutY="113.0" opacity="0.9" prefHeight="77.0" prefWidth="247.0" text=" Gratulacje, gra skończona!!!" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="120.0">
-         <font>
-            <Font name="System Italic" size="40.0" />
-         </font></Label>
-      <Label fx:id="pointsPlayer1" alignment="CENTER" layoutX="118.0" layoutY="272.0" opacity="0.9" text="Wynik gracza" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="190.0">
-         <font>
-            <Font name="System Italic" size="35.0" />
-         </font></Label>
-      <Label fx:id="pointsPlayer2" alignment="CENTER" layoutX="125.0" layoutY="337.0" opacity="0.9" text="Wynik gracza" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="250.0">
-         <font>
-            <Font name="System Italic" size="35.0" />
-         </font></Label>
-      <Label alignment="TOP_LEFT" blendMode="SRC_ATOP" layoutX="-309.0" layoutY="350.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.3" prefHeight="50.0" prefWidth="478.0" text="~~~~~~" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Bodoni MT" size="40.0" />
-         </font>
-      </Label>
-      <Label alignment="TOP_LEFT" blendMode="SRC_ATOP" layoutX="7.0" layoutY="350.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.3" prefHeight="50.0" prefWidth="587.0" text="~~~~~~~~~~~~~~~~" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Bodoni MT" size="40.0" />
-         </font>
-      </Label>
-      <Button layoutX="160.0" layoutY="313.0" mnemonicParsing="false" onAction="#goToLogin" opacity="0.9" text="Zagraj ponownie!" textFill="#576ec2" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="310.0">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Button>
-      <Button layoutX="321.0" layoutY="313.0" mnemonicParsing="false" onAction="#exitFromTheGame" opacity="0.9" text="Wyjście" textFill="#576ec2" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="100.0">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Button>
-   </children>
+   <ImageView fitHeight="682.0" fitWidth="600.0" layoutY="-200.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@blue.jpg" />
+   </ImageView>
+   <Label alignment="CENTER" layoutX="142.0" layoutY="14.0" opacity="0.45" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
+      <font>
+         <Font name="System Italic" size="99.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" layoutX="177.0" layoutY="113.0" opacity="0.9" prefHeight="77.0" prefWidth="247.0" text=" Gratulacje, gra skończona!!!" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="120.0">
+      <font>
+         <Font name="System Italic" size="40.0" />
+      </font>
+   </Label>
+   <Label fx:id="pointsPlayer1" alignment="CENTER" layoutX="118.0" layoutY="272.0" opacity="0.9" text="Wynik gracza" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="200.0">
+      <font>
+         <Font name="System Italic" size="30.0" />
+      </font>
+   </Label>
+   <Label fx:id="pointsPlayer2" alignment="CENTER" layoutX="125.0" layoutY="337.0" opacity="0.9" text="Wynik gracza" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="250.0">
+      <font>
+         <Font name="System Italic" size="30.0" />
+      </font>
+   </Label>
+   <Label alignment="TOP_LEFT" blendMode="SRC_ATOP" layoutX="-309.0" layoutY="350.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.3" prefHeight="50.0" prefWidth="478.0" text="~~~~~~" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="Bodoni MT" size="40.0" />
+      </font>
+   </Label>
+   <Label alignment="TOP_LEFT" blendMode="SRC_ATOP" layoutX="7.0" layoutY="350.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.3" prefHeight="50.0" prefWidth="587.0" text="~~~~~~~~~~~~~~~~" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="Bodoni MT" size="40.0" />
+      </font>
+   </Label>
+   <Button layoutX="160.0" layoutY="313.0" mnemonicParsing="false" onAction="#goToLogin" text="Zagraj ponownie!" textFill="#576ec2" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="310.0">
+      <font>
+         <Font name="System Bold" size="19.0" />
+      </font>
+   </Button>
+   <Button layoutX="306.0" layoutY="313.0" mnemonicParsing="false" onAction="#exitFromTheGame" text="Wyjście" textFill="#576ec2" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="100.0">
+      <font>
+         <Font name="System Bold" size="19.0" />
+      </font>
+   </Button>
 </AnchorPane>

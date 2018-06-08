@@ -7,142 +7,152 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="490.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EndOfGame">
-   <children>
-      <ImageView fitHeight="798.0" fitWidth="681.0" layoutY="-190.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@blue.jpg" />
-         </image>
-      </ImageView>
-      <Label alignment="CENTER" layoutX="129.0" layoutY="14.0" opacity="0.45" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
-         <font>
-            <Font name="System Italic" size="99.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="143.0" layoutY="150.0" opacity="0.9" prefHeight="54.0" prefWidth="315.0" text="Gratulacje!" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="143.0" AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="150.0">
-         <font>
-            <Font name="System Italic" size="60.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="165.0" layoutY="232.0" opacity="0.9" prefHeight="73.0" prefWidth="352.0" text="Gra skończona" textFill="WHITE" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="240.0">
-         <font>
-            <Font name="System Italic" size="45.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="125.0" layoutY="326.0" opacity="0.9" prefHeight="81.0" prefWidth="289.0" text="Twój wynik:" textFill="WHITE" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="125.0">
-         <font>
-            <Font name="System Italic" size="50.0" />
-         </font>
-      </Label>
-      <Label fx:id="pointsLabel" layoutX="429.0" layoutY="330.0" opacity="0.9" prefHeight="73.0" prefWidth="175.0" textFill="WHITE" AnchorPane.bottomAnchor="84.0">
-         <font>
-            <Font name="System Italic" size="50.0" />
-         </font>
-      </Label>
-      <Label layoutX="-42.0" layoutY="-207.0" opacity="0.3" prefHeight="144.0" prefWidth="681.0" text="~~~~~~~~~~~~~~" textFill="WHITE" AnchorPane.bottomAnchor="554.0" AnchorPane.leftAnchor="-42.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="-207.0">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="45.0" layoutY="32.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="76.0" layoutY="96.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="131.0" layoutY="115.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="100.0" layoutY="8.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="31.0" layoutY="129.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="71.0" layoutY="191.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="31.0" layoutY="226.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="119.0" layoutY="226.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="64.0" layoutY="287.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="595.0" layoutY="22.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="548.0" layoutY="46.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="615.0" layoutY="95.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="526.0" layoutY="120.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="540.0" layoutY="214.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="615.0" layoutY="214.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="581.0" layoutY="145.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="581.0" layoutY="299.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Label layoutX="526.0" layoutY="287.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB" size="99.0" />
-         </font>
-      </Label>
-      <Button layoutX="225.0" layoutY="424.0" mnemonicParsing="false" onAction="#goToLogin" opacity="0.9" text="Zagraj ponownie!" textFill="#576ec2" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="424.0">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="540.0" layoutY="424.0" mnemonicParsing="false" onAction="#exitFromTheGame" opacity="0.9" text="Wyjście" textFill="#576ec2" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="424.0">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane prefHeight="490.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8.0.141"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EndOfGame">
+   <ImageView fitHeight="798.0" fitWidth="681.0" layoutY="-190.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@blue.jpg"/>
+   </ImageView>
+   <Label alignment="CENTER" layoutX="129.0" layoutY="14.0" opacity="0.45" text="QuizApp" textFill="WHITE"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+      <font>
+         <Font name="System Italic" size="99.0"/>
+      </font>
+   </Label>
+   <Label alignment="CENTER" layoutX="143.0" layoutY="150.0" opacity="0.9" prefHeight="54.0" prefWidth="315.0"
+          text="Gratulacje!" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="143.0"
+          AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="150.0">
+      <font>
+         <Font name="System Italic" size="60.0"/>
+      </font>
+   </Label>
+   <Label alignment="CENTER" layoutX="165.0" layoutY="232.0" opacity="0.9" prefHeight="73.0" prefWidth="352.0"
+          text="Gra skończona" textFill="WHITE" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="165.0"
+          AnchorPane.topAnchor="240.0">
+      <font>
+         <Font name="System Italic" size="45.0"/>
+      </font>
+   </Label>
+   <Label alignment="CENTER" layoutX="125.0" layoutY="326.0" opacity="0.9" prefHeight="81.0" prefWidth="289.0"
+          text="Twój wynik:" textFill="WHITE" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="125.0">
+      <font>
+         <Font name="System Italic" size="50.0"/>
+      </font>
+   </Label>
+   <Label fx:id="pointsLabel" layoutX="429.0" layoutY="330.0" opacity="0.9" prefHeight="73.0" prefWidth="175.0"
+          textFill="WHITE" AnchorPane.bottomAnchor="84.0">
+      <font>
+         <Font name="System Italic" size="50.0"/>
+      </font>
+   </Label>
+   <Label layoutX="-42.0" layoutY="-207.0" opacity="0.3" prefHeight="144.0" prefWidth="681.0" text="~~~~~~~~~~~~~~"
+          textFill="WHITE" AnchorPane.bottomAnchor="554.0" AnchorPane.leftAnchor="-42.0" AnchorPane.rightAnchor="42.0"
+          AnchorPane.topAnchor="-207.0">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="45.0" layoutY="32.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="76.0" layoutY="96.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="131.0" layoutY="115.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="100.0" layoutY="8.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="31.0" layoutY="129.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="71.0" layoutY="191.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="31.0" layoutY="226.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="119.0" layoutY="226.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="64.0" layoutY="287.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="595.0" layoutY="22.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="548.0" layoutY="46.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="615.0" layoutY="95.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="526.0" layoutY="120.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="540.0" layoutY="214.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="615.0" layoutY="214.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="581.0" layoutY="145.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="581.0" layoutY="299.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Label layoutX="526.0" layoutY="287.0" opacity="0.3" rotate="90.0" text="~" textFill="WHITE">
+      <font>
+         <Font name="Berlin Sans FB" size="99.0"/>
+      </font>
+   </Label>
+   <Button layoutX="225.0" layoutY="424.0" mnemonicParsing="false" onAction="#goToLogin" opacity="0.9"
+           text="Zagraj ponownie!" textFill="#576ec2" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="100.0"
+           AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="424.0">
+      <font>
+         <Font name="System Bold" size="20.0"/>
+      </font>
+   </Button>
+   <Button layoutX="540.0" layoutY="424.0" mnemonicParsing="false" onAction="#exitFromTheGame" opacity="0.9"
+           text="Wyjście" textFill="#576ec2" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="350.0"
+           AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="424.0">
+      <font>
+         <Font name="System Bold" size="20.0"/>
+      </font>
+   </Button>
 </AnchorPane>
