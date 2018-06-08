@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import sample.Main;
 import sample.model.Player;
+import sample.model.Question;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,8 +41,12 @@ public class GiveNamesTwoPlayers extends QuizController{
             alert.setContentText("Imiona muszą się różnić!");
             alert.showAndWait();
         } else {
+            Player p1 = new Player(first.getText());
+            Player p2 = new Player(second.getText());
+            p1.howManyQuestions = Question.askForQuestions();
+            p2.howManyQuestions = p1.howManyQuestions;
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TwoPlayers.fxml"));
-            Main.changeWindow(actionEvent, new Player(first.getText()), new Player(second.getText()), loader, null);
+            Main.changeWindow(actionEvent, p1, p2, loader, null);
         }
     }
 

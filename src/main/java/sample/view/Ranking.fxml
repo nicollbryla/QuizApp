@@ -9,31 +9,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Ranking">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Ranking">
     <ImageView fitHeight="616.0" fitWidth="600.0" layoutY="-171.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@blue.jpg"/>
+        <Image url="@blue.jpg" />
     </ImageView>
-    <Label alignment="CENTER" layoutX="107.0" layoutY="14.0" onDragDetected="#goToMenu" opacity="0.45" prefWidth="600.0"
-           text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-           AnchorPane.topAnchor="-15.0">
+    <Label alignment="CENTER" layoutX="107.0" layoutY="14.0" onDragDetected="#goToMenu" opacity="0.45" prefWidth="600.0" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
         <font>
-          <Font name="System Italic" size="99.0"/>
+          <Font name="System Italic" size="99.0" />
         </font>
     </Label>
-    <TableView fx:id="tableView" editable="true" layoutX="68.0" layoutY="129.0" opacity="0.8" prefHeight="238.0"
-               prefWidth="478.0">
+    <TableView fx:id="tableView" editable="true" layoutX="68.0" layoutY="129.0" opacity="0.8" prefHeight="238.0" prefWidth="478.0">
       <columns>
-          <TableColumn fx:id="loginColumn" prefWidth="123.0" text="Login"/>
-          <TableColumn fx:id="nameColumn" prefWidth="116.0" text="Imię"/>
-          <TableColumn fx:id="surnameColumn" prefWidth="157.0" text="Nazwisko"/>
-          <TableColumn fx:id="pointsColumn" minWidth="0.0" prefWidth="81.0" text="Punkty"/>
+          <TableColumn fx:id="loginColumn" prefWidth="123.0" text="Login" />
+          <TableColumn fx:id="nameColumn" prefWidth="116.0" text="Imię" />
+          <TableColumn fx:id="surnameColumn" prefWidth="157.0" text="Nazwisko" />
+          <TableColumn fx:id="pointsColumn" minWidth="0.0" prefWidth="81.0" text="Punkty" />
       </columns>
     </TableView>
-    <Button alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onDragDetected="#goToMenu" opacity="0.8"
-            text="Menu" textFill="#576ec2">
+    <Button alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToMenu" opacity="0.8" text="Menu" textFill="#576ec2">
         <font>
-          <Font name="System Bold" size="13.0"/>
+          <Font name="System Bold" size="13.0" />
         </font>
     </Button>
 </AnchorPane>
