@@ -39,27 +39,24 @@ public class Registration extends QuizController {
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException{
-        boolean multiply = false;
         if(name.getText().length() < 2){
             if(surname.getText().length() < 2){
-                multiply = true;
                 if(login.getText().length() < 2){
-                    emptyField(name, "\"Imie\", \"Nazwisko\" i \"Login\"", multiply);
+                    emptyField(name, "\"Imie\", \"Nazwisko\" i \"Login\"", true);
                 } else{
-                    emptyField(name, "\"Imie\" i \"Nazwisko\"",multiply);
+                    emptyField(name, "\"Imie\" i \"Nazwisko\"",true);
                 }
             } else {
-                emptyField(name, "\"Imie\"",multiply);
+                emptyField(name, "\"Imie\"",false);
             }
         } else if(surname.getText().length() < 2){
             if(login.getText().length() < 2){
-                multiply = true;
-                emptyField(surname, "\"Nazwisko\" i \"Login\"",multiply);
+                emptyField(surname, "\"Nazwisko\" i \"Login\"",true);
             } else {
-                emptyField(surname, "\"Nazwisko\"",multiply);
+                emptyField(surname, "\"Nazwisko\"",false);
             }
         } else if(login.getText().length() < 2){
-            emptyField(login, "\"Login\"",multiply);
+            emptyField(login, "\"Login\"",false);
         } else if(pass1.getText().equals("") && pass2.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Rejestracja");
