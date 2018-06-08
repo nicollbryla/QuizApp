@@ -6,10 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import sample.Main;
 
+import sample.model.Database;
 import sample.model.Player;
 import sample.model.Question;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.*;
 
 public class TwoPlayers extends QuizController {
@@ -45,6 +47,7 @@ public class TwoPlayers extends QuizController {
     private List<Question> questionList;
     private int questionIndex;
     private Question currentQuestion;
+    private int amountOfQuestions;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -57,28 +60,26 @@ public class TwoPlayers extends QuizController {
         questionIndex = -1;
         questionList = Question.loadQuestions("questions");
         Collections.shuffle(questionList, random);
-        nextQuestion();
+        currentQuestion = questionList.get(++questionIndex);
+        currentQuestion.shuffle(random);
     }
 
     @Override
     public void setTwoPlayers(Player p1, Player p2) {
         firstPlayer = p1;
         secondPlayer = p2;
+        amountOfQuestions = p1.howManyQuestions;
         displayQuestion();
-    }
-
-    private void changePlayer(){
-        first = !first;
     }
 
     private void displayQuestion() {
         if(first) {
             namePlayer.setText("Gracz " + firstPlayer.name);
-            pointsLabel.setText("Twoje punkty: " + Integer.toString(firstPlayer.score));
+            pointsLabel.setText("Twoje punkty: " + Integer.toString(firstPlayer.scoreDuringGame));
         }
         else {
             namePlayer.setText("Gracz " + secondPlayer.name);
-            pointsLabel.setText("Twoje punkty: " + Integer.toString(secondPlayer.score));
+            pointsLabel.setText("Twoje punkty: " + Integer.toString(secondPlayer.scoreDuringGame));
         }
 
         questionLabel.setWrapText(true);
@@ -95,7 +96,7 @@ public class TwoPlayers extends QuizController {
     }
 
     private boolean nextQuestion(){
-        if(questionIndex + 1 == questionList.size())
+        if(questionIndex + 1 == amountOfQuestions )
             return false;
         currentQuestion = questionList.get(++questionIndex);
         currentQuestion.shuffle(random);
@@ -111,22 +112,25 @@ public class TwoPlayers extends QuizController {
         alert.setHeaderText("Błąd");
         alert.setContentText("Trzeba zaznaczyć jedną odpowiedź!");
         alert.showAndWait();
-
     }
 
     private void checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
         if(button.isSelected() && button.getText().equals(correctAnswer)) {
             if(first) {
-                firstPlayer.score++;
+                firstPlayer.scoreDuringGame++;
             }
             else {
-                secondPlayer.score++;
+                secondPlayer.scoreDuringGame++;
             }
         }
     }
 
-    public void answer(ActionEvent actionEvent) throws IOException {
+    private void changePlayer(){
+        first = !first;
+    }
+
+    public void answer(ActionEvent actionEvent) throws IOException, SQLException {
         checkAnswer(answer0);
         checkAnswer(answer1);
         checkAnswer(answer2);
@@ -145,6 +149,8 @@ public class TwoPlayers extends QuizController {
             displayQuestion();
         }
         else if(!nextQuestion()){
+
+            updateTheScore();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setHeaderText("Gratulacje! Gra skończona");
             alert.setContentText("Kliknij ok, żeby zobaczyć swój wynik.");
@@ -156,6 +162,13 @@ public class TwoPlayers extends QuizController {
             }
         }
 
+    }
+
+    private void updateTheScore() throws SQLException {
+        Database db = new Database();
+        db.update(firstPlayer.scoreDuringGame, firstPlayer.login);
+        db.update(secondPlayer.scoreDuringGame, secondPlayer.login);
+        db.close();
     }
 
     private void endOfGame(ActionEvent actionEvent) throws IOException {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginSecondPlayer">
+   <children>
+      <Label alignment="CENTER" layoutX="256.0" layoutY="221.0" text="Podaj hasło" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="241.0" layoutY="143.0" prefHeight="35.0" prefWidth="132.0" text="Podaj login" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="login" layoutX="173.0" layoutY="185.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" />
+      <PasswordField fx:id="haslo" layoutX="176.0" layoutY="251.0" opacity="0.7" prefHeight="31.0" prefWidth="268.0" />
+      <Button layoutX="268.0" layoutY="314.0" mnemonicParsing="false" onAction="#signIn" text="Zaloguj" />
+      <Label layoutX="218.0" layoutY="62.0" text="Logowanie drugiego gracza" />
+   </children>
+</AnchorPane>
