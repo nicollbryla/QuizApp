@@ -45,8 +45,10 @@ public class GiveNamesTwoPlayers extends QuizController{
             Player p2 = new Player(second.getText());
             p1.howManyQuestions = Question.askForQuestions();
             p2.howManyQuestions = p1.howManyQuestions;
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TwoPlayers.fxml"));
-            Main.changeWindow(actionEvent, p1, p2, loader, null);
+            if(p1.howManyQuestions != 0) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TwoPlayers.fxml"));
+                Main.changeWindow(actionEvent, p1, p2, loader, null);
+            }
         }
     }
 
