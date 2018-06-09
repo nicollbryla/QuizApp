@@ -48,20 +48,31 @@ public class Question {
 
     public static int askForQuestions(){
         int amount;
-        while(true) {
-            List<Question> list = Question.loadQuestions("questions");
-            TextInputDialog dialog = new TextInputDialog();
-            dialog.setTitle("Pytania");
-            dialog.setHeaderText("Wybierz ilość pytań w grze (max. " + list.size() + ")");
-            dialog.setContentText("Podaj wybraną ilość: ");
-            Optional<String> result = dialog.showAndWait();
+        List<Question> list = Question.loadQuestions("questions");
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Pytania");
+        dialog.setHeaderText("Wybierz ilość pytań w grze (max. " + list.size() + ")");
+        dialog.setContentText("Podaj wybraną ilość: ");
+        Optional<String> result = dialog.showAndWait();
+        try {
             amount = Integer.parseInt(result.get());
-            if(amount > 0 && amount <= list.size()){
-                break;
+            if(amount < 0 || amount >= list.size()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Podano niepoprawną ilość.");
+                alert.showAndWait();
+                amount=0;
             }
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Podano niepoprawną ilość.");
-            alert.showAndWait();
+        }catch (Exception e){
+            try {
+                if (result.get().equals("")) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Nie podano ilości pytań.");
+                    alert.showAndWait();
+                }
+            }catch(Exception ex) {
+                dialog.close();
+            }
+            amount = 0;
         }
         return amount;
     }

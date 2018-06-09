@@ -55,8 +55,10 @@ public class LoginSecondPlayer extends QuizController {
             setTwoPlayers(player, secondPlayer);
             player.howManyQuestions = Question.askForQuestions();
             secondPlayer.howManyQuestions = player.howManyQuestions;
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TwoPlayers.fxml"));
-            Main.changeWindow(actionEvent, player, secondPlayer, loader, admin );
+            if(player.howManyQuestions != 0) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TwoPlayers.fxml"));
+                Main.changeWindow(actionEvent, player, secondPlayer, loader, admin);
+            }
         }
         db.close();
     }

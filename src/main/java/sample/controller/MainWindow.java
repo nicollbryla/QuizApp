@@ -21,8 +21,10 @@ public class MainWindow extends QuizController {
 
     public void onePlayer(ActionEvent actionEvent) throws IOException{
         player.howManyQuestions = Question.askForQuestions();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/OnePlayer.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, null);
+        if(player.howManyQuestions != 0) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/OnePlayer.fxml"));
+            Main.changeWindow(actionEvent, player, null, loader, null);
+        }
     }
 
     public void twoPlayers(ActionEvent actionEvent) throws IOException {
