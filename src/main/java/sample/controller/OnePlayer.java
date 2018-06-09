@@ -52,7 +52,6 @@ public class OnePlayer extends QuizController {
         answer2.setWrapText(true);
         answer3.setWrapText(true);
         goToNextQuestionButton.setVisible(false);
-        goToNextQuestionButton.setText("Przejdź dalej");
         answerButton.setVisible(true);
         questionLabel.setText(currentQuestion.content);
         categoryLabel.setText("Kategoria: " + currentQuestion.category);

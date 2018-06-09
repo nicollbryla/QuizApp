@@ -16,6 +16,8 @@ import java.util.*;
 
 public class TwoPlayers extends QuizController {
     @FXML
+    public Button goToNextQuestionButton;
+    @FXML
     public Button answerButton;
 
     @FXML
@@ -56,6 +58,8 @@ public class TwoPlayers extends QuizController {
         answer1.setToggleGroup(group);
         answer2.setToggleGroup(group);
         answer3.setToggleGroup(group);
+        goToNextQuestionButton.setVisible(false);
+        answerButton.setVisible(true);
         random = new Random();
         questionIndex = -1;
         questionList = Question.loadQuestions("questions");
@@ -116,13 +120,16 @@ public class TwoPlayers extends QuizController {
 
     private void checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
-        if(button.isSelected() && button.getText().equals(correctAnswer)) {
+        if(button.getText().equals(correctAnswer)) {
+            button.setStyle("-fx-text-fill: #50ff00");
             if(first) {
                 firstPlayer.scoreDuringGame++;
             }
             else {
                 secondPlayer.scoreDuringGame++;
             }
+        } else {
+            button.setStyle("-fx-text-fill: red");
         }
     }
 
@@ -130,15 +137,34 @@ public class TwoPlayers extends QuizController {
         first = !first;
     }
 
-    public void answer(ActionEvent actionEvent) throws IOException, SQLException {
-        checkAnswer(answer0);
-        checkAnswer(answer1);
-        checkAnswer(answer2);
-        checkAnswer(answer3);
+    public void answer(){
+        answerButton.setVisible(false);
+        goToNextQuestionButton.setVisible(true);
+
+        if(answer0.isSelected()) {
+            checkAnswer(answer0);
+        } else if(answer1.isSelected()) {
+            checkAnswer(answer1);
+        } else if(answer2.isSelected()) {
+            checkAnswer(answer2);
+        } else if(answer3.isSelected()) {
+            checkAnswer(answer3);
+        }
 
         if(NoAnswerIsSelected()){
             alertNoAnswerIsSelected();
         }
+    }
+
+    public void goToNextQuestion(ActionEvent actionEvent) throws SQLException, IOException {
+        goToNextQuestionButton.setVisible(false);
+        answerButton.setVisible(true);
+
+        answer0.setStyle("-fx-text-fill:white");
+        answer1.setStyle("-fx-text-fill:white");
+        answer2.setStyle("-fx-text-fill:white");
+        answer3.setStyle("-fx-text-fill:white");
+
         answer0.setSelected(false);
         answer1.setSelected(false);
         answer2.setSelected(false);
@@ -161,7 +187,6 @@ public class TwoPlayers extends QuizController {
                 endOfGame(actionEvent);
             }
         }
-
     }
 
     private void updateTheScore() throws SQLException {
