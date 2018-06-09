@@ -7,11 +7,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import sample.Main;
-import sample.controller.QuizController;
 import sample.model.Database;
 import sample.model.Player;
 import sample.model.Question;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -26,7 +24,7 @@ public class LoginSecondPlayer extends QuizController {
     @FXML
     private PasswordField haslo;
 
-    Player secondPlayer;
+    private Player secondPlayer;
 
     @Override
     public void setTwoPlayers(Player firstPlayer, Player secondPlayer) {
@@ -67,6 +65,10 @@ public class LoginSecondPlayer extends QuizController {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setContentText("Niepoprawne dane");
         alert.showAndWait();
+    }
+
+    public void exitFromTheGame(){
+        System.exit(0);
     }
 
 }
