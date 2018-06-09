@@ -64,7 +64,7 @@ public class Database {
             insert = false;
             Class.forName("org.postgresql.Driver");
             connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
-            String query = "UPDATE player SET score = score + ? WHERE login = ?";
+            String query = "UPDATE player SET score = score + ? WHERE login = ?";//TODO
             preparedStatement = connect.prepareStatement(query);
             preparedStatement.setInt(1,setInt);
             preparedStatement.setString(2,setString);

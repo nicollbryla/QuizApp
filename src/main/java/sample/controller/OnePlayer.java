@@ -16,6 +16,8 @@ import java.util.*;
 
 public class OnePlayer extends QuizController {
     @FXML
+    public Button goToNextQuestionButton;
+    @FXML
     public Button answerButton;
     @FXML
     private Label questionLabel;
@@ -49,6 +51,9 @@ public class OnePlayer extends QuizController {
         answer1.setWrapText(true);
         answer2.setWrapText(true);
         answer3.setWrapText(true);
+        goToNextQuestionButton.setVisible(false);
+        goToNextQuestionButton.setText("Przejdź dalej");
+        answerButton.setVisible(true);
         questionLabel.setText(currentQuestion.content);
         categoryLabel.setText("Kategoria: " + currentQuestion.category);
         pointsLabel.setText("Twoje punkty: " + Integer.toString(player.scoreDuringGame));
@@ -96,20 +101,42 @@ public class OnePlayer extends QuizController {
     private void checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
 
-        if(button.isSelected() && button.getText().equals(correctAnswer)) {
+        if(button.getText().equals(correctAnswer)) {
             player.scoreDuringGame++;
+            button.setStyle("-fx-text-fill: #50ff00");
+        } else {
+            button.setStyle("-fx-text-fill: red");
         }
     }
 
-    public void answer(ActionEvent actionEvent) throws IOException, SQLException {
-        checkAnswer(answer0);
-        checkAnswer(answer1);
-        checkAnswer(answer2);
-        checkAnswer(answer3);
+    public void answer(){
+        answerButton.setVisible(false);
+        goToNextQuestionButton.setVisible(true);
+
+        if(answer0.isSelected()) {
+            checkAnswer(answer0);
+        } else if(answer1.isSelected()) {
+            checkAnswer(answer1);
+        } else if(answer2.isSelected()) {
+            checkAnswer(answer2);
+        } else if(answer3.isSelected()) {
+            checkAnswer(answer3);
+        }
 
         if(NoAnswerIsSelected()){
             alertNoAnswerIsSelected();
         }
+    }
+
+    public void goToNextQuestion(ActionEvent actionEvent) throws SQLException, IOException {
+        goToNextQuestionButton.setVisible(false);
+        answerButton.setVisible(true);
+
+        answer0.setStyle("-fx-text-fill:white");
+        answer1.setStyle("-fx-text-fill:white");
+        answer2.setStyle("-fx-text-fill:white");
+        answer3.setStyle("-fx-text-fill:white");
+
         answer0.setSelected(false);
         answer1.setSelected(false);
         answer2.setSelected(false);
@@ -119,7 +146,6 @@ public class OnePlayer extends QuizController {
             displayQuestion();
         }
         else if(!nextQuestion()){
-
             updateTheScore();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setHeaderText("Gratulacje! Gra skończona");

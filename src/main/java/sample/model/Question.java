@@ -56,7 +56,7 @@ public class Question {
         Optional<String> result = dialog.showAndWait();
         try {
             amount = Integer.parseInt(result.get());
-            if(amount < 0 || amount >= list.size()) {
+            if(amount <= 0 || amount > list.size()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Podano niepoprawną ilość.");
                 alert.showAndWait();

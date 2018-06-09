@@ -28,7 +28,7 @@ public class Main extends Application {
         primaryStage.setScene(loginScene);
         primaryStage.setResizable(false);
         primaryStage.show();
-        String musicStr = "src/main/media/out.mp3"; //ok
+        String musicStr = "src/main/media/out.mp3";
         Media media = new Media(Paths.get(musicStr).toUri().toString());
         MediaPlayer player = new MediaPlayer(media);
         player.play();
