@@ -175,17 +175,8 @@ public class TwoPlayers extends QuizController {
             displayQuestion();
         }
         else if(!nextQuestion()){
-
             updateTheScore();
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setHeaderText("Gratulacje! Gra skończona");
-            alert.setContentText("Kliknij ok, żeby zobaczyć swój wynik.");
-            Optional<ButtonType> result = alert.showAndWait();
-            ButtonType button = result.orElse(ButtonType.CANCEL);
-
-            if(button == ButtonType.OK){
-                endOfGame(actionEvent);
-            }
+            endOfGame(actionEvent);
         }
     }
 
