@@ -138,21 +138,29 @@ public class TwoPlayers extends QuizController {
     }
 
     public void answer(){
-        answerButton.setVisible(false);
-        goToNextQuestionButton.setVisible(true);
+        boolean selected = false;
 
-        if(answer0.isSelected()) {
+        if (answer0.isSelected()) {
             checkAnswer(answer0);
-        } else if(answer1.isSelected()) {
+            selected = true;
+        } else if (answer1.isSelected()) {
             checkAnswer(answer1);
-        } else if(answer2.isSelected()) {
+            selected = true;
+        } else if (answer2.isSelected()) {
             checkAnswer(answer2);
-        } else if(answer3.isSelected()) {
+            selected = true;
+        } else if (answer3.isSelected()) {
             checkAnswer(answer3);
+            selected = true;
         }
 
         if(NoAnswerIsSelected()){
             alertNoAnswerIsSelected();
+        }
+
+        if(selected) {
+            answerButton.setVisible(false);
+            goToNextQuestionButton.setVisible(true);
         }
     }
 

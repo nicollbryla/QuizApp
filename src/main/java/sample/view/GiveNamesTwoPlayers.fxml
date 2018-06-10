@@ -8,64 +8,53 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.GiveNamesTwoPlayers">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.GiveNamesTwoPlayers">
    <ImageView fitHeight="600.0" fitWidth="613.0" layoutY="-200.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@blue.jpg"/>
+      <Image url="@blue.jpg" />
    </ImageView>
-   <Button fx:id="goNext" layoutX="263.0" layoutY="326.0" mnemonicParsing="false" onAction="#goNextWindow" opacity="0.9"
-           text="Przejdź dalej" textFill="#576ec2" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0"
-           AnchorPane.topAnchor="320.0">
+   <Button fx:id="goNext" layoutX="263.0" layoutY="326.0" mnemonicParsing="false" onAction="#goNextWindow" opacity="0.9" text="Przejdź dalej" textFill="#576ec2" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="320.0">
       <font>
-         <Font name="System Bold" size="20.0"/>
+         <Font name="System Bold" size="20.0" />
       </font>
    </Button>
-   <Label alignment="CENTER" layoutX="150.0" layoutY="129.0" opacity="0.9" text="Podaj imiona graczy" textFill="WHITE"
-          AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="129.0">
+   <Label alignment="CENTER" layoutX="150.0" layoutY="129.0" opacity="0.9" text="Podaj imiona graczy" textFill="WHITE" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="129.0">
       <font>
-         <Font name="System Italic" size="35.0"/>
+         <Font name="System Italic" size="35.0" />
       </font>
    </Label>
-   <Label alignment="CENTER" layoutX="436.0" layoutY="224.0" opacity="0.9" text="Gracz 2" textFill="WHITE"
-          AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="195.0">
+   <Label alignment="CENTER" layoutX="436.0" layoutY="224.0" opacity="0.9" text="Gracz 2" textFill="WHITE" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="195.0">
       <font>
-         <Font name="System Italic" size="25.0"/>
+         <Font name="System Italic" size="25.0" />
       </font>
    </Label>
-   <Label alignment="CENTER" layoutX="98.0" layoutY="182.0" opacity="0.9" text="Gracz 1" textFill="WHITE"
-          AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="195.0">
+   <Label alignment="CENTER" layoutX="98.0" layoutY="182.0" opacity="0.9" text="Gracz 1" textFill="WHITE" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="195.0">
       <font>
-         <Font name="System Italic" size="25.0"/>
+         <Font name="System Italic" size="25.0" />
       </font>
    </Label>
-   <TextField fx:id="first" layoutX="46.0" layoutY="263.0" opacity="0.7" prefHeight="31.0" prefWidth="211.0"
-              AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="250.0">
+   <TextField fx:id="first" layoutX="46.0" layoutY="263.0" opacity="0.7" prefHeight="31.0" prefWidth="211.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="250.0">
       <font>
-         <Font name="System Italic" size="15.0"/>
+         <Font name="System Italic" size="15.0" />
       </font>
    </TextField>
-   <TextField fx:id="second" layoutX="328.0" layoutY="263.0" opacity="0.7" prefHeight="31.0" prefWidth="211.0"
-              AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0">
+   <TextField fx:id="second" layoutX="328.0" layoutY="263.0" opacity="0.7" prefHeight="31.0" prefWidth="211.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0">
       <font>
-         <Font name="System Italic" size="15.0"/>
+         <Font name="System Italic" size="15.0" />
       </font>
    </TextField>
-   <Label alignment="CENTER" layoutX="123.0" layoutY="28.0" opacity="0.45" text="QuizApp" textFill="WHITE"
-          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
+   <Label alignment="CENTER" layoutX="123.0" layoutY="28.0" opacity="0.45" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-15.0">
       <font>
-         <Font name="System Italic" size="99.0"/>
+         <Font name="System Italic" size="99.0" />
       </font>
    </Label>
-   <Button layoutX="18.0" layoutY="349.0" mnemonicParsing="false" onAction="#goToMenu" opacity="0.8" text="Menu"
-           textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="23.0">
+   <Button layoutX="18.0" layoutY="349.0" mnemonicParsing="false" onAction="#goToMenu" opacity="0.8" text="Menu" textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="23.0">
       <font>
-         <Font name="System Bold" size="13.0"/>
+         <Font name="System Bold" size="13.0" />
       </font>
    </Button>
-   <Button layoutX="97.0" layoutY="349.0" mnemonicParsing="false" onAction="#backToLogin" opacity="0.8" text="Wróć"
-           textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="84.0">
+   <Button layoutX="97.0" layoutY="349.0" mnemonicParsing="false" onAction="#backToLogin" opacity="0.8" text="Wróć" textFill="#576ec2" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="84.0">
       <font>
-         <Font name="System Bold" size="13.0"/>
+         <Font name="System Bold" size="13.0" />
       </font>
    </Button>
 </AnchorPane>
