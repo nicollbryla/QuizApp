@@ -21,12 +21,12 @@
          <Font name="System Italic" size="40.0" />
       </font>
    </Label>
-   <Label fx:id="pointsPlayer1" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="272.0" opacity="0.9" text="Wynik gracza" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="200.0">
+   <Label fx:id="pointsPlayer1" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="272.0" opacity="0.9" text="Wynik gracza" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="200.0">
       <font>
          <Font name="System Italic" size="20.0" />
       </font>
    </Label>
-   <Label fx:id="pointsPlayer2" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="125.0" layoutY="337.0" opacity="0.9" text="Wynik gracza" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="250.0">
+   <Label fx:id="pointsPlayer2" alignment="CENTER" contentDisplay="CENTER" layoutX="125.0" layoutY="337.0" opacity="0.9" text="Wynik gracza" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="250.0">
       <font>
          <Font name="System Italic" size="20.0" />
       </font>

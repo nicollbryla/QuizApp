@@ -146,18 +146,7 @@ public class OnePlayer extends QuizController {
         }
         else if(!nextQuestion()){
             updateTheScore();
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setHeaderText("Gratulacje! Gra skończona");
-            alert.setContentText("Kliknij ok, żeby zobaczyć swój wynik.");
-            Optional<ButtonType> result = alert.showAndWait();
-            ButtonType button = result.orElse(ButtonType.CANCEL);
-
-            if(button == ButtonType.OK){
-                endOfGame(actionEvent);
-            }
-            else if(button == ButtonType.CANCEL){
-                goToMenu(actionEvent);
-            }
+            endOfGame(actionEvent);
         }
     }
 
