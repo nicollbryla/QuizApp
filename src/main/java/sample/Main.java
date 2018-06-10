@@ -3,6 +3,7 @@ package sample;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import sample.controller.Login;
 import sample.model.Admin;
 import sample.model.Config;
 import sample.model.Player;

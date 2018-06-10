@@ -46,15 +46,5 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <ImageView fx:id="soundOnImage" fitHeight="35.0" fitWidth="35.0" layoutX="551.0" layoutY="345.0" onMouseClicked="#soundOn" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="21.0" AnchorPane.rightAnchor="14.0">
-         <image>
-            <Image url="@soundOn1.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="soundOffImage" fitHeight="35.0" fitWidth="35.0" layoutX="552.0" layoutY="344.0" onMouseClicked="#soundOff" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@soundOff1.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
