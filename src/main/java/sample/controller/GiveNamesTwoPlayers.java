@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import sample.Main;
 import sample.model.Player;
 import sample.model.Question;
@@ -15,13 +16,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GiveNamesTwoPlayers extends QuizController{
-
     @FXML
     public Button goNext;
-
     @FXML
     private TextField first;
-
     @FXML
     private TextField second;
 
@@ -61,6 +59,4 @@ public class GiveNamesTwoPlayers extends QuizController{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
         Main.changeWindow(actionEvent, player, null, loader,  null);
     }
-
-
 }

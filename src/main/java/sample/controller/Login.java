@@ -1,5 +1,6 @@
 package sample.controller;
 
+import javafx.scene.image.ImageView;
 import sample.model.Admin;
 import sample.model.Database;
 import javafx.event.ActionEvent;
@@ -15,6 +16,10 @@ import sample.model.Player;
 import sample.Main;
 
 public class Login extends QuizController {
+    @FXML
+    private ImageView soundOffImage;
+    @FXML
+    private ImageView soundOnImage;
     @FXML
     public ToggleGroup logowanie;
     @FXML
@@ -38,6 +43,7 @@ public class Login extends QuizController {
         haslo.setText("halko");
         guest.setWrapText(true);
         register.setWrapText(true);
+        soundOnImage.setVisible(false);
     }
 
     public void signIn(ActionEvent actionEvent){
@@ -158,5 +164,17 @@ public class Login extends QuizController {
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, null);
+    }
+
+    public void soundOff(){
+        soundOffImage.setVisible(false);
+        soundOnImage.setVisible(true);
+        Main.soundOff();
+    }
+
+    public void soundOn(){
+        soundOnImage.setVisible(false);
+        soundOffImage.setVisible(true);
+        Main.soundOn();
     }
 }

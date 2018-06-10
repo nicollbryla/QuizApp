@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 
 public class Main extends Application {
+    private static MediaPlayer music;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -30,8 +31,16 @@ public class Main extends Application {
         primaryStage.show();
         String musicStr = "src/main/media/out.mp3";
         Media media = new Media(Paths.get(musicStr).toUri().toString());
-        MediaPlayer player = new MediaPlayer(media);
-        player.play();
+        music = new MediaPlayer(media);
+        music.play();
+    }
+
+    public static void soundOff(){
+        music.pause();
+    }
+
+    public static void soundOn(){
+        music.play();
     }
 
     public static void main(String[] args) {

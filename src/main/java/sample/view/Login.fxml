@@ -120,4 +120,14 @@
          <Font name="Bodoni MT" size="66.0" />
       </font>
    </Label>
+   <ImageView fx:id="soundOffImage" fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="353.0" onMouseClicked="#soundOff" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="551.0" AnchorPane.topAnchor="360.0">
+      <image>
+         <Image url="@soundOff1.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="soundOnImage" fitHeight="35.0" fitWidth="35.0" layoutX="51.0" layoutY="357.0" onMouseClicked="#soundOn" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="551.0" AnchorPane.topAnchor="360.0">
+      <image>
+         <Image url="@soundOn1.png" />
+      </image>
+   </ImageView>
 </AnchorPane>
