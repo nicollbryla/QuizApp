@@ -36,6 +36,7 @@ public class OnePlayer extends QuizController {
 
     public void setPlayer(Player p) {
         player = p;
+        player.scoreDuringGame = 0;
         displayQuestion();
     }
 

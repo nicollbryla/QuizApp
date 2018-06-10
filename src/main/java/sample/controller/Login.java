@@ -37,13 +37,21 @@ public class Login extends QuizController {
     @FXML
     private Button register;
 
+    private static boolean soundOnVisible = Boolean.parseBoolean(null);
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         login.setText("ResultSet");
         haslo.setText("halko");
         guest.setWrapText(true);
         register.setWrapText(true);
-        soundOnImage.setVisible(false);
+        if (soundOnVisible){
+            soundOnImage.setVisible(true);
+            soundOffImage.setVisible(false);
+        }else {
+            soundOnImage.setVisible(false);
+            soundOffImage.setVisible(true);
+        }
     }
 
     public void signIn(ActionEvent actionEvent){
@@ -167,12 +175,14 @@ public class Login extends QuizController {
     }
 
     public void soundOff(){
+        soundOnVisible = true;
         soundOffImage.setVisible(false);
         soundOnImage.setVisible(true);
         Main.soundOff();
     }
 
     public void soundOn(){
+        soundOnVisible = false;
         soundOnImage.setVisible(false);
         soundOffImage.setVisible(true);
         Main.soundOn();
