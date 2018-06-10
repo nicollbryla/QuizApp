@@ -29,7 +29,7 @@ public class ModelTable {
         this.name = name;
     }
 
-    /*public String getSurname() {
+    public String getSurname() {
         return surname;
     }
 
@@ -43,5 +43,5 @@ public class ModelTable {
 
     public void setScore(Integer score) {
         this.score = score;
-    }*/
+    }
 }
