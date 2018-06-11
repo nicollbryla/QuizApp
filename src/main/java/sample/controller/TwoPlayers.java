@@ -6,13 +6,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import sample.Main;
 
+import sample.model.Database;
 import sample.model.Player;
 import sample.model.Question;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.*;
 
 public class TwoPlayers extends QuizController {
+    @FXML
+    public Button goToNextQuestionButton;
+    @FXML
+    public Button answerButton;
 
     @FXML
     private Label namePlayer;
@@ -43,6 +49,7 @@ public class TwoPlayers extends QuizController {
     private List<Question> questionList;
     private int questionIndex;
     private Question currentQuestion;
+    private int amountOfQuestions;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -51,32 +58,32 @@ public class TwoPlayers extends QuizController {
         answer1.setToggleGroup(group);
         answer2.setToggleGroup(group);
         answer3.setToggleGroup(group);
+        goToNextQuestionButton.setVisible(false);
+        answerButton.setVisible(true);
         random = new Random();
         questionIndex = -1;
         questionList = Question.loadQuestions("questions");
         Collections.shuffle(questionList, random);
-        nextQuestion();
+        currentQuestion = questionList.get(++questionIndex);
+        currentQuestion.shuffle(random);
     }
 
     @Override
     public void setTwoPlayers(Player p1, Player p2) {
         firstPlayer = p1;
         secondPlayer = p2;
+        amountOfQuestions = p1.howManyQuestions;
         displayQuestion();
-    }
-
-    private void changePlayer(){
-        first = !first;
     }
 
     private void displayQuestion() {
         if(first) {
             namePlayer.setText("Gracz " + firstPlayer.name);
-            pointsLabel.setText("Twoje punkty: " + Integer.toString(firstPlayer.score));
+            pointsLabel.setText("Twoje punkty: " + Integer.toString(firstPlayer.scoreDuringGame));
         }
         else {
             namePlayer.setText("Gracz " + secondPlayer.name);
-            pointsLabel.setText("Twoje punkty: " + Integer.toString(secondPlayer.score));
+            pointsLabel.setText("Twoje punkty: " + Integer.toString(secondPlayer.scoreDuringGame));
         }
 
         questionLabel.setWrapText(true);
@@ -93,7 +100,7 @@ public class TwoPlayers extends QuizController {
     }
 
     private boolean nextQuestion(){
-        if(questionIndex + 1 == questionList.size())
+        if(questionIndex + 1 == amountOfQuestions )
             return false;
         currentQuestion = questionList.get(++questionIndex);
         currentQuestion.shuffle(random);
@@ -109,32 +116,63 @@ public class TwoPlayers extends QuizController {
         alert.setHeaderText("Błąd");
         alert.setContentText("Trzeba zaznaczyć jedną odpowiedź!");
         alert.showAndWait();
-
     }
 
-    private boolean checkAnswer(RadioButton button){
+    private void checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
-        if(button.isSelected() && button.getText().equals(correctAnswer)) {
+        if(button.getText().equals(correctAnswer)) {
+            button.setStyle("-fx-text-fill: #50ff00");
             if(first) {
-                firstPlayer.score++;
+                firstPlayer.scoreDuringGame++;
             }
             else {
-                secondPlayer.score++;
+                secondPlayer.scoreDuringGame++;
             }
-            return true;
+        } else {
+            button.setStyle("-fx-text-fill: red");
         }
-        return false;
     }
 
-    public void answer(ActionEvent actionEvent) throws IOException {
-        checkAnswer(answer0);
-        checkAnswer(answer1);
-        checkAnswer(answer2);
-        checkAnswer(answer3);
+    private void changePlayer(){
+        first = !first;
+    }
+
+    public void answer(){
+        boolean selected = false;
+
+        if (answer0.isSelected()) {
+            checkAnswer(answer0);
+            selected = true;
+        } else if (answer1.isSelected()) {
+            checkAnswer(answer1);
+            selected = true;
+        } else if (answer2.isSelected()) {
+            checkAnswer(answer2);
+            selected = true;
+        } else if (answer3.isSelected()) {
+            checkAnswer(answer3);
+            selected = true;
+        }
 
         if(NoAnswerIsSelected()){
             alertNoAnswerIsSelected();
         }
+
+        if(selected) {
+            answerButton.setVisible(false);
+            goToNextQuestionButton.setVisible(true);
+        }
+    }
+
+    public void goToNextQuestion(ActionEvent actionEvent) throws SQLException, IOException {
+        goToNextQuestionButton.setVisible(false);
+        answerButton.setVisible(true);
+
+        answer0.setStyle("-fx-text-fill:white");
+        answer1.setStyle("-fx-text-fill:white");
+        answer2.setStyle("-fx-text-fill:white");
+        answer3.setStyle("-fx-text-fill:white");
+
         answer0.setSelected(false);
         answer1.setSelected(false);
         answer2.setSelected(false);
@@ -145,34 +183,20 @@ public class TwoPlayers extends QuizController {
             displayQuestion();
         }
         else if(!nextQuestion()){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setHeaderText("Gratulacje! Gra skończona");
-            alert.setContentText("Kliknij ok, żeby zobaczyć swój wynik.");
-            Optional<ButtonType> result = alert.showAndWait();
-            ButtonType button = result.orElse(ButtonType.CANCEL);
-
-           // updateTheScore();
-
-            if(button == ButtonType.OK){
-                endOfGame(actionEvent);
-            }
+            updateTheScore();
+            endOfGame(actionEvent);
         }
-
     }
 
-    /*public void updateTheScore() throws SQLException {
+    private void updateTheScore() throws SQLException {
         Database db = new Database();
-        db.update(player.score, player.login);
+        db.update(firstPlayer.scoreDuringGame, firstPlayer.login);
+        db.update(secondPlayer.scoreDuringGame, secondPlayer.login);
         db.close();
-    }*/
-
-    public void endOfGame(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/EndOfTwoPlayersGame.fxml"));
-        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
     }
 
-    public void backToMainWindow(ActionEvent actionEvent) throws  IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
+    private void endOfGame(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/EndOfTwoPlayersGame.fxml"));
         Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
     }
 

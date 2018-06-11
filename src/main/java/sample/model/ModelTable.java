@@ -2,8 +2,8 @@ package sample.model;
 
 public class ModelTable {
 
-    String login, name, surname;
-    Integer score;
+    public String login, name, surname;
+    public Integer score;
 
 
     public ModelTable(String login, String name, String surname, Integer score) {

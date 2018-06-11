@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Admin {
-    private int id;
+    public int id;
     public String login;
     public String name;
     public String surname;

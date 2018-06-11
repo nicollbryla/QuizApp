@@ -1,6 +1,9 @@
 package sample;
 
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import sample.controller.Login;
 import sample.model.Admin;
 import sample.model.Config;
 import sample.model.Player;
@@ -12,22 +15,33 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.controller.QuizController;
-
 import java.io.IOException;
+import java.nio.file.Paths;
 
 public class Main extends Application {
-
-    private Config config;
+    private static MediaPlayer music;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        config = new Config("config.cfg");
+        new Config("config.cfg");
         AnchorPane root = FXMLLoader.load(getClass().getResource("view/Login.fxml"));
         primaryStage.setTitle("QuizApp");
         Scene loginScene = new Scene(root);
         primaryStage.setScene(loginScene);
         primaryStage.setResizable(false);
         primaryStage.show();
+        String musicStr = "src/main/media/out.mp3";
+        Media media = new Media(Paths.get(musicStr).toUri().toString());
+        music = new MediaPlayer(media);
+        music.play();
+    }
+
+    public static void soundOff(){
+        music.pause();
+    }
+
+    public static void soundOn(){
+        music.play();
     }
 
     public static void main(String[] args) {

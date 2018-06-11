@@ -20,14 +20,10 @@
          <Font name="System Bold Italic" size="99.0" />
       </font>
    </Label>
-   <AnchorPane layoutX="14.0" layoutY="134.0" opacity="0.7" prefHeight="151.0" prefWidth="796.0"
-               style="-fx-border-style: solid; -fx-background-color: white; -fx-border-width: 2px;"
-               AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="134.0">
-      <Label fx:id="questionLabel" alignment="CENTER" layoutX="62.0" layoutY="15.0" opacity="0.8" prefHeight="122.0"
-             prefWidth="744.0" text="Label" textFill="#1541c5" AnchorPane.bottomAnchor="16.0"
-             AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="13.0">
+   <AnchorPane layoutX="14.0" layoutY="134.0" opacity="0.7" prefHeight="151.0" prefWidth="796.0" style="-fx-border-style: solid; -fx-background-color: white; -fx-border-width: 2px;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="134.0">
+      <Label fx:id="questionLabel" alignment="CENTER" layoutX="62.0" layoutY="15.0" opacity="0.8" prefHeight="122.0" prefWidth="744.0" text="Label" textFill="#1541c5" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="13.0">
          <font>
-            <Font name="System Bold Italic" size="25.0"/>
+            <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
    </AnchorPane>
@@ -81,32 +77,30 @@
          <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
          <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
       </rowConstraints>
-      <children>
-         <RadioButton fx:id="answer0" contentDisplay="CENTER" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
-            <font>
-               <Font name="System Bold" size="20.0" />
-            </font>
-         </RadioButton>
-         <RadioButton fx:id="answer2" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.rowIndex="2">
-            <font>
-               <Font name="System Bold" size="20.0" />
-            </font>
-         </RadioButton>
-         <RadioButton fx:id="answer1" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <font>
-               <Font name="System Bold" size="20.0" />
-            </font>
-         </RadioButton>
-         <RadioButton fx:id="answer3" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <font>
-               <Font name="System Bold" size="20.0" />
-            </font>
-         </RadioButton>
-      </children>
+      <RadioButton fx:id="answer0" contentDisplay="CENTER" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="answer2" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.rowIndex="2">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="answer1" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="answer3" mnemonicParsing="false" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="RadioButton" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </RadioButton>
    </GridPane>
-   <Button fx:id="answerButton" alignment="CENTER" contentDisplay="CENTER" layoutX="282.0" layoutY="508.0" mnemonicParsing="false" onAction="#answer" opacity="0.7" prefHeight="56.0" prefWidth="329.0" text="Odpowiadam" textAlignment="CENTER" textFill="#576ec2" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="289.0">
+   <Button fx:id="answerButton" alignment="CENTER" contentDisplay="CENTER" layoutX="342.0" layoutY="508.0" mnemonicParsing="false" onAction="#answer" opacity="0.7" prefHeight="56.0" prefWidth="225.0" text="Odpowiedz" textAlignment="CENTER" textFill="#5870bf" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="342.0" AnchorPane.rightAnchor="342.0">
       <font>
-         <Font name="System Bold" size="25.0" />
+         <Font name="System Bold" size="20.0" />
       </font>
    </Button>
    <Label fx:id="categoryLabel" layoutX="828.0" layoutY="142.0" opacity="0.7" text="Label" textFill="#1541c5" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="142.0">
@@ -132,6 +126,11 @@
    <Button layoutX="139.0" layoutY="553.0" mnemonicParsing="false" onAction="#exitFromTheGame" opacity="0.8" prefHeight="30.0" prefWidth="66.0" text="Wyjście" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="134.0">
       <font>
          <Font name="System Bold" size="13.0" />
+      </font>
+   </Button>
+   <Button fx:id="goToNextQuestionButton" alignment="CENTER" layoutX="342.0" layoutY="508.0" mnemonicParsing="false" onAction="#goToNextQuestion" opacity="0.7" prefHeight="56.0" prefWidth="225.0" text="Przejdź dalej" textAlignment="CENTER" textFill="#576ec2" wrapText="true" AnchorPane.leftAnchor="342.0" AnchorPane.rightAnchor="342.0">
+      <font>
+         <Font name="System Bold" size="20.0" />
       </font>
    </Button>
 </AnchorPane>

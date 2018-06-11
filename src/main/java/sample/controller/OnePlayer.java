@@ -16,6 +16,10 @@ import java.util.*;
 
 public class OnePlayer extends QuizController {
     @FXML
+    public Button goToNextQuestionButton;
+    @FXML
+    public Button answerButton;
+    @FXML
     private Label questionLabel;
     @FXML
     private Label categoryLabel;
@@ -32,6 +36,7 @@ public class OnePlayer extends QuizController {
 
     public void setPlayer(Player p) {
         player = p;
+        player.scoreDuringGame = 0;
         displayQuestion();
     }
 
@@ -47,6 +52,8 @@ public class OnePlayer extends QuizController {
         answer1.setWrapText(true);
         answer2.setWrapText(true);
         answer3.setWrapText(true);
+        goToNextQuestionButton.setVisible(false);
+        answerButton.setVisible(true);
         questionLabel.setText(currentQuestion.content);
         categoryLabel.setText("Kategoria: " + currentQuestion.category);
         pointsLabel.setText("Twoje punkty: " + Integer.toString(player.scoreDuringGame));
@@ -91,29 +98,53 @@ public class OnePlayer extends QuizController {
 
     }
 
-    private boolean checkAnswer(RadioButton button){
+    private void checkAnswer(RadioButton button){
         String correctAnswer = currentQuestion.ans[currentQuestion.correctAnswer];
 
-        if(button.isSelected() && button.getText().equals(correctAnswer)) {
+        if(button.getText().equals(correctAnswer)) {
             player.scoreDuringGame++;
-            return true;
-        } else if(button.isSelected()) {
+            button.setStyle("-fx-text-fill: #50ff00");
+        } else {
+            button.setStyle("-fx-text-fill: red");
         }
-        return false;
     }
 
-    public void answer(ActionEvent actionEvent) throws IOException, InterruptedException, SQLException, ClassNotFoundException {
-        if(checkAnswer(answer0)) {
+    public void answer(){
+        boolean selected = false;
 
-        } else if(checkAnswer(answer1)) {
+        if (answer0.isSelected()) {
+            checkAnswer(answer0);
+            selected = true;
+        } else if (answer1.isSelected()) {
+            checkAnswer(answer1);
+            selected = true;
+        } else if (answer2.isSelected()) {
+            checkAnswer(answer2);
+            selected = true;
+        } else if (answer3.isSelected()) {
+            checkAnswer(answer3);
+            selected = true;
+        }
 
-        } else if(checkAnswer(answer2)) {
-
-        }else if(checkAnswer(answer3)) {
-
-        } else if(NoAnswerIsSelected()){
+        if (NoAnswerIsSelected()) {
             alertNoAnswerIsSelected();
         }
+
+        if(selected) {
+            answerButton.setVisible(false);
+            goToNextQuestionButton.setVisible(true);
+        }
+    }
+
+    public void goToNextQuestion(ActionEvent actionEvent) throws SQLException, IOException {
+        goToNextQuestionButton.setVisible(false);
+        answerButton.setVisible(true);
+
+        answer0.setStyle("-fx-text-fill:white");
+        answer1.setStyle("-fx-text-fill:white");
+        answer2.setStyle("-fx-text-fill:white");
+        answer3.setStyle("-fx-text-fill:white");
+
         answer0.setSelected(false);
         answer1.setSelected(false);
         answer2.setSelected(false);
@@ -123,20 +154,8 @@ public class OnePlayer extends QuizController {
             displayQuestion();
         }
         else if(!nextQuestion()){
-
             updateTheScore();
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setHeaderText("Gratulacje! Gra skończona");
-            alert.setContentText("Kliknij ok, żeby zobaczyć swój wynik.");
-            Optional<ButtonType> result = alert.showAndWait();
-            ButtonType button = result.orElse(ButtonType.CANCEL);
-
-            if(button == ButtonType.OK){
-                endOfGame(actionEvent);
-            }
-            else if(button == ButtonType.CANCEL){
-                goToMenu(actionEvent);
-            }
+            endOfGame(actionEvent);
         }
     }
 
@@ -150,7 +169,7 @@ public class OnePlayer extends QuizController {
         System.exit(0);
     }
 
-    public void endOfGame(ActionEvent actionEvent) throws IOException {
+    private void endOfGame(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/EndOfGame.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, null);
     }

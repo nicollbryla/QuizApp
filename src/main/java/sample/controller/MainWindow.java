@@ -21,14 +21,20 @@ public class MainWindow extends QuizController {
 
     public void onePlayer(ActionEvent actionEvent) throws IOException{
         player.howManyQuestions = Question.askForQuestions();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/OnePlayer.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, null);
+        if(player.howManyQuestions != 0) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/OnePlayer.fxml"));
+            Main.changeWindow(actionEvent, player, null, loader, null);
+        }
     }
 
     public void twoPlayers(ActionEvent actionEvent) throws IOException {
         if(player.asGuest){
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/GiveNamesTwoPlayers.fxml"));
-            Main.changeWindow(actionEvent,null, null, loader,null);
+            Main.changeWindow(actionEvent,null, null, loader, null);
+        }
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/LoginSecondPlayer.fxml"));
+            Main.changeWindow(actionEvent, player, null, loader, null);
         }
     }
 

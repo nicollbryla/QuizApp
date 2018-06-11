@@ -8,12 +8,12 @@ public class Database {
     private static String dbUser;
     private static String dbPass;
 
-    public Connection connect;
-    public Statement stmt;
-    public ResultSet rs;
-    public PreparedStatement preparedStatement;
-    public boolean insert;
-    public boolean  update;
+    private Connection connect;
+    private Statement stmt;
+    private ResultSet rs;
+    private PreparedStatement preparedStatement;
+    private boolean insert;
+    private boolean  update;
 
     public Database(){
         connect = null;
@@ -83,19 +83,16 @@ public class Database {
             insert = false;
             Class.forName("org.postgresql.Driver");
             connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
-            String query = "UPDATE player SET score = score + ? WHERE login = ?";
-             preparedStatement = connect.prepareStatement(query);
+            String query = "UPDATE player SET score = score + ? WHERE login = ?";//TODO
+            preparedStatement = connect.prepareStatement(query);
             preparedStatement.setInt(1,setInt);
             preparedStatement.setString(2,setString);
             preparedStatement.executeUpdate();
             connect.close();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 
     public void close() throws SQLException{

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class Player {
     public int id;
     public String name;
-    public String surname;
+    private String surname;
     public String login;
     public int score;
     public boolean asGuest;
@@ -43,11 +43,4 @@ public class Player {
         score = rs.getInt("score");
 
     }
-
-    /*public String toString(){
-        StringBuilder builder = new StringBuilder();
-        builder.append(name + ' ' + Integer.toString(score));
-        return builder.toString();
-    }*/
-
 }

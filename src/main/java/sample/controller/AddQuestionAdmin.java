@@ -30,10 +30,9 @@ public class AddQuestionAdmin extends QuizController {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
-    public void addQuestion(ActionEvent actionEvent) throws IOException {
+    public void addQuestion(){
         AddQuestion x = new AddQuestion();
         if (x.validateQuestion(question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText())){
             x.addQuestion("questions",question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText());

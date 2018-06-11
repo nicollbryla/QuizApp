@@ -48,6 +48,7 @@ public class AcceptQuestionAdmin  extends QuizController{
     private Question currentQuestion;
     private Vector<Integer> ifAddList;
 
+
     public void setAdmin(Admin a) {
         admin = a;
         displayQuestion();
@@ -72,8 +73,8 @@ public class AcceptQuestionAdmin  extends QuizController{
         });
     }
 
-
     public void nextQuestion() {
+
         if(questionIndex + 1 == questionList.size())
             questionIndex = -1;
         currentQuestion = questionList.get(++questionIndex);

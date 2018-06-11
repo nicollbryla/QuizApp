@@ -1,5 +1,6 @@
 package sample.controller;
 
+import javafx.scene.image.ImageView;
 import sample.model.Admin;
 import sample.model.Database;
 import javafx.event.ActionEvent;
@@ -10,12 +11,15 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import sample.model.Player;
 import sample.Main;
 
 public class Login extends QuizController {
+    @FXML
+    private ImageView soundOffImage;
+    @FXML
+    private ImageView soundOnImage;
     @FXML
     public ToggleGroup logowanie;
     @FXML
@@ -33,15 +37,24 @@ public class Login extends QuizController {
     @FXML
     private Button register;
 
+    private static boolean soundOnVisible = Boolean.parseBoolean(null);
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         login.setText("ResultSet");
         haslo.setText("halko");
         guest.setWrapText(true);
         register.setWrapText(true);
+        if (soundOnVisible){
+            soundOnImage.setVisible(true);
+            soundOffImage.setVisible(false);
+        }else {
+            soundOnImage.setVisible(false);
+            soundOffImage.setVisible(true);
+        }
     }
 
-    public void signIn(ActionEvent actionEvent) throws IOException, SQLException {
+    public void signIn(ActionEvent actionEvent){
         Database db = null;
         Player player = null;
         Admin admin = null;
@@ -132,12 +145,12 @@ public class Login extends QuizController {
         alert.showAndWait();
     }
 
-    public void changeData(ActionEvent actionEvent) throws IOException {
+    public void changeData(){
         login.setText("jerzyna");
         haslo.setText("zeszczecina");
     }
 
-    public void changeDataPlayer(ActionEvent actionEvent) throws IOException{
+    public void changeDataPlayer(){
         login.setText("ResultSet");
         haslo.setText("halko");
     }
@@ -159,5 +172,19 @@ public class Login extends QuizController {
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
         Main.changeWindow(actionEvent, player, null, loader, null);
+    }
+
+    public void soundOff(){
+        soundOnVisible = true;
+        soundOffImage.setVisible(false);
+        soundOnImage.setVisible(true);
+        Main.soundOff();
+    }
+
+    public void soundOn(){
+        soundOnVisible = false;
+        soundOnImage.setVisible(false);
+        soundOffImage.setVisible(true);
+        Main.soundOn();
     }
 }
