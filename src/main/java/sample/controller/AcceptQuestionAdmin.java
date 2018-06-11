@@ -150,11 +150,11 @@ public class AcceptQuestionAdmin  extends QuizController{
                 Question q = questionList.get(i);
                 AddQuestion addQuestion = new AddQuestion();
                 addQuestion.addQuestion("questions", q.content, q.ans[q.correctAnswer], q.ans[1], q.ans[2], q.ans[3]);
-                db.executeUpdate("select from proposedquestions where id = "+q.id.toString()+";");
+                db.executeUpdate("delete from proposedquestions where id = "+q.id.toString()+";");
             }
-            else if (iff == 2) //executeUpdate
+            else if (iff == 2) //delete
             {
-                db.executeUpdate("select from proposedquestions where id = "+questionList.get(i).id.toString()+";");
+                db.executeUpdate("delete from proposedquestions where id = "+questionList.get(i).id.toString()+";");
             }
         }
         try {
