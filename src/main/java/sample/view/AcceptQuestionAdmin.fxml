@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -77,28 +76,28 @@
                <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
                <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
            </rowConstraints>
-           <children>
-               <Label fx:id="answer0" contentDisplay="CENTER" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="ans0" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
-                   <font>
-                       <Font name="System Bold" size="20.0" />
-                   </font>
-               </Label>
-               <Label fx:id="answer2" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="asn2" textFill="WHITE" GridPane.rowIndex="2">
-                   <font>
-                       <Font name="System Bold" size="20.0" />
-                   </font>
-               </Label>
-               <Label fx:id="answer1" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="asn1" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                   <font>
-                       <Font name="System Bold" size="20.0" />
-                   </font>
-               </Label>
-               <Label fx:id="answer3" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="asn3" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                   <font>
-                       <Font name="System Bold" size="20.0" />
-                   </font>
-               </Label>
-           </children>
+          <children>
+              <Label fx:id="answer0" contentDisplay="CENTER" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="ans0" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+                  <font>
+                      <Font name="System Bold" size="20.0" />
+                  </font>
+              </Label>
+              <Label fx:id="answer2" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="asn2" textFill="WHITE" GridPane.rowIndex="2">
+                  <font>
+                      <Font name="System Bold" size="20.0" />
+                  </font>
+              </Label>
+              <Label fx:id="answer1" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="asn1" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <font>
+                      <Font name="System Bold" size="20.0" />
+                  </font>
+              </Label>
+              <Label fx:id="answer3" opacity="0.9" prefHeight="68.0" prefWidth="306.0" text="asn3" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <font>
+                      <Font name="System Bold" size="20.0" />
+                  </font>
+              </Label>
+          </children>
        </GridPane>
    
        <Label fx:id="categoryLabel" layoutX="828.0" layoutY="142.0" opacity="0.7" text="Label" textFill="#1541c5" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="142.0">
@@ -121,20 +120,27 @@
                <Font name="System Bold" size="13.0" />
            </font>
        </Button>
-       <Button layoutX="139.0" layoutY="553.0" mnemonicParsing="false" onAction="#saveChanges" opacity="0.8" prefHeight="30.0" prefWidth="66.0" text="Zapisz" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="134.0">
+       <Button layoutX="139.0" layoutY="553.0" mnemonicParsing="false" onAction="#saveAndDisplay" opacity="0.8" prefHeight="30.0" prefWidth="66.0" text="Zapisz" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="134.0">
            <font>
                <Font name="System Bold" size="13.0" />
            </font>
        </Button>
-      <Button layoutX="582.0" layoutY="493.0" mnemonicParsing="false" onAction="#prevQuestion" opacity="0.8" prefHeight="30.0" prefWidth="98.0" text="Poprzednie" textFill="#576ec2">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button layoutX="711.0" layoutY="493.0" mnemonicParsing="false" onAction="#nextQuestion" opacity="0.8" prefHeight="30.0" prefWidth="98.0" text="Następne" textFill="#576ec2">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
+       <Button layoutX="557.0" layoutY="553.0" mnemonicParsing="false" onAction="#prevQuestion" opacity="0.8" prefHeight="30.0" prefWidth="98.0" text="Poprzednie" textFill="#576ec2">
+           <font>
+             <Font name="System Bold" size="13.0" />
+           </font>
+       </Button>
+       <Button layoutX="662.0" layoutY="553.0" mnemonicParsing="false" onAction="#nextQuestion" opacity="0.8" prefHeight="30.0" prefWidth="98.0" text="Następne" textFill="#576ec2">
+           <font>
+             <Font name="System Bold" size="13.0" />
+           </font>
+       </Button>
+      <ToggleButton fx:id="skipButton" layoutX="308.0" layoutY="489.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" selected="true" text="Pomiń">
+         <toggleGroup>
+            <ToggleGroup fx:id="tgroup" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton fx:id="addButton" layoutX="388.0" layoutY="489.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="80.0" text="Dodaj" toggleGroup="$tgroup" />
+      <ToggleButton fx:id="deleteButton" layoutX="468.0" layoutY="489.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="80.0" text="Usuń" toggleGroup="$tgroup" />
    </children>
 </AnchorPane>

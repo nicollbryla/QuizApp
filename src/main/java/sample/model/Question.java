@@ -2,15 +2,13 @@ package sample.model;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
-import jdk.nashorn.internal.runtime.options.Option;
 
-import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
 public class Question {
-    public int id;
+    public Integer id;
     public String category;
     public String content;
     public String[] ans;

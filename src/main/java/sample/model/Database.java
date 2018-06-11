@@ -29,6 +29,10 @@ public class Database {
         dbUrl = "jdbc:postgresql://" + host + ":" + port + "/" + database;
     }
 
+    public void dbUpdate(String query) throws db_exception {
+
+    }
+
     public ResultSet dbselect(String query) throws db_exception {
         try {
             insert = false;
@@ -58,6 +62,21 @@ public class Database {
         }
     }
 
+    public void delete(String query) {
+        update = false;
+        insert = false;
+        try {
+            Class.forName("org.postgresql.Driver");
+            connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+            connect.setAutoCommit(false);
+            stmt = connect.createStatement();
+            stmt.executeUpdate(query);
+            insert = true;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void update(Integer setInt, String setString ) {
         try {
             update = true;
@@ -83,7 +102,9 @@ public class Database {
         if (insert){
             stmt.close();
             connect.commit();
-        } else if(update){
+
+        }
+        if(update){
             preparedStatement.close();
         }
         else {

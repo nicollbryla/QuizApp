@@ -3,6 +3,7 @@ package sample.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import sample.Main;
 
@@ -36,6 +37,11 @@ public class AddQuestionAdmin extends QuizController {
         AddQuestion x = new AddQuestion();
         if (x.validateQuestion(question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText())){
             x.addQuestion("questions",question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText());
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Dodawanie pytań");
+            alert.setHeaderText("Pytanie zostało dodane.");
+            alert.showAndWait();
         }
     }
 

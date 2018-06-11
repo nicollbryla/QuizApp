@@ -83,11 +83,6 @@ public class AddQuestion  {
                 } catch (Exception ignored) {
                 }
             }
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Dodawanie pytań");
-            alert.setHeaderText("Pytanie zostało dodane.");
-            alert.showAndWait();
-
     }
 
 }
