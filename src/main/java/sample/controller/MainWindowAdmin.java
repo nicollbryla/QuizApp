@@ -22,7 +22,7 @@ public class MainWindowAdmin extends QuizController {
     }
 
     public void addQuestion(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AddQuestionAdmin.fxml"));
         Main.changeWindow(actionEvent, null, null, loader, admin);
     }
 

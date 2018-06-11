@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Question {
-    public int id;
+    public Integer id;
     public String category;
     public String content;
     public String[] ans;

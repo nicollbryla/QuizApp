@@ -5,14 +5,19 @@ import javafx.fxml.FXML;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import sample.Main;
 import sample.model.Admin;
+import sample.model.Database;
 import sample.model.Question;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Vector;
 
 public class AcceptQuestionAdmin  extends QuizController{
     @FXML
@@ -29,11 +34,20 @@ public class AcceptQuestionAdmin  extends QuizController{
     private Label answer3;
     @FXML
     private Label whichQuestion;
-
+    @FXML
+    private ToggleButton skipButton;
+    @FXML
+    private ToggleButton addButton;
+    @FXML
+    private ToggleButton deleteButton;
+    @FXML
+    public ToggleGroup tgroup;
 
     private List<Question> questionList;
     private int questionIndex;
     private Question currentQuestion;
+    private Vector<Integer> ifAddList;
+
 
     public void setAdmin(Admin a) {
         admin = a;
@@ -45,10 +59,22 @@ public class AcceptQuestionAdmin  extends QuizController{
         questionList = Question.loadQuestions("proposedquestions");
         questionIndex = 0;
         currentQuestion = questionList.get(questionIndex);
+        System.out.println(questionList.size());
+        ifAddList = new Vector<>();
+        ifAddList.setSize(questionList.size());
+        System.out.println(ifAddList.size());
+        for (int i = 0; i < ifAddList.size(); ++i)
+        {
+            ifAddList.set(i,0);
+        }
+        tgroup.selectedToggleProperty().addListener((skipButton,addButton,deleteButton)-> {
+            saveToggle();
+            //change colour
+        });
     }
 
+    public void nextQuestion() {
 
-    public void nextQuestion(){
         if(questionIndex + 1 == questionList.size())
             questionIndex = -1;
         currentQuestion = questionList.get(++questionIndex);
@@ -60,6 +86,24 @@ public class AcceptQuestionAdmin  extends QuizController{
             questionIndex = questionList.size();
         currentQuestion = questionList.get(--questionIndex);
         displayQuestion();
+    }
+
+    private void saveToggle() {
+        if (tgroup.getSelectedToggle() == addButton) {
+            System.out.println(ifAddList.size());
+            for (Integer x : ifAddList)
+            {
+                System.out.println(x);
+            }
+            ifAddList.setElementAt(1,questionIndex);
+        }
+        else if (tgroup.getSelectedToggle() == deleteButton) {
+            ifAddList.setElementAt(2, questionIndex);
+        }
+        else
+        {
+            ifAddList.setElementAt(0,questionIndex);
+        }
     }
 
     private void displayQuestion() {
@@ -75,15 +119,51 @@ public class AcceptQuestionAdmin  extends QuizController{
         answer1.setText(currentQuestion.ans[1]);
         answer2.setText(currentQuestion.ans[2]);
         answer3.setText(currentQuestion.ans[3]);
+        if (ifAddList.elementAt(questionIndex) == 1) {
+            tgroup.selectToggle(addButton);
+        }
+        else if (ifAddList.elementAt(questionIndex) == 2) {
+            tgroup.selectToggle(deleteButton);
+        }
+        else {
+            tgroup.selectToggle(skipButton);
+        }
     }
 
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         saveChanges();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, player, null, loader, null);
+        Main.changeWindow(actionEvent, null, null, loader, admin);
     }
 
-    public void saveChanges(){}
+    public void saveAndDisplay(ActionEvent actionEvent) throws IOException {
+        saveChanges();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AcceptQuestionAdmin.fxml"));
+        Main.changeWindow(actionEvent, null, null, loader, admin);
+    }
+
+    private void saveChanges(){
+        Database db = new Database();
+        for (int i = 0; i < ifAddList.size(); ++i) {
+            Integer iff = ifAddList.elementAt(i);
+            if (iff == 1) //add
+            {
+                Question q = questionList.get(i);
+                AddQuestion addQuestion = new AddQuestion();
+                addQuestion.addQuestion("questions", q.content, q.ans[q.correctAnswer], q.ans[1], q.ans[2], q.ans[3]);
+                db.delete("delete from proposedquestions where id = "+q.id.toString()+";");
+            }
+            else if (iff == 2) //delete
+            {
+                db.delete("delete from proposedquestions where id = "+questionList.get(i).id.toString()+";");
+            }
+        }
+        try {
+            db.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void goToMainWindowAdmin(ActionEvent actionEvent) throws IOException {
         saveChanges();
