@@ -90,17 +90,12 @@ public class AcceptQuestionAdmin  extends QuizController{
 
     private void saveToggle() {
         if (tgroup.getSelectedToggle() == addButton) {
-            System.out.println(ifAddList.size());
-            for (Integer x : ifAddList)
-            {
-                System.out.println(x);
-            }
             ifAddList.setElementAt(1,questionIndex);
         }
         else if (tgroup.getSelectedToggle() == deleteButton) {
             ifAddList.setElementAt(2, questionIndex);
         }
-        else
+        else if (tgroup.getSelectedToggle() == skipButton || tgroup.getSelectedToggle() == null)
         {
             ifAddList.setElementAt(0,questionIndex);
         }
