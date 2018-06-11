@@ -13,7 +13,7 @@ public class Question {
     public String[] ans;
     public int correctAnswer;
 
-    private Question(ResultSet rs) throws SQLException {
+    public Question(ResultSet rs) throws SQLException {
         id = rs.getInt("id");
         category = rs.getString("cat");
         content = rs.getString("content");

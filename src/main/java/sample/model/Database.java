@@ -45,12 +45,13 @@ public class Database {
         try {
             stmt = connect.createStatement();
             stmt.executeUpdate(query);
+            connect.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void update(Integer setInt, String setString ) {
+    public void updateScore(Integer setInt, String setString ) {
         try {
             String query = "UPDATE player SET score = score + ? WHERE login = ?";//TODO
             PreparedStatement preparedStatement = connect.prepareStatement(query);

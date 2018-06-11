@@ -161,7 +161,7 @@ public class OnePlayer extends QuizController {
 
     private void updateTheScore() throws SQLException {
         Database db = new Database();
-        db.update(player.scoreDuringGame, player.login);
+        db.updateScore(player.scoreDuringGame, player.login);
         db.close();
     }
 

@@ -44,4 +44,9 @@ public class MainWindowAdmin extends QuizController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AcceptQuestionAdmin.fxml"));
         Main.changeWindow(actionEvent, null, null, loader, admin);
     }
+
+    public void editQuestion(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/EditQuestionAdmin.fxml"));
+        Main.changeWindow(actionEvent, null, null, loader, admin);
+    }
 }
