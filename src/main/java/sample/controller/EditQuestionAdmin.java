@@ -67,21 +67,29 @@ public class EditQuestionAdmin extends QuizController {
         }
     }
 
+    private void fillRightPanel() {
+        String selectedQ = listView.getSelectionModel().getSelectedItem();
+        selectedQId = selectedQ.substring(0,selectedQ.indexOf('.'));
+        Question questionHM = questions.get(selectedQId);
+
+        question.setText(questionHM.content);
+        ans0.setText(questionHM.ans[0]);
+        ans1.setText(questionHM.ans[1]);
+        ans2.setText(questionHM.ans[2]);
+        ans3.setText(questionHM.ans[3]);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         questions = new HashMap<>();
             fillListView();
             listView.setOnMouseClicked(e -> {
-                String selectedQ = listView.getSelectionModel().getSelectedItem();
-                selectedQId = selectedQ.substring(0,selectedQ.indexOf('.'));
-                Question questionHM = questions.get(selectedQId);
-
-                question.setText(questionHM.content);
-                ans0.setText(questionHM.ans[0]);
-                ans1.setText(questionHM.ans[1]);
-                ans2.setText(questionHM.ans[2]);
-                ans3.setText(questionHM.ans[3]);
+                fillRightPanel();
             });
+            if(!listView.getItems().isEmpty()) {
+                listView.getSelectionModel().select(0);
+                fillRightPanel();
+            }
     }
 
     public void saveChanges(ActionEvent actionEvent) throws IOException {
