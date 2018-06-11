@@ -200,11 +200,6 @@ public class TwoPlayers extends QuizController {
         Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
     }
 
-    public void goToMenu(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Menu.fxml"));
-        Main.changeWindow(actionEvent, firstPlayer, secondPlayer, loader, null);
-    }
-
     public void exitFromTheGame(){
         System.exit(0);
     }

@@ -88,7 +88,7 @@
          <Font name="Bodoni MT" size="96.0" />
       </font>
    </Label>
-   <Label alignment="CENTER" opacity="0.3" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="760.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="545.0">
+   <Label alignment="CENTER" opacity="0.3" text="QuizApp" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="760.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="545.0">
       <font>
          <Font name="System Italic" size="30.0" />
       </font>
@@ -111,6 +111,11 @@
    <Button fx:id="goToNextQuestionButton" layoutX="289.0" layoutY="509.0" mnemonicParsing="false" onAction="#goToNextQuestion" opacity="0.7" prefHeight="54.0" prefWidth="322.0" text="Przejdź dalej" textFill="#576ec2">
       <font>
          <Font name="System Bold" size="25.0" />
+      </font>
+   </Button>
+   <Button layoutX="14.0" layoutY="553.0" mnemonicParsing="false" onAction="#exitFromTheGame" opacity="0.8" text="Wyjście" textFill="#576ec2" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+      <font>
+         <Font name="System Bold" size="13.0" />
       </font>
    </Button>
 </AnchorPane>

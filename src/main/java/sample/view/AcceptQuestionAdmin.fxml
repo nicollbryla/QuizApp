@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AcceptQuestionAdmin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AcceptQuestionAdmin">
    <children>
        <ImageView fitHeight="1030.0" fitWidth="1216.0" layoutX="-104.0" layoutY="-421.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -105,11 +112,6 @@
                <Font name="System Bold Italic" size="17.0" />
            </font>
        </Label>
-       <Label alignment="CENTER" layoutX="760.0" layoutY="545.0" opacity="0.3" prefHeight="29.0" prefWidth="126.0" text="QuizApp" textFill="WHITE" AnchorPane.leftAnchor="760.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="545.0">
-           <font>
-               <Font name="System Italic" size="30.0" />
-           </font>
-       </Label>
        <Button layoutX="76.0" layoutY="553.0" mnemonicParsing="false" onAction="#goToMainWindowAdmin" opacity="0.8" text="Wróć" textFill="#576ec2" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="74.0">
            <font>
                <Font name="System Bold" size="13.0" />
@@ -125,22 +127,31 @@
                <Font name="System Bold" size="13.0" />
            </font>
        </Button>
-       <Button layoutX="557.0" layoutY="553.0" mnemonicParsing="false" onAction="#prevQuestion" opacity="0.8" prefHeight="30.0" prefWidth="98.0" text="Poprzednie" textFill="#576ec2">
+       <Button layoutX="587.0" layoutY="553.0" mnemonicParsing="false" onAction="#prevQuestion" opacity="0.8" prefHeight="30.0" prefWidth="141.0" text="Poprzednie" textFill="#576ec2">
            <font>
              <Font name="System Bold" size="13.0" />
            </font>
        </Button>
-       <Button layoutX="662.0" layoutY="553.0" mnemonicParsing="false" onAction="#nextQuestion" opacity="0.8" prefHeight="30.0" prefWidth="98.0" text="Następne" textFill="#576ec2">
+       <Button layoutX="745.0" layoutY="553.0" mnemonicParsing="false" onAction="#nextQuestion" opacity="0.8" prefHeight="30.0" prefWidth="141.0" text="Następne" textFill="#576ec2">
            <font>
              <Font name="System Bold" size="13.0" />
            </font>
        </Button>
-      <ToggleButton fx:id="skipButton" layoutX="308.0" layoutY="489.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" selected="true" text="Pomiń">
+      <ToggleButton fx:id="skipButton" layoutX="228.0" layoutY="487.0" mnemonicParsing="false" opacity="0.9" prefHeight="26.0" prefWidth="80.0" selected="true" text="Pomiń" textFill="#576ec2" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="540.0">
          <toggleGroup>
             <ToggleGroup fx:id="tgroup" />
          </toggleGroup>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
       </ToggleButton>
-      <ToggleButton fx:id="addButton" layoutX="388.0" layoutY="489.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="80.0" text="Dodaj" toggleGroup="$tgroup" />
-      <ToggleButton fx:id="deleteButton" layoutX="468.0" layoutY="489.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="80.0" text="Usuń" toggleGroup="$tgroup" />
+      <ToggleButton fx:id="addButton" layoutX="389.0" layoutY="487.0" mnemonicParsing="false" opacity="0.9" prefHeight="39.0" prefWidth="130.0" text="Dodaj" textFill="#576ec2" toggleGroup="$tgroup" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="385.0" AnchorPane.rightAnchor="385.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="deleteButton" layoutX="540.0" layoutY="489.0" mnemonicParsing="false" opacity="0.9" prefHeight="39.0" prefWidth="80.0" text="Usuń" textFill="#576ec2" toggleGroup="$tgroup" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="540.0" AnchorPane.rightAnchor="230.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></ToggleButton>
    </children>
 </AnchorPane>
