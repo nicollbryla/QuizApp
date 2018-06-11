@@ -2,6 +2,7 @@ package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import sample.Main;
 import sample.model.Admin;
 
@@ -32,6 +33,14 @@ public class MainWindowAdmin extends QuizController {
     }
 
     public void acceptQuestion(ActionEvent actionEvent) throws IOException {
+        if(AcceptQuestionAdmin.IsProposedQestionEmpty())
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Dodawanie zaproponowanych pytań");
+            alert.setHeaderText("Baza z oczekującymi pytaniami jest pusta.");
+            alert.showAndWait();
+            return;
+        }
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/AcceptQuestionAdmin.fxml"));
         Main.changeWindow(actionEvent, null, null, loader, admin);
     }

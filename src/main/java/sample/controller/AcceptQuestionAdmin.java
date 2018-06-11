@@ -54,6 +54,10 @@ public class AcceptQuestionAdmin  extends QuizController{
         displayQuestion();
     }
 
+    static boolean IsProposedQestionEmpty(){
+        return Question.loadQuestions("proposedquestions").isEmpty();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         questionList = Question.loadQuestions("proposedquestions");
