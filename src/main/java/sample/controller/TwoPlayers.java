@@ -190,8 +190,8 @@ public class TwoPlayers extends QuizController {
 
     private void updateTheScore() throws SQLException {
         Database db = new Database();
-        db.update(firstPlayer.scoreDuringGame, firstPlayer.login);
-        db.update(secondPlayer.scoreDuringGame, secondPlayer.login);
+        db.updateScore(firstPlayer.scoreDuringGame, firstPlayer.login);
+        db.updateScore(secondPlayer.scoreDuringGame, secondPlayer.login);
         db.close();
     }
 

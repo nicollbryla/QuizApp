@@ -36,7 +36,7 @@ public class AddQuestionPlayer extends QuizController {
     public void addQuestion(){
         AddQuestion x = new AddQuestion();
         if (x.validateQuestion(question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText())){
-            x.addQuestion("proposedQuestions",question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText());
+            x.addQuestion("proposedquestions",question.getText(), correctAnswer.getText(), incorrectAnswer1.getText(), incorrectAnswer2.getText(), incorrectAnswer3.getText());
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Dodawanie pytań");
