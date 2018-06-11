@@ -71,7 +71,7 @@ public class AddQuestion  {
             System.out.println(maxIdx);
             try {
                 db = new Database();
-                db.insert("Insert into "+tableName+"(id, cat, content, ans0, ans1, ans2, ans3) values ('"
+                db.executeUpdate("Insert into "+tableName+"(id, cat, content, ans0, ans1, ans2, ans3) values ('"
                         + maxIdx + "','jakakolwiek', '" + question + "', '" + correctAnswer
                         + "', '" + incorrectAnswer1 + "', '"+ incorrectAnswer2 +"', '"
                         +incorrectAnswer3 + "'"+");");

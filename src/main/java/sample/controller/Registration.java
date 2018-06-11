@@ -121,7 +121,7 @@ public class Registration extends QuizController {
             System.out.println(maxIdx);
             try {
                 db = new Database();
-                db.insert("Insert into player(id, login, password, name, surname, score) values ('" + maxIdx + "', '" + login.getText() + "', '" + pass1.getText() + "', '" + name.getText() + "', '"+ surname.getText() +"', '0'"+");");
+                db.executeUpdate("Insert into player(id, login, password, name, surname, score) values ('" + maxIdx + "', '" + login.getText() + "', '" + pass1.getText() + "', '" + name.getText() + "', '"+ surname.getText() +"', '0'"+");");
                 db.close();
             } catch (Exception e) {
                 try {

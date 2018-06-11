@@ -10,17 +10,19 @@ public class Database {
 
     private Connection connect;
     private Statement stmt;
-    private ResultSet rs;
-    private PreparedStatement preparedStatement;
-    private boolean insert;
-    private boolean  update;
 
-    public Database(){
-        connect = null;
-        stmt = null;
+    public Database() {
+        try {
+            Class.forName("org.postgresql.Driver");
+            connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+            connect.setAutoCommit(false);
+        }
+        catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void loadParams(Properties properties){
+    static void loadParams(Properties properties){
         String host = properties.getProperty("db_host");
         String port = properties.getProperty("db_port");
         String database = properties.getProperty("db_name");
@@ -29,85 +31,39 @@ public class Database {
         dbUrl = "jdbc:postgresql://" + host + ":" + port + "/" + database;
     }
 
-    public void dbUpdate(String query) throws db_exception {
-
-    }
-
     public ResultSet dbselect(String query) throws db_exception {
         try {
-            insert = false;
-            Class.forName("org.postgresql.Driver");
-            connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
-            connect.setAutoCommit(false);
             stmt = connect.createStatement();
-            rs = stmt.executeQuery(query);
-            return rs;
+            return stmt.executeQuery(query);
         } catch (Exception e) {
             e.printStackTrace();
             throw new db_exception();
         }
     }
 
-    public void insert(String query) {
+    public void executeUpdate(String query) {
         try {
-            insert = false;
-            Class.forName("org.postgresql.Driver");
-            connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
-            connect.setAutoCommit(false);
             stmt = connect.createStatement();
             stmt.executeUpdate(query);
-            insert = true;
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void delete(String query) {
-        update = false;
-        insert = false;
-        try {
-            Class.forName("org.postgresql.Driver");
-            connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
-            connect.setAutoCommit(false);
-            stmt = connect.createStatement();
-            stmt.executeUpdate(query);
-            insert = true;
-        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void update(Integer setInt, String setString ) {
         try {
-            update = true;
-            insert = false;
-            Class.forName("org.postgresql.Driver");
-            connect = DriverManager.getConnection(dbUrl, dbUser, dbPass);
             String query = "UPDATE player SET score = score + ? WHERE login = ?";//TODO
-            preparedStatement = connect.prepareStatement(query);
-            preparedStatement.setInt(1,setInt);
-            preparedStatement.setString(2,setString);
+            PreparedStatement preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1, setInt);
+            preparedStatement.setString(2, setString);
             preparedStatement.executeUpdate();
-            connect.close();
-
-        } catch (SQLException | ClassNotFoundException e) {
+            preparedStatement.close();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void close() throws SQLException{
-        if (insert){
-            stmt.close();
-            connect.commit();
-
-        }
-        if(update){
-            preparedStatement.close();
-        }
-        else {
-            stmt.close();
-            rs.close();
-        }
         connect.close();
     }
 
