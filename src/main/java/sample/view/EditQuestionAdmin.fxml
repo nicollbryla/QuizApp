@@ -1,29 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="464.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EditQuestionAdmin">
+<AnchorPane prefHeight="464.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EditQuestionAdmin">
    <children>
-      <ListView fx:id="listView" layoutX="14.0" layoutY="35.0" prefHeight="414.0" prefWidth="284.0" />
-      <Label layoutX="14.0" layoutY="8.0" text="Wszystkie pytania" />
-      <VBox layoutX="337.0" layoutY="35.0" prefHeight="335.0" prefWidth="266.0">
+      <ImageView fitHeight="709.0" fitWidth="636.0" layoutY="-172.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@blue.jpg" />
+         </image>
+      </ImageView>
+      <ListView fx:id="listView" layoutX="14.0" layoutY="55.0" opacity="0.7" prefHeight="398.0" prefWidth="284.0" />
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" opacity="0.9" prefHeight="30.0" prefWidth="284.0" text="Wszystkie pytania" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="25.0" />
+         </font></Label>
+      <VBox layoutX="337.0" layoutY="55.0" prefHeight="335.0" prefWidth="266.0">
          <children>
-            <Label  text="Pytanie" />
-            <TextField fx:id="question" />
-            <Label  text="Poprawna odpowiedź" />
-            <TextField fx:id="ans0" />
-            <Label  text="Odpowiedź 1" />
-            <TextField fx:id="ans1"/>
-            <Label text="Odpowiedź 2" />
-            <TextField  fx:id="ans2"  />
-            <Label  text="Odpowiedź 3" />
-            <TextField fx:id="ans3" />
+            <Label opacity="0.9" text="Pytanie" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font></Label>
+            <TextField fx:id="question" opacity="0.7" />
+            <Label opacity="0.9" text="Poprawna odpowiedź" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font></Label>
+            <TextField fx:id="ans0" opacity="0.7" />
+            <Label opacity="0.9" text="Odpowiedź 1" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font></Label>
+            <TextField fx:id="ans1" opacity="0.7" />
+            <Label opacity="0.9" text="Odpowiedź 2" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font></Label>
+            <TextField fx:id="ans2" opacity="0.7" />
+            <Label opacity="0.9" text="Odpowiedź 3" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font></Label>
+            <TextField fx:id="ans3" opacity="0.7" />
          </children></VBox>
-      <Button layoutX="337.0" layoutY="398.0" mnemonicParsing="false" onAction="#saveChanges" text="Zapisz" />
-      <Button layoutX="452.0" layoutY="398.0" mnemonicParsing="false" onAction="#goToMainWindowAdmin" text="Wróć" />
+      <Button layoutX="336.0" layoutY="398.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="31.0" prefWidth="125.0" rotate="0.9" text="Zapisz" textFill="#576ec2" AnchorPane.leftAnchor="336.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="476.0" layoutY="398.0" mnemonicParsing="false" onAction="#goToMainWindowAdmin" prefHeight="31.0" prefWidth="125.0" rotate="0.9" text="Wróć" textFill="#576ec2">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>
