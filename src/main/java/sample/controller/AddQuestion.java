@@ -20,7 +20,7 @@ public class AddQuestion  {
         alert.showAndWait();
     }
 
-    public boolean validateQuestion(String question, String correctAnswer, String incorrectAnswer1, String incorrectAnswer2, String incorrectAnswer3){
+    boolean validateQuestion(String question, String correctAnswer, String incorrectAnswer1, String incorrectAnswer2, String incorrectAnswer3){
         boolean multiply = false;
         StringBuilder emptyFields = new StringBuilder();
         if (question.isEmpty()) {
@@ -72,7 +72,7 @@ public class AddQuestion  {
             try {
                 db = new Database();
                 db.executeUpdate("Insert into "+tableName+"(id, cat, content, ans0, ans1, ans2, ans3) values ('"
-                        + maxIdx + "','jakakolwiek', '" + question + "', '" + correctAnswer
+                        + maxIdx + "','General knowledge', '" + question + "', '" + correctAnswer
                         + "', '" + incorrectAnswer1 + "', '"+ incorrectAnswer2 +"', '"
                         +incorrectAnswer3 + "'"+");");
                 db.close();

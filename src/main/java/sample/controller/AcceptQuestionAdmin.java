@@ -75,6 +75,7 @@ public class AcceptQuestionAdmin  extends QuizController{
             saveToggle();
             //set colour TODO
         });
+        displayQuestion();
     }
 
     public void nextQuestion() {
