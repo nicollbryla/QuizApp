@@ -28,7 +28,7 @@ public class MainWindowAdmin extends QuizController {
     }
 
     public void backToMainWindow(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/Login.fxml"));
         Main.changeWindow(actionEvent, null, null, loader, admin);
     }
 
