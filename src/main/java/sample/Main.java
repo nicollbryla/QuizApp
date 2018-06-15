@@ -37,7 +37,7 @@ public class Main extends Application {
     }
 
     public static void soundOff(){
-        music.pause();
+        music.stop();
     }
 
     public static void soundOn(){
